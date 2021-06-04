@@ -1,0 +1,8 @@
+.categories {
+  color: var(--color-white);
+  background-color: var(--color-dark-background);
+  width: var(--size-categories-width);
+  height: var(--size-categories-heigth);
+
+  padding: 30px;
+}

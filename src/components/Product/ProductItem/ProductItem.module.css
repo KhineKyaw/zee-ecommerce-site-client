@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: rebeccapurple;
+  width: var(--size-card-width);
+  height: var(--size-card-height);
+  border: 1px solid var(--color-gray-border);
+}

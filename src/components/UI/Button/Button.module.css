@@ -1,0 +1,26 @@
+.main {
+  color: var(--color-white);
+  cursor: pointer;
+  background-color: var(--color-dark);
+  padding: var(--size-btn-padding);
+  font-size: 0.9rem;
+  border-radius: var(--border-radius-btn);
+  border: 1px solid transparent;
+  transition: 280ms;
+}
+
+.main:hover {
+  color: var(--color-primary);
+}
+
+.outline {
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark);
+}
+
+.outline:hover {
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
