@@ -9,7 +9,6 @@ const Card = props => {
     className.push(props.className)
   }
 
-  // Remove unnecessary props
   const Props = { ...props }
   delete Props.children
 

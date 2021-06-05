@@ -8,7 +8,7 @@ const ProductList = props => {
   return (
     <div className={classes.productList}>
       {props.data.map(item => (
-        <ProductItem>
+        <ProductItem key={item}>
           item {item}
           <Button>Button</Button>
           <Button type='outline'>Outline</Button>

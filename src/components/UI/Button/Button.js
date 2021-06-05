@@ -13,9 +13,10 @@ const Button = props => {
   if (props.type) {
     className.push(classes[props.type])
   }
-  // Remove unnecessary props
+
   const Props = { ...props }
   delete Props.children
+  delete Props.type
 
   return (
     <button {...Props} className={className.join(" ")}>
