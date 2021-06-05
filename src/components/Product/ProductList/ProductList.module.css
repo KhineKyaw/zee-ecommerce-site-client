@@ -1,4 +1,4 @@
 .productList {
   display: flex;
-  margin-left: var(--size-common-pm-medium);
+  margin-left: var(--size-common-whitespace-medium);
 }

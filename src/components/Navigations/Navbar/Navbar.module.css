@@ -1,8 +1,38 @@
 .navbar {
-  display: flex;
+  flex-flow: row;
   align-items: center;
-
+  justify-content: center;
   height: var(--size-navbar-height);
   padding: var(--size-navbar-padding-horizontal);
   background-color: var(--color-white);
+}
+
+.logo {
+  flex: 1;
+  /* background-color: aqua; */
+}
+
+.pages {
+  flex: 2;
+  justify-content: space-evenly;
+  /* background-color: bisque; */
+}
+
+.actions {
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  border-left: 1px solid var(--color-gray-border);
+  /* background-color: blue; */
+}
+
+.actions button {
+  margin-left: 16px;
+}
+
+.navbar,
+.logo,
+.pages,
+.actions {
+  display: flex;
 }

@@ -1,6 +1,7 @@
 @import "variables.css";
 
 * {
+  font-size: var(--size-font-default);
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -8,7 +9,7 @@
 }
 
 main {
-  padding: 32px;
+  padding: var(--size-common-whitespace-medium);
   background-color: var(--color-gray-background);
   min-height: calc(100vh - var(--size-navbar-height));
 }
@@ -18,4 +19,8 @@ footer {
   justify-content: center;
   align-items: center;
   height: 180px;
+}
+
+button {
+  cursor: pointer;
 }

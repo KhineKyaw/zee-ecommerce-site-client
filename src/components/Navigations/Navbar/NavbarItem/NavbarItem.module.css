@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.item:hover::before,
+.active::before {
+  content: "";
+  background-color: rgb(var(--color-primary-rgb), 0.64);
+  position: absolute;
+  width: 124%;
+  height: 7px;
+  bottom: 0;
+  left: -12%;
+  animation: expand 200ms ease-in-out;
+}
+
+@keyframes expand {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 100%;
+  }
+}
