@@ -5,6 +5,7 @@ import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
 import LanguageContext from "../../../context/language-context"
 import LanguageSwitch from "./LanguageSwitch/LanguageSwitch"
+import NavSearchBar from "./NavSearchBar/NavSearchBar"
 
 const Navbar = () => {
   const {
@@ -26,7 +27,7 @@ const Navbar = () => {
         <NavbarItem>{texts.navbar["page-3"]}</NavbarItem>
       </ul>
       <div className={classes.actions}>
-        <IconButton name='search' />
+        <NavSearchBar placeholder='Search' autoFocus />
         <IconButton name='profile' />
         <IconButton name='bag' />
         <LanguageSwitch language={language} onClick={languageChangedHandler} />

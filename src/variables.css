@@ -18,8 +18,12 @@
 }
 
 :root {
+  /* main */
+  --size-main-width-large: 982px;
+
   --size-navbar-height: 58px;
   --size-navbar-padding-horizontal: 0 32px;
+
   --size-banner-height: 60vh;
 
   /* white spaces */
@@ -39,6 +43,7 @@
   --size-font-large: 32px;
 
   --size-iconbutton-medium: 24px;
+  --size-iconbutton-search: 30px;
 }
 
 :root {

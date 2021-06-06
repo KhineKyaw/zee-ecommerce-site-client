@@ -9,8 +9,10 @@
 }
 
 main {
+  width: var(--size-main-width-large);
   padding: var(--size-common-whitespace-medium);
-  background-color: var(--color-gray-background);
+  margin-left: calc(calc(100% - var(--size-main-width-large)) / 2);
+  /* background-color: var(--color-gray-background); */
   min-height: calc(100vh - var(--size-navbar-height));
 }
 
