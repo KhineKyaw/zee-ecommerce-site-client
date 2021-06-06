@@ -1,4 +1,4 @@
-module.exports = [
+export default [
     {
         title: "Baellerry Men Long Wallet",
         images: [

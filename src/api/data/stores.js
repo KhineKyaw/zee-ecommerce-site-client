@@ -1,4 +1,4 @@
-module.exports = [
+export default [
     {
         name: "Nokia",
         logo: "https://static-01.shop.com.mm/other/shop/2a0a819a66d0c6b9c317beddb264c639.jpeg_120x120q75.jpg_.webp"
