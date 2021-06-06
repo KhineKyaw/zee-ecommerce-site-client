@@ -1,13 +1,17 @@
 const ln_dict = {
   en: {
-    "page-title-1": "Products",
-    "page-title-2": "Stores",
-    "page-title-3": "Categories"
+    navbar: {
+      "page-1": "Products",
+      "page-2": "Stores",
+      "page-3": "Categories"
+    }
   },
   mm: {
-    "page-title-1": "ထုတ်ကုန်များ",
-    "page-title-2": "စတိုးဆိုင်များ",
-    "page-title-3": "အမျိုးအစား"
+    navbar: {
+      "page-1": "ထုတ်ကုန်များ",
+      "page-2": "စတိုးဆိုင်များ",
+      "page-3": "အမျိုးအစား"
+    }
   }
 }
 

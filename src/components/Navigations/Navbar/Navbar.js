@@ -4,6 +4,7 @@ import IconButton from "../../UI/IconButton/HeaderIconButton"
 import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
 import LanguageContext from "../../../context/language-context"
+import LanguageSwitch from "./LanguageSwitch/LanguageSwitch"
 
 const Navbar = () => {
   const {
@@ -20,15 +21,15 @@ const Navbar = () => {
     <div className={classes.navbar}>
       <div className={classes.logo}>Logo</div>
       <ul className={classes.pages}>
-        <NavbarItem active={true}>{texts["page-title-1"]}</NavbarItem>
-        <NavbarItem>{texts["page-title-2"]}</NavbarItem>
-        <NavbarItem>{texts["page-title-3"]}</NavbarItem>
+        <NavbarItem active={true}>{texts.navbar["page-1"]}</NavbarItem>
+        <NavbarItem>{texts.navbar["page-2"]}</NavbarItem>
+        <NavbarItem>{texts.navbar["page-3"]}</NavbarItem>
       </ul>
       <div className={classes.actions}>
         <IconButton name='search' />
         <IconButton name='profile' />
         <IconButton name='bag' />
-        <button onClick={languageChangedHandler}>Language</button>
+        <LanguageSwitch language={language} onClick={languageChangedHandler} />
       </div>
     </div>
   )

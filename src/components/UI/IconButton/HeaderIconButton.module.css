@@ -5,11 +5,16 @@
   background-color: transparent;
   width: var(--size-iconbutton-medium);
   height: var(--size-iconbutton-medium);
+  color: var(--color-dark);
+  /* fill: var(--color-success); */
+  transition: var(--duration-animation-normal);
+}
+
+.iconbutton:hover {
+  color: var(--color-primary);
 }
 
 .iconbutton svg {
   width: 100%;
   height: 100%;
-  color: var(--color-dark);
-  fill: var(--color-dark);
 }

@@ -16,7 +16,7 @@
   height: 7px;
   bottom: 0;
   left: -12%;
-  animation: expand 200ms ease-in-out;
+  animation: expand var(--duration-animation-normal) ease-in-out;
 }
 
 @keyframes expand {

@@ -40,3 +40,7 @@
 
   --size-iconbutton-medium: 24px;
 }
+
+:root {
+  --duration-animation-normal: 200ms;
+}
