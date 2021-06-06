@@ -8,7 +8,7 @@ const ProductList = props => {
   return (
     <div className={classes.productList}>
       {props.data.map(item => (
-        <ProductItem key={item.title} product={item} />
+        <ProductItem key={item.id} product={item} />
       ))}
     </div>
   )

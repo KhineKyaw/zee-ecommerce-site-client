@@ -34,7 +34,7 @@
 
   /* card */
   --size-card-width-medium: 31%;
-  --size-card-height-medium: 270px;
+  --size-card-height-medium: 286px;
 
   --size-btn-padding: 10px 18px;
 
@@ -49,4 +49,5 @@
 
 :root {
   --duration-animation-normal: 200ms;
+  --duration-animation-long: 300ms;
 }
