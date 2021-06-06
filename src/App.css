@@ -16,13 +16,6 @@ main {
   min-height: calc(100vh - var(--size-navbar-height));
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 180px;
-}
-
 button {
   cursor: pointer;
 }

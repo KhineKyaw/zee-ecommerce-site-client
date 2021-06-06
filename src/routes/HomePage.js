@@ -5,13 +5,15 @@ import Banner from "../components/Banner/Banner"
 import Categories from "../components/Navigations/Categories/Categories"
 import ProductList from "../components/Product/ProductList/ProductList"
 
+import getProducts from "../api/getProducts"
+
 const HomePage = () => {
   return (
     <>
       <Banner />
       <div className={classes.body}>
         <Categories />
-        <ProductList data={[1, 2, 3]} />
+        <ProductList data={getProducts()} />
       </div>
     </>
   )

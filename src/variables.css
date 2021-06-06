@@ -32,8 +32,9 @@
   --size-categories-heigth: 400px;
   --size-categories-width: 260px;
 
-  --size-card-width: 220px;
-  --size-card-height: 300px;
+  /* card */
+  --size-card-width-medium: 31%;
+  --size-card-height-medium: 270px;
 
   --size-btn-padding: 10px 18px;
 
