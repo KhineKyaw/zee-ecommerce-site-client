@@ -24,7 +24,7 @@
   --size-navbar-height: 58px;
   --size-navbar-padding-horizontal: 0 32px;
 
-  --size-banner-height: 60vh;
+  --size-banner-height: calc(var(--size-main-width-large) * 0.4);
 
   /* white spaces */
   --size-common-whitespace-medium: 32px;
