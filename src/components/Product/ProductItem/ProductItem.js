@@ -5,7 +5,7 @@ import Card from "../../UI/Card/Card"
 import Button from "../../UI/Button/Button"
 
 const ProductItem = props => {
-  const { product } = props
+  const { item } = props
   // console.log(props.parentWidth)
 
   return (
@@ -16,11 +16,11 @@ const ProductItem = props => {
       }}>
       <div className={classes.item}>
         <div className={classes.imageContainer}>
-          <img src={product.imageUrl} alt={product.title + "image"}></img>
+          <img src={item.imageUrl} alt={item.title + "image"}></img>
         </div>
         <div className={classes.itemInfo}>
-          <p>{product.title}</p>
-          <p>Ks {product.price}</p>
+          <p>{item.title}</p>
+          <p>Ks {item.price}</p>
           <Button type='outline'>ADD TO CART</Button>
         </div>
       </div>

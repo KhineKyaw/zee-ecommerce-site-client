@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
 
-import ProductItem from "../ProductItem/ProductItem"
-import classes from "./ProductList.module.css"
+import classes from "./ListView.module.css"
 
-const ProductList = props => {
+const ListView = props => {
   const containerRef = useRef()
   const [childMrgin, setChildMrgin] = useState(0)
   const { childWidth, cols } = props
@@ -14,16 +13,17 @@ const ProductList = props => {
   }, [containerRef, childWidth, cols])
 
   return (
-    <div ref={containerRef} className={classes.productList}>
+    <div ref={containerRef} className={classes.listView}>
       {props.data.map((item, idx) => (
-        <ProductItem
+        <props.renderItem
+          childWidth={childWidth}
           margin={(idx + 1) % props.cols ? childMrgin : 0}
           key={item.id}
-          product={item}
+          item={item}
         />
       ))}
     </div>
   )
 }
 
-export default ProductList
+export default ListView

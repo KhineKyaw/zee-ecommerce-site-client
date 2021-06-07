@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--size-common-whitespace-medium);
+  border-bottom: 2px solid var(--color-gray-border);
+  padding-bottom: 8px;
+}
+
+.section p {
+  cursor: pointer;
+  transition: var(--duration-animation-normal);
+}
+
+.section p:hover {
+  color: var(--color-primary);
+}

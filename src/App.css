@@ -19,3 +19,10 @@ main {
 button {
   cursor: pointer;
 }
+
+h1 {
+  color: var(--color-dark);
+  font-size: 2.1rem;
+  font-weight: bold;
+  /* background-color: orange; */
+}
