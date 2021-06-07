@@ -13,7 +13,7 @@ const HomePage = () => {
       <Banner />
       <div className={classes.body}>
         <Categories />
-        <ProductList data={getProducts()} />
+        <ProductList cols={4} childWidth={200} data={getProducts()} />
       </div>
     </>
   )

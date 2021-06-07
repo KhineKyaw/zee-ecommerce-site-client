@@ -1,11 +1,23 @@
-.item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+.card {
+  display: inline-block;
   width: var(--size-card-width-medium);
   height: var(--size-card-height-medium);
   margin-bottom: var(--size-common-whitespace-medium);
   overflow: hidden;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  height: 123%;
+  flex-flow: column;
+  align-items: center;
+  transition: var(--duration-animation-long);
+}
+
+.item:hover {
+  /* margin-bottom: 0; */
+  transform: translateY(-60px);
 }
 
 .imageContainer {
@@ -27,12 +39,7 @@
   height: fit-content;
   flex-flow: column;
   /* justify-content: center; */
-  margin-bottom: -64px;
-  transition: var(--duration-animation-long);
-}
-
-.itemInfo:hover {
-  margin-bottom: 0;
+  /* margin-bottom: -64px; */
 }
 
 .itemInfo p {

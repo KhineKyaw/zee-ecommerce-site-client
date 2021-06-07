@@ -19,7 +19,7 @@
 
 :root {
   /* main */
-  --size-main-width-large: 982px;
+  --size-main-width-large: 1200px;
 
   --size-navbar-height: 58px;
   --size-navbar-padding-horizontal: 0 32px;
@@ -29,11 +29,12 @@
   /* white spaces */
   --size-common-whitespace-medium: 32px;
 
+  /* categories */
   --size-categories-heigth: 400px;
-  --size-categories-width: 260px;
+  --size-categories-width: 258px;
 
   /* card */
-  --size-card-width-medium: 31%;
+  --size-card-width-medium: 200px;
   --size-card-height-medium: 286px;
 
   --size-btn-padding: 10px 18px;
