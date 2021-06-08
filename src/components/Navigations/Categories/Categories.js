@@ -15,7 +15,7 @@ const Categories = () => {
     const wrapperRect = wrapperRef.current.getBoundingClientRect()
 
     if (wrapperRect.top <= CATE_TOP) {
-      if (wrapperRect.bottom < CATE_HEIGHT + CATE_TOP) {
+      if (wrapperRect.bottom < CATE_HEIGHT + CATE_TOP * 2) {
         setCategoriesType("abs-bot")
         return
       }
@@ -36,7 +36,7 @@ const Categories = () => {
   if (categoriesType === "abs-bot") {
     categoriesStyle = {
       position: "absolute",
-      bottom: "0"
+      bottom: CATE_TOP
     }
   }
 

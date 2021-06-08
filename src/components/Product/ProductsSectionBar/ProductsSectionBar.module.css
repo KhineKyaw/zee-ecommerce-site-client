@@ -26,4 +26,5 @@
 .section_mid h1 {
   border-bottom: 2px solid var(--color-primary);
   margin-bottom: var(--size-common-whitespace-medium);
+  text-align: center;
 }
