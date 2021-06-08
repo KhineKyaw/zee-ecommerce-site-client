@@ -133,3 +133,21 @@
   from {left: -100%;}
   to {left: 0;}
 }
+
+/* Slide out, move right */
+.slide-out-right {
+  -webkit-animation-name: slide-out-right;
+  -webkit-animation-duration: var(--duration-banner-animation);
+  animation-name: slide-out-right;
+  animation-duration: var(--duration-banner-animation);
+}
+
+@-webkit-keyframes slide-out-right {
+  from {left: 0;}
+  to {left: 100%;}
+}
+
+@keyframes slide-out-right {
+  from {left: 0;}
+  to {left: 100%;}
+}
