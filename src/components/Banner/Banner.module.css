@@ -5,3 +5,15 @@
   overflow: hidden;
 }
 
+/* Slide img */
+.slide {
+  position: absolute;
+  object-fit: contain;
+  display: inline-block;
+  width: 100%;
+  left: -100%;
+}
+
+.slide.slide-show {
+  left: 0;
+}
