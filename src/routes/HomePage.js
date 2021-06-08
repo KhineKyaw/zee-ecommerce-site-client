@@ -19,29 +19,38 @@ const HomePage = () => {
     <>
       <Banner />
       <div className={classes.body}>
-        <Categories />
-        <div>
-          <ProductsSectionBar
-            title={texts.home["section-title-1"]}
-            subTitle={texts.actions["view-more"]}
-          />
-          <ListView
-            renderItem={ProductItem}
-            cols={4}
-            childWidth={210}
-            data={getProducts()}
-          />
-          <ProductsSectionBar
-            title={texts.home["section-title-2"]}
-            subTitle={texts.actions["view-more"]}
-          />
-          <ListView
-            renderItem={StoreProfileItem}
-            cols={4}
-            childWidth={210}
-            data={getStores()}
-          />
+        <div className={classes.topContent}>
+          <Categories />
+          <div className={classes.innerContent}>
+            <ProductsSectionBar
+              title={texts.home["section-title-1"]}
+              subTitle={texts.actions["view-more"]}
+            />
+            <ListView
+              renderItem={ProductItem}
+              cols={4}
+              childWidth={210}
+              data={getProducts()}
+            />
+            <ProductsSectionBar
+              title={texts.home["section-title-2"]}
+              subTitle={texts.actions["view-more"]}
+            />
+            <ListView
+              renderItem={StoreProfileItem}
+              cols={4}
+              childWidth={210}
+              data={getStores()}
+            />
+          </div>
         </div>
+        <ProductsSectionBar type='mid' title={texts.home["section-title-3"]} />
+        <ListView
+          renderItem={ProductItem}
+          cols={5}
+          childWidth={210}
+          data={[...getProducts(), ...getProducts(10)]}
+        />
       </div>
     </>
   )

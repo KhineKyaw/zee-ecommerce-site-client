@@ -1,4 +1,18 @@
 .body {
-  display: flex;
+  flex-flow: column;
   margin-top: 32px;
+}
+
+.topContent {
+  position: relative;
+  width: 100%;
+}
+
+.innerContent {
+  width: 100%;
+}
+
+.body,
+.topContent {
+  display: flex;
 }
