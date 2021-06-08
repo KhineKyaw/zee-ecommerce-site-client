@@ -74,3 +74,62 @@
   display: inline-block;
   transition: background-color var(--duration-animation-long) ease;
 }
+
+.active, .dot:hover {
+  background-color: var(--color-accent);
+}
+
+/* Slide animation */
+/* Slide out, move left */
+.slide-out-left {
+  -webkit-animation-name: slide-out-left;
+  -webkit-animation-duration: var(--duration-banner-animation);
+  animation-name: slide-out-left;
+  animation-duration: var(--duration-banner-animation);
+}
+
+@-webkit-keyframes slide-out-left {
+  from {left: 0;}
+  to {left: -100%;}
+}
+
+@keyframes slide-out-left {
+  from {left: 0;}
+  to {left: -100%;}
+}
+
+/* Slide in, move left */
+.slide-in-left {
+  -webkit-animation-name: slide-in-left;
+  -webkit-animation-duration: var(--duration-banner-animation);
+  animation-name: slide-in-left;
+  animation-duration: var(--duration-banner-animation);
+}
+
+@-webkit-keyframes slide-in-left {
+  from {left: 100%;}
+  to {left: 0;}
+}
+
+@keyframes slide-in-left {
+  from {left: 100%;}
+  to {left: 0;}
+}
+
+/* Slide in, move right */
+.slide-in-right {
+  -webkit-animation-name: slide-in-right;
+  -webkit-animation-duration: var(--duration-banner-animation);
+  animation-name: slide-in-right;
+  animation-duration: var(--duration-banner-animation);
+}
+
+@-webkit-keyframes slide-in-right {
+  from {left: -100%;}
+  to {left: 0;}
+}
+
+@keyframes slide-in-right {
+  from {left: -100%;}
+  to {left: 0;}
+}
