@@ -46,9 +46,16 @@
 
   --size-iconbutton-medium: 24px;
   --size-iconbutton-search: 30px;
+
+  /* banner */
+  --size-banner-control-btn-padding: 12px;
+  --size-banner-dot: 10px;
 }
 
 :root {
   --duration-animation-normal: 200ms;
   --duration-animation-long: 300ms;
+
+  /* banner */
+  --duration-banner-animation: 1.2s;
 }
