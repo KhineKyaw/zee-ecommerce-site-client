@@ -1,5 +1,7 @@
 .banner {
+  position: relative;
   background-color: var(--color-white);
   height: var(--size-banner-height);
+  overflow: hidden;
 }
 
