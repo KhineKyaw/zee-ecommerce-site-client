@@ -13,6 +13,8 @@ import getProducts from "../api/getProducts"
 import getStores from "../api/getStores"
 import LanguageContext from "../context/language-context"
 
+const ITEM_WIDTH = 210
+
 const HomePage = () => {
   const { languageDict: texts } = useContext(LanguageContext)
   return (
@@ -29,7 +31,7 @@ const HomePage = () => {
             <ListView
               renderItem={ProductItem}
               cols={4}
-              childWidth={210}
+              childWidth={ITEM_WIDTH}
               data={getProducts()}
             />
             <ProductsSectionBar
@@ -39,7 +41,7 @@ const HomePage = () => {
             <ListView
               renderItem={StoreProfileItem}
               cols={4}
-              childWidth={210}
+              childWidth={ITEM_WIDTH}
               data={getStores()}
             />
           </div>
@@ -48,7 +50,7 @@ const HomePage = () => {
         <ListView
           renderItem={ProductItem}
           cols={5}
-          childWidth={210}
+          childWidth={ITEM_WIDTH}
           data={[...getProducts(), ...getProducts(10)]}
         />
       </div>

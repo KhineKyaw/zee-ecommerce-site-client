@@ -13,7 +13,12 @@ const StoreProfileItem = props => {
         marginRight: props.margin
       }}>
       <div className={classes.item}>
-        <img src={item.logo} alt={item.name + "logo"} />
+        <div
+          className={classes.background}
+          style={{
+            backgroundImage: `url('${item.background}')`
+          }}></div>
+        <img src={item.logo} alt={item.name + " logo"} />
         <p>{item.name}</p>
       </div>
     </Card>
