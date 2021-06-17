@@ -48,6 +48,7 @@ const HomePage = () => {
         </div>
         <ProductsSectionBar type='mid' title={texts.home["section-title-3"]} />
         <ListView
+          type={"button"}
           renderItem={ProductItem}
           cols={5}
           childWidth={ITEM_WIDTH}
