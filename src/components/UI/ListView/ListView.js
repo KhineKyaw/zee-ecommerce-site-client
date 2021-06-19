@@ -16,7 +16,7 @@ const ListView = props => {
 
   if (props.type) {
     actionBar =
-      props.type == "pagination" ? (
+      props.type === "pagination" ? (
         <div>Pagination</div>
       ) : (
         <div className={classes.moreAction}>

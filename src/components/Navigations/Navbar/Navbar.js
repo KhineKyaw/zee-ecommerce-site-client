@@ -20,17 +20,22 @@ const Navbar = () => {
 
   return (
     <div className={classes.navbar}>
-      <div className={classes.logo}>Logo</div>
-      <ul className={classes.pages}>
-        <NavbarItem active={true}>{texts.navbar["page-1"]}</NavbarItem>
-        <NavbarItem>{texts.navbar["page-2"]}</NavbarItem>
-        <NavbarItem>{texts.navbar["page-3"]}</NavbarItem>
-      </ul>
-      <div className={classes.actions}>
-        <NavSearchBar placeholder='Search' autoFocus />
-        <IconButton name='profile' />
-        <IconButton name='bag' />
-        <LanguageSwitch language={language} onClick={languageChangedHandler} />
+      <div className={classes.navbar_inner}>
+        <div className={classes.logo}>Logo</div>
+        <ul className={classes.pages}>
+          <NavbarItem active={true}>{texts.navbar["page-1"]}</NavbarItem>
+          <NavbarItem>{texts.navbar["page-2"]}</NavbarItem>
+          <NavbarItem>{texts.navbar["page-3"]}</NavbarItem>
+        </ul>
+        <div className={classes.actions}>
+          <NavSearchBar placeholder='Search' autoFocus />
+          <IconButton name='profile' />
+          <IconButton name='bag' />
+          <LanguageSwitch
+            language={language}
+            onClick={languageChangedHandler}
+          />
+        </div>
       </div>
     </div>
   )

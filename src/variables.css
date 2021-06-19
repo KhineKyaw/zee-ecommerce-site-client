@@ -5,7 +5,7 @@
 
   --color-dark-background: #393f42;
   --color-gray-background: #e8eaed;
-  --color-gray-border: #e1e2e6;
+  --color-gray-border: #dcdee2;
 
   --color-white: #f4f5f7;
   --color-dark: #3e3e3e;
@@ -22,8 +22,9 @@
   --size-main-width-large: 1200px;
 
   --size-navbar-height: 58px;
-  --size-navbar-padding-horizontal: 0 32px;
+  --size-navbar-width: var(--size-main-width-large);
 
+  /* banner */
   --size-banner-height: calc(var(--size-main-width-large) * 0.4);
 
   /* white spaces */

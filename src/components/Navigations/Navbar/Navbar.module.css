@@ -1,10 +1,15 @@
 .navbar {
+  justify-content: center;
+  height: var(--size-navbar-height);
+  background-color: var(--color-white);
+  /* padding: var(--size-navbar-padding-horizontal); */
+}
+
+.navbar_inner {
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  height: var(--size-navbar-height);
-  padding: var(--size-navbar-padding-horizontal);
-  background-color: var(--color-white);
+  width: var(--size-navbar-width);
 }
 
 .logo {
@@ -31,6 +36,7 @@
 }
 
 .navbar,
+.navbar_inner,
 .logo,
 .pages,
 .actions {

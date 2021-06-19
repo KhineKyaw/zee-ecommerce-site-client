@@ -50,8 +50,8 @@ const HomePage = () => {
         <ListView
           type={"button"}
           renderItem={ProductItem}
-          cols={5}
-          childWidth={ITEM_WIDTH}
+          cols={6}
+          childWidth={ITEM_WIDTH - 20}
           data={[...getProducts(), ...getProducts(10)]}
         />
       </div>
