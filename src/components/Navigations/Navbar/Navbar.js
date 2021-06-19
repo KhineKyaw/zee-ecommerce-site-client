@@ -6,6 +6,7 @@ import NavbarItem from "./NavbarItem/NavbarItem"
 import LanguageContext from "../../../context/language-context"
 import LanguageSwitch from "./LanguageSwitch/LanguageSwitch"
 import NavSearchBar from "./NavSearchBar/NavSearchBar"
+import Logo from "./Logo/Logo"
 
 const Navbar = () => {
   const {
@@ -21,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbar_inner}>
-        <div className={classes.logo}>Logo</div>
+        <Logo />
         <ul className={classes.pages}>
           <NavbarItem active={true}>{texts.navbar["page-1"]}</NavbarItem>
           <NavbarItem>{texts.navbar["page-2"]}</NavbarItem>

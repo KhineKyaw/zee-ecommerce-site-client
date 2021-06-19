@@ -12,11 +12,6 @@
   width: var(--size-navbar-width);
 }
 
-.logo {
-  flex: 1;
-  /* background-color: aqua; */
-}
-
 .pages {
   flex: 2;
   justify-content: space-evenly;
