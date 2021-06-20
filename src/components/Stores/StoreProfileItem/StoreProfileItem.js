@@ -9,7 +9,8 @@ const StoreProfileItem = props => {
     <Card
       className={classes.card}
       style={{
-        width: props.childWidth || 200,
+        width: props.width || 200,
+        height: props.height || 200,
         marginRight: props.margin
       }}>
       <div className={classes.item}>

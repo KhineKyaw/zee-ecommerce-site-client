@@ -75,6 +75,18 @@ const products = [
         price: 11500
       }
     ]
+  },
+  {
+    title:
+      "Light luxury fluffy sofa creative design velvet armchair Nordic leisure furniture waiting chair comfortable back dressing seats",
+    images: [
+      "https://ae01.alicdn.com/kf/Hae248343d47c493a94a88fc44c316184T/Light-luxury-fluffy-sofa-creative-design-velvet-armchair-Nordic-leisure-furniture-waiting-chair-comfortable-back-dressing.jpg_640x640.jpg"
+    ],
+    items: [
+      {
+        price: 230500
+      }
+    ]
   }
 ]
 

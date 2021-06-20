@@ -13,7 +13,7 @@ const ProductItem = props => {
       className={classes.card}
       style={{
         marginRight: props.margin,
-        width: props.childWidth || 210
+        width: props.width || 210
       }}>
       <div className={classes.item}>
         <div className={classes.imageContainer}>

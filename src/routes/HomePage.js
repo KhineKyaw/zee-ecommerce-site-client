@@ -4,19 +4,11 @@ import classes from "./HomePage.module.css"
 import Banner from "../components/Banner/Banner"
 import Categories from "../components/Navigations/Categories/Categories"
 
-import ProductsSectionBar from "../components/Product/ProductsSectionBar/ProductsSectionBar"
-import ListView from "../components/UI/ListView/ListView"
-import ProductItem from "../components/Product/ProductItem/ProductItem"
-import StoreProfileItem from "../components/Stores/StoreProfileItem/StoreProfileItem"
-
-import getProducts from "../api/getProducts"
-import getStores from "../api/getStores"
-import LanguageContext from "../context/language-context"
-
-const ITEM_WIDTH = 210
+import SectionMore2Love from "../containers/Home/SectionMore2Love"
+import SectionTopProducts from "../containers/Home/SectionTopProducts"
+import SectionStores from "../containers/Home/SectionStores"
 
 const HomePage = () => {
-  const { languageDict: texts } = useContext(LanguageContext)
   return (
     <>
       <Banner />
@@ -24,36 +16,11 @@ const HomePage = () => {
         <div className={classes.topContent}>
           <Categories />
           <div className={classes.innerContent}>
-            <ProductsSectionBar
-              title={texts.home["section-title-1"]}
-              subTitle={texts.actions["view-more"]}
-            />
-            <ListView
-              renderItem={ProductItem}
-              cols={4}
-              childWidth={ITEM_WIDTH}
-              data={getProducts()}
-            />
-            <ProductsSectionBar
-              title={texts.home["section-title-2"]}
-              subTitle={texts.actions["view-more"]}
-            />
-            <ListView
-              renderItem={StoreProfileItem}
-              cols={4}
-              childWidth={ITEM_WIDTH}
-              data={getStores()}
-            />
+            <SectionTopProducts />
+            <SectionStores />
           </div>
         </div>
-        <ProductsSectionBar type='mid' title={texts.home["section-title-3"]} />
-        <ListView
-          type={"button"}
-          renderItem={ProductItem}
-          cols={6}
-          childWidth={ITEM_WIDTH - 20}
-          data={[...getProducts(), ...getProducts(10)]}
-        />
+        <SectionMore2Love />
       </div>
     </>
   )

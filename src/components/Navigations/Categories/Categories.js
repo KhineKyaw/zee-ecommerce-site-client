@@ -45,7 +45,7 @@ const Categories = () => {
 
   const CategoriesList = categories
     ? categories.map(item => {
-        return <p>{item.name}</p>
+        return <p key={item.id}>{item.name}</p>
       })
     : "Loading"
 

@@ -6,7 +6,7 @@ import Button from "../Button/Button"
 const ListView = props => {
   const containerRef = useRef()
   const [childMrgin, setChildMrgin] = useState(0)
-  const { childWidth, cols } = props
+  const { childWidth, childHeight, cols } = props
   var actionBar = null
 
   useEffect(() => {
@@ -20,22 +20,29 @@ const ListView = props => {
         <div>Pagination</div>
       ) : (
         <div className={classes.moreAction}>
-          <Button>Load More</Button>
+          <Button onClick={props.onButtonClick}>Load More</Button>
         </div>
       )
   }
 
+  const theList = props.data ? (
+    props.data.map((item, idx) => (
+      <props.renderItem
+        width={childWidth}
+        height={childHeight}
+        margin={(idx + 1) % props.cols ? childMrgin : 0}
+        key={item.id}
+        item={item}
+      />
+    ))
+  ) : (
+    <p>Loading...</p>
+  )
+
   return (
     <>
       <div ref={containerRef} className={classes.listView}>
-        {props.data.map((item, idx) => (
-          <props.renderItem
-            childWidth={childWidth}
-            margin={(idx + 1) % props.cols ? childMrgin : 0}
-            key={item.id}
-            item={item}
-          />
-        ))}
+        {theList}
       </div>
       {actionBar}
     </>
