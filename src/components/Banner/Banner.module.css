@@ -1,8 +1,18 @@
 .banner-container {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   height: var(--size-banner-height);
   overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide img {
+  height: 100%;
 }
 
 /* Next & previous buttons */
