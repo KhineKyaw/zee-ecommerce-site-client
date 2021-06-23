@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 
 import classes from "./HomePage.module.css"
 import Banner from "../components/Banner/Banner"

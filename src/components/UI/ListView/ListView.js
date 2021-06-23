@@ -30,7 +30,8 @@ const ListView = props => {
       <props.renderItem
         width={childWidth}
         height={childHeight}
-        margin={(idx + 1) % props.cols ? childMrgin : 0}
+        margin={childMrgin}
+        lastChild={!((idx + 1) % props.cols)}
         key={item.id}
         item={item}
       />

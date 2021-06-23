@@ -11,7 +11,7 @@ const StoreProfileItem = props => {
       style={{
         width: props.width || 200,
         height: props.height || 200,
-        marginRight: props.margin
+        marginRight: props.lastChild ? 0 : props.margin
       }}>
       <div className={classes.item}>
         <div

@@ -87,6 +87,51 @@ const products = [
         price: 230500
       }
     ]
+  },
+  {
+    title:
+      "Light luxury fluffy sofa creative design velvet armchair Nordic leisure furniture waiting chair comfortable back dressing seats",
+    images: [
+      "https://ae01.alicdn.com/kf/H4271f2b0212940ee8e77ddaf48e6240ac/Women-Thick-Platform-Slippers-Summer-Beach-Eva-Soft-Sole-Slide-Sandals-Leisure-Men-Ladies-Indoor-Bathroom.jpg_Q90.jpg_.webp"
+    ],
+    items: [
+      {
+        price: 230500
+      }
+    ]
+  },
+  {
+    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
+    images: [
+      "//ae01.alicdn.com/kf/H90388142075f4f28824cd1cbc1e155625/Max-RAM-36GB-Rom-2TB-SSD-Ultrabook-Metal-Computer-with-2-4G-5-0G-Bluetooth-Ryzen.jpg_220x220xz.jpg_.webp"
+    ],
+    items: [
+      {
+        price: 635100
+      }
+    ]
+  },
+  {
+    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
+    images: [
+      "https://ae01.alicdn.com/kf/H6190310641b741178f2ef00188fb2bb0N/Nordic-designer-creative-U-shaped-white-casual-lamb-wool-single-sofa-modern-minimalist-living-balcony-bedroom.jpg_Q90.jpg_.webp"
+    ],
+    items: [
+      {
+        price: 635100
+      }
+    ]
+  },
+  {
+    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
+    images: [
+      "https://ae01.alicdn.com/kf/H6dd34cd7bc7145c397fad284ddfa84f1s/Shoe-rack-living-room-furnitu-Modern-shoe-cabinets-shoe-stool-for-entry-home-Simple-iron-art.jpg_Q90.jpg_.webp"
+    ],
+    items: [
+      {
+        price: 635100
+      }
+    ]
   }
 ]
 

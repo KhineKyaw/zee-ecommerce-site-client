@@ -16,7 +16,6 @@
 }
 
 .item:hover {
-  /* margin-bottom: 0; */
   transform: translateY(-60px);
 }
 
@@ -34,12 +33,9 @@
 
 .itemInfo {
   padding: 12px;
-  /* background-color: orange; */
   flex: 1;
   height: fit-content;
   flex-flow: column;
-  /* justify-content: center; */
-  /* margin-bottom: -64px; */
 }
 
 .itemInfo p {

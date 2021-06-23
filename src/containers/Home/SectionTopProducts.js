@@ -14,7 +14,7 @@ const SectionMore2Love = () => {
   const [data, setData] = useState()
 
   useEffect(() => {
-    setData(getProducts(0))
+    setData(getProducts(0).slice(0, 8))
   }, [])
 
   return (
