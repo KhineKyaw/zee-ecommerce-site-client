@@ -25,7 +25,7 @@ const calcLeft = (offset) => {
   if (Math.abs(offset) > 2) {
     return '50%'
   }
-  return `${50 + (offset * 7)}%`
+  return `${50 - (offset * 7)}%`
 }
 
 const calcZIndex = (offset) => {
@@ -51,6 +51,15 @@ const Banner = () => {
     }
   }
 
+  const add = (offset) => {
+    let nextIndex = index + offset
+    if (nextIndex < 0) 
+      nextIndex += promotions.length
+    else if (nextIndex >= promotions.length)
+      nextIndex -= promotions.length
+    setIndex(nextIndex)
+  }
+
   return (
     <div className={classes["banner-container"]}>
       {promotions.map((p, i) => (
@@ -58,8 +67,8 @@ const Banner = () => {
           <img src={p.image} alt={p.title} />
         </Card>
       ))}
-      <div className={classes.prev} onClick={() => null}>&#10094;</div>
-      <div className={classes.next} onClick={() => null}>&#10095;</div>
+      <div className={classes.prev} onClick={() => add(-1)}>&#10094;</div>
+      <div className={classes.next} onClick={() => add(+1)}>&#10095;</div>
     </div>
   )
 }
