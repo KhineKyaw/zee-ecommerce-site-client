@@ -52,12 +52,20 @@ const Banner = () => {
   }
 
   const add = (offset) => {
-    let nextIndex = index + offset
-    if (nextIndex < 0) 
-      nextIndex += promotions.length
-    else if (nextIndex >= promotions.length)
-      nextIndex -= promotions.length
-    setIndex(nextIndex)
+    const direction = (offset / Math.abs(offset))
+    setIndex((prevIndex) => {
+      let nextIndex = prevIndex + direction
+      if (nextIndex < 0) 
+        nextIndex += promotions.length
+      else if (nextIndex >= promotions.length)
+        nextIndex -= promotions.length
+      return nextIndex
+    })
+    if (offset > 1 || offset < -1) {
+      setTimeout(() => 
+        add(offset - direction),
+      500)
+    }
   }
 
   return (
