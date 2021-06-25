@@ -1,0 +1,54 @@
+:root {
+  --size-image-view: 460px;
+  --size-image-view-images: 60px;
+}
+
+.view {
+  display: flex;
+  flex-flow: column;
+  width: var(--size-image-view);
+  border: 1px solid var(--color-gray-border);
+}
+
+.imageMagnifier {
+  background-color: var(--color-white);
+  height: var(--size-image-view);
+}
+
+.imageMagnifier img {
+  width: 100%;
+  height: 100%;
+}
+
+.imagesWrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  height: var(--size-image-view-images);
+  margin-top: 12px;
+}
+
+.imagesWrapper li {
+  display: flex;
+  list-style: none;
+  flex: 0 0 var(--size-image-view-images);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 5px;
+  background-color: var(--color-white);
+  transition: border var(--duration-animation-fast);
+}
+
+.plain_li {
+  border: 2px solid var(--color-gray-border);
+}
+
+.selected {
+  border: 2px solid var(--color-primary);
+}
+
+.imageMagnifier,
+.imagesWrapper li {
+  cursor: pointer;
+  overflow: hidden;
+}

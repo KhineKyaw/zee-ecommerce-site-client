@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import classes from "./ProductDetails.module.css"
 import getProduct from "../api/getProduct"
+import ImageView from "../components/Product/ImageView/ImageView"
 
 const ProductDetails = props => {
   const [data, setData] = useState()
@@ -15,7 +16,11 @@ const ProductDetails = props => {
 
   return (
     <>
-      <div className={classes.main}>{data.title}</div>
+      <div className={classes.main}>
+        {/* Replace this with own component */}
+        <div style={{ flex: 1 }}>Product Info (Temp)</div>
+        <ImageView data={data.images} />
+      </div>
       <div className={classes.detail}>detail</div>
       <div className={classes.reviews}>reviews</div>
       <div className={classes.recommendation}>recommendation</div>

@@ -1,4 +1,5 @@
 .main {
+  min-height: 70vh;
 }
 
 .detail {
@@ -16,5 +17,5 @@
 .recommendation {
   display: flex;
   flex: 1;
-  height: 20vh; /* temp */
+  margin-bottom: 32px;
 }

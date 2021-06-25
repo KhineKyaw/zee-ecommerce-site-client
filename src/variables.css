@@ -54,6 +54,7 @@
 }
 
 :root {
+  --duration-animation-fast: 160ms;
   --duration-animation-normal: 200ms;
   --duration-animation-long: 300ms;
 
