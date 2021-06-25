@@ -1,3 +1,20 @@
 .main {
-  background-color: var(--color-white);
+}
+
+.detail {
+}
+
+.reviews {
+}
+
+.recommendation {
+}
+
+.main,
+.detail,
+.reviews,
+.recommendation {
+  display: flex;
+  flex: 1;
+  height: 20vh; /* temp */
 }
