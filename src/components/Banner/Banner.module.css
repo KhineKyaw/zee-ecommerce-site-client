@@ -16,6 +16,10 @@
   height: 100%;
 }
 
+.slide:hover img{
+  opacity: 0.8;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;

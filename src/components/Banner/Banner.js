@@ -38,6 +38,7 @@ const calcScale = (offset) => {
 
 const Banner = () => {
   const [index, setIndex] = useState(0)
+  const [animating, setAnimating] = useState(false)
 
   const slideStyle = (i) => {
     const offset = minRoundDistance(i, index, promotions.length)
@@ -52,6 +53,8 @@ const Banner = () => {
   }
 
   const add = (offset) => {
+    setAnimating(false)
+    if (offset === 0 || animating) return
     const direction = (offset / Math.abs(offset))
     setIndex((prevIndex) => {
       let nextIndex = prevIndex + direction
@@ -61,17 +64,22 @@ const Banner = () => {
         nextIndex -= promotions.length
       return nextIndex
     })
-    if (offset > 1 || offset < -1) {
+    setAnimating(true)
+    if (offset !== 0) {
       setTimeout(() => 
         add(offset - direction),
       500)
     }
   }
 
+  const onSlideClick = (p, i) => {
+    add(minRoundDistance(index, i, promotions.length))
+  }
+
   return (
     <div className={classes["banner-container"]}>
       {promotions.map((p, i) => (
-        <Card className={classes["slide"]} style={slideStyle(i)}>
+        <Card className={classes["slide"]} style={slideStyle(i)} onClick={() => onSlideClick(p, i)}>
           <img src={p.image} alt={p.title} />
         </Card>
       ))}
