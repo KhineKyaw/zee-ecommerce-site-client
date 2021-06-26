@@ -1,8 +1,9 @@
 .main {
   min-height: 70vh;
+  /* background-color: var(--color-white); */
 }
 
-.detail {
+.description {
 }
 
 .reviews {

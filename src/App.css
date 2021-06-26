@@ -24,5 +24,14 @@ h1 {
   color: var(--color-dark);
   font-size: 2.1rem;
   font-weight: bold;
-  /* background-color: orange; */
+}
+
+h3 {
+  color: var(--color-dark);
+  font-size: 1.4rem;
+}
+
+h4 {
+  color: var(--color-dark);
+  font-size: 1.2rem;
 }

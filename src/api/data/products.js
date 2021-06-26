@@ -9,6 +9,28 @@ const products = [
       "https://ae01.alicdn.com/kf/HTB1Bkdal4TI8KJjSspiq6zM4FXa1/Baellerry-Men-Canvas-Long-Wallets-Zipper-Male-Wallet-Money-Purse-Man-Phone-Coin-Pocket-Famous-Brand.jpg_Q90.jpg_.webp",
       "https://ae01.alicdn.com/kf/HTB1Y2PJdzgy_uJjSZTEq6AYkFXaL/Baellerry-Men-Canvas-Long-Wallets-Zipper-Male-Wallet-Money-Purse-Man-Phone-Coin-Pocket-Famous-Brand.jpg_Q90.jpg_.webp"
     ],
+    details:
+      "Baellerry Men Wallet is a long Korean Men's wallet which has fashionable design. It is very smart and stylish type wallet to hold and people of all ages can use it. And it is made of very good quality leather and the best gift idea as there is original box for it.Also, it is very convenient for keeping visiting cards,Bank cards, and your smartphones.This product is now available at zee.com online shopping mall.",
+    specifications: [
+      "Brand Name: Baellerry",
+      "Item Type:Wallet",
+      "Model Number: FB034",
+      "Pattern Type : Letter",
+      "Item Weight : 200 g",
+      "Lining Material : Polyester",
+      "Wallet Length : Long",
+      "Item Width : 2.7 cm",
+      "Material Composition : High Quality PU Leather Women Men Wallet Male Female Purse",
+      "Interior : Coin Pocket,Interior Compartment,Interior Zipper Pocket,Interior Slot Pocket,Note Compartment,Cell Phone Pocket,Zipper Poucht,Card Holder",
+      "Gender : Unisex",
+      "Item Length : 19.7cm",
+      "Closure Type : Zipper",
+      "Main Material : PU",
+      "Wallets : Clutch Wallets",
+      "Style : Vintage",
+      "Item Height:10.5cm",
+      "Decoration:Letter"
+    ],
     optionCategories: [
       {
         name: "Color"

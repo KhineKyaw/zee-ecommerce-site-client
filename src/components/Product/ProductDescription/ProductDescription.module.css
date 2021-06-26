@@ -1,0 +1,31 @@
+desc {
+  color: var(--color-dark);
+}
+
+.desc p {
+  text-align: justify;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+
+.specs {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.specs li {
+  color: var(--color-dark);
+  list-style: disc;
+  list-style-position: inside;
+  text-indent: -1.4em;
+  padding-left: 1.4em;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.desc h4,
+p,
+.specs {
+  margin-bottom: 14px;
+}
