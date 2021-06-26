@@ -1,10 +1,12 @@
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 
 import Card from '../UI/Card/Card'
 
 import classes from "./Banner.module.css"
 
 import { promotions } from '../../api/data'
+
+const autoRotateInterval = 4000
 
 const minRoundDistance = (i, t, r) => {
   const dd = t - i
@@ -75,6 +77,13 @@ const Banner = () => {
   const onSlideClick = (p, i) => {
     add(minRoundDistance(index, i, promotions.length))
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      add(+1)
+    }, autoRotateInterval)
+    return () => clearInterval(interval)
+  }, [add])
 
   return (
     <div className={classes["banner-container"]}>
