@@ -1,22 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
 .main {
   min-height: 70vh;
-  /* background-color: var(--color-white); */
+  margin: 22px 0;
 }
 
 .description {
 }
 
 .reviews {
+  min-height: 50vh;
 }
 
 .recommendation {
+  flex-flow: column;
+}
+
+.description,
+.reviews,
+.recommendation {
+  margin: 22px 0;
 }
 
 .main,
 .detail,
 .reviews,
+.description,
 .recommendation {
   display: flex;
-  flex: 1;
-  margin-bottom: 32px;
+  width: var(--size-main-width-large);
 }

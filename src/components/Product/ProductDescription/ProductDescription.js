@@ -10,8 +10,8 @@ const ProductDescription = props => {
       <p>{data.details}</p>
       <h4>Specifications</h4>
       <ul className={classes.specs}>
-        {data.specifications.map(item => (
-          <li>{item}</li>
+        {data.specifications.map((item, idx) => (
+          <li key={idx}>{item}</li>
         ))}
       </ul>
     </div>

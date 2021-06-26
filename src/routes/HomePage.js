@@ -7,10 +7,11 @@ import Categories from "../components/Navigations/Categories/Categories"
 import SectionMore2Love from "../containers/Home/SectionMore2Love"
 import SectionTopProducts from "../containers/Home/SectionTopProducts"
 import SectionStores from "../containers/Home/SectionStores"
+import Layout from "../hoc/Layout"
 
 const HomePage = () => {
   return (
-    <>
+    <Layout>
       <Banner />
       <div className={classes.body}>
         <div className={classes.topContent}>
@@ -22,7 +23,7 @@ const HomePage = () => {
         </div>
         <SectionMore2Love />
       </div>
-    </>
+    </Layout>
   )
 }
 

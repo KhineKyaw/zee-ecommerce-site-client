@@ -9,11 +9,8 @@
 }
 
 main {
-  width: var(--size-main-width-large);
-  padding: var(--size-common-whitespace-medium) 0;
-  margin-left: calc(calc(100% - var(--size-main-width-large)) / 2);
-  /* background-color: var(--color-gray-background); */
-  min-height: calc(100vh - var(--size-navbar-height));
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -23,15 +20,15 @@ button {
 h1 {
   color: var(--color-dark);
   font-size: 2.1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h3 {
   color: var(--color-dark);
-  font-size: 1.4rem;
+  font-size: 1.46rem;
 }
 
 h4 {
   color: var(--color-dark);
-  font-size: 1.2rem;
+  font-size: 1.28rem;
 }

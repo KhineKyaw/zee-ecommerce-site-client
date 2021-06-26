@@ -1,0 +1,11 @@
+.sectionWrapper {
+  display: flex;
+  /* width: 100vw; */
+  justify-content: center;
+  align-items: center;
+  /* padding: 32px; */
+}
+
+.sw_background_light {
+  background-color: var(--color-white);
+}

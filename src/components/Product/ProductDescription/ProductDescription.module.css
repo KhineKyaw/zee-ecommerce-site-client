@@ -25,7 +25,10 @@ desc {
 }
 
 .desc h4,
-p,
 .specs {
   margin-bottom: 14px;
+}
+
+.desc p {
+  margin-bottom: 22px;
 }
