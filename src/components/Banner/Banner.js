@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 import Card from '../UI/Card/Card'
 
 import classes from "./Banner.module.css"
 
-import { promotions } from '../../api/data'
+import getPromotions from '../../api/getPromotions'
 
+const promotions = getPromotions()
 const autoRotateInterval = 4000
 const transitionDuration = 500
 
@@ -53,7 +54,7 @@ const Banner = () => {
   const [index, setIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 
-  const move = (offset) => {
+  const move = useCallback((offset) => {
     setAnimating(false)
     if (offset !== 0 && !animating) {
       setAnimating(true)
@@ -65,7 +66,7 @@ const Banner = () => {
         move(offset - unitDistance),
       transitionDuration)
     }
-  }
+  }, [animating])
 
   const slideStyle = (slideIndex) => {
     const offset = minRoundOffset(slideIndex, index, promotions.length)
@@ -97,7 +98,7 @@ const Banner = () => {
   return (
     <div className={classes["banner-container"]}>
       {promotions.map((promotion, slideIndex) => (
-        <Card className={classes["slide"]} style={slideStyle(slideIndex)} onClick={() => onSlideClick(promotion, slideIndex)}>
+        <Card key={promotion.id} className={classes["slide"]} style={slideStyle(slideIndex)} onClick={() => onSlideClick(promotion, slideIndex)}>
           <img src={promotion.image} alt={promotion.title} />
         </Card>
       ))}
