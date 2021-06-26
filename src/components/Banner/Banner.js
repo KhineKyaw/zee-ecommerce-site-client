@@ -7,27 +7,38 @@ import classes from "./Banner.module.css"
 import { promotions } from '../../api/data'
 
 const autoRotateInterval = 4000
+const transitionDuration = 500
 
-const minRoundDistance = (i, t, r) => {
-  const dd = t - i
-  let rd;
-  if (dd < 0) {
-    rd = dd + r
+const minRoundOffset = (start, target, range) => {
+  const directDistance = target - start
+  let roundDistance;
+  if (directDistance < 0) {
+    roundDistance = directDistance + range
   } else {
-    rd = dd - r
+    roundDistance = directDistance - range
   }
-  if (Math.abs(dd) > Math.abs(rd)) {
-    return rd
+  if (Math.abs(directDistance) > Math.abs(roundDistance)) {
+    return roundDistance
   } else {
-    return dd
+    return directDistance
   }
+}
+
+const roundAddition = (v1, v2, range) => {
+  let result = v1 + v2
+  if (result < 0)
+    result += range
+  else if (result > range)
+    result -= range
+  return result
 }
 
 const calcLeft = (offset) => {
   if (Math.abs(offset) > 2) {
     return '50%'
+  } else {
+    return `${50 - (offset * 7)}%`
   }
-  return `${50 - (offset * 7)}%`
 }
 
 const calcZIndex = (offset) => {
@@ -42,58 +53,56 @@ const Banner = () => {
   const [index, setIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 
-  const slideStyle = (i) => {
-    const offset = minRoundDistance(i, index, promotions.length)
+  const move = (offset) => {
+    setAnimating(false)
+    if (offset !== 0 && !animating) {
+      setAnimating(true)
+      const unitDistance = (offset / Math.abs(offset))
+      setIndex((prevIndex) => {
+        return roundAddition(prevIndex, unitDistance, promotions.length)
+      })
+      setTimeout(() => 
+        move(offset - unitDistance),
+      transitionDuration)
+    }
+  }
+
+  const slideStyle = (slideIndex) => {
+    const offset = minRoundOffset(slideIndex, index, promotions.length)
     const left = calcLeft(offset)
     const zIndex = calcZIndex(offset)
     const scale = calcScale(offset)
     return {
       left: left,
       zIndex: zIndex,
-      transform: `translate(-50%) scale(${scale})`
+      transform: `translate(-50%) scale(${scale})`,
+      transitionDuration: `${transitionDuration}ms`,
     }
   }
 
-  const add = (offset) => {
-    setAnimating(false)
-    if (offset === 0 || animating) return
-    const direction = (offset / Math.abs(offset))
-    setIndex((prevIndex) => {
-      let nextIndex = prevIndex + direction
-      if (nextIndex < 0) 
-        nextIndex += promotions.length
-      else if (nextIndex >= promotions.length)
-        nextIndex -= promotions.length
-      return nextIndex
-    })
-    setAnimating(true)
-    if (offset !== 0) {
-      setTimeout(() => 
-        add(offset - direction),
-      500)
+  const onSlideClick = (promotion, slideIndex) => {
+    if (slideIndex === 0) {
+    } else {
+      move(minRoundOffset(index, slideIndex, promotions.length))
     }
-  }
-
-  const onSlideClick = (p, i) => {
-    add(minRoundDistance(index, i, promotions.length))
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      add(+1)
+      move(+1)
     }, autoRotateInterval)
     return () => clearInterval(interval)
-  }, [add])
+  }, [move])
 
   return (
     <div className={classes["banner-container"]}>
-      {promotions.map((p, i) => (
-        <Card className={classes["slide"]} style={slideStyle(i)} onClick={() => onSlideClick(p, i)}>
-          <img src={p.image} alt={p.title} />
+      {promotions.map((promotion, slideIndex) => (
+        <Card className={classes["slide"]} style={slideStyle(slideIndex)} onClick={() => onSlideClick(promotion, slideIndex)}>
+          <img src={promotion.image} alt={promotion.title} />
         </Card>
       ))}
-      <div className={classes.prev} onClick={() => add(-1)}>&#10094;</div>
-      <div className={classes.next} onClick={() => add(+1)}>&#10095;</div>
+      <div className={classes.prev} onClick={() => move(-1)}>&#10094;</div>
+      <div className={classes.next} onClick={() => move(+1)}>&#10095;</div>
     </div>
   )
 }

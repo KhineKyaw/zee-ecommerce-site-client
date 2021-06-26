@@ -5,20 +5,18 @@
   overflow: hidden;
 }
 
+/* Slide and it's images */
 .slide {
   position: absolute;
   height: 100%;
   overflow: hidden;
-  transition: .5s ease;
+  transition: ease;
+  background-color: var(--color-dark-background);
 }
 
 .slide img {
   height: 100%;
   transition: 0.3s ease;
-}
-
-.slide:hover img{
-  opacity: 0.8;
 }
 
 /* Next & previous buttons */
