@@ -1,21 +1,22 @@
 .banner-container {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   height: var(--size-banner-height);
   overflow: hidden;
 }
 
-/* Slide img */
+/* Slide and it's images */
 .slide {
   position: absolute;
-  object-fit: contain;
-  display: inline-block;
-  width: 100%;
-  left: -100%;
+  height: 100%;
+  overflow: hidden;
+  transition: ease;
+  background-color: var(--color-dark-background);
 }
 
-.slide.slide-show {
-  left: 0;
+.slide img {
+  height: 100%;
+  transition: 0.3s ease;
 }
 
 /* Next & previous buttons */
@@ -53,101 +54,4 @@
 
 .banner-container:hover .prev {
   opacity: 1;
-}
-
-/* The dots/bullets/indicators */
-.dot-container {
-  z-index: 1;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-}
-
-.dot {
-  cursor: pointer;
-  height: var(--size-banner-dot);
-  width: var(--size-banner-dot);
-  margin: 0 calc(var(--size-banner-dot) / 4);
-  background-color: var(--color-white);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color var(--duration-animation-long) ease;
-}
-
-.active, .dot:hover {
-  background-color: var(--color-accent);
-}
-
-/* Slide animation */
-/* Slide out, move left */
-.slide-out-left {
-  -webkit-animation-name: slide-out-left;
-  -webkit-animation-duration: var(--duration-banner-animation);
-  animation-name: slide-out-left;
-  animation-duration: var(--duration-banner-animation);
-}
-
-@-webkit-keyframes slide-out-left {
-  from {left: 0;}
-  to {left: -100%;}
-}
-
-@keyframes slide-out-left {
-  from {left: 0;}
-  to {left: -100%;}
-}
-
-/* Slide in, move left */
-.slide-in-left {
-  -webkit-animation-name: slide-in-left;
-  -webkit-animation-duration: var(--duration-banner-animation);
-  animation-name: slide-in-left;
-  animation-duration: var(--duration-banner-animation);
-}
-
-@-webkit-keyframes slide-in-left {
-  from {left: 100%;}
-  to {left: 0;}
-}
-
-@keyframes slide-in-left {
-  from {left: 100%;}
-  to {left: 0;}
-}
-
-/* Slide in, move right */
-.slide-in-right {
-  -webkit-animation-name: slide-in-right;
-  -webkit-animation-duration: var(--duration-banner-animation);
-  animation-name: slide-in-right;
-  animation-duration: var(--duration-banner-animation);
-}
-
-@-webkit-keyframes slide-in-right {
-  from {left: -100%;}
-  to {left: 0;}
-}
-
-@keyframes slide-in-right {
-  from {left: -100%;}
-  to {left: 0;}
-}
-
-/* Slide out, move right */
-.slide-out-right {
-  -webkit-animation-name: slide-out-right;
-  -webkit-animation-duration: var(--duration-banner-animation);
-  animation-name: slide-out-right;
-  animation-duration: var(--duration-banner-animation);
-}
-
-@-webkit-keyframes slide-out-right {
-  from {left: 0;}
-  to {left: 100%;}
-}
-
-@keyframes slide-out-right {
-  from {left: 0;}
-  to {left: 100%;}
 }
