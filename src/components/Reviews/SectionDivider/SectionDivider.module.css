@@ -1,0 +1,8 @@
+.item1 {
+  width: 220px;
+}
+
+.item2 {
+  display: flex;
+  flex: 1;
+}

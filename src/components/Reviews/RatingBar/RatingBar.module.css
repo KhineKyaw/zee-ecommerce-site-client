@@ -1,0 +1,23 @@
+.wrapper {
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.bar {
+  background-color: var(--color-gray-background);
+  width: 220px;
+  height: 5px;
+  margin-right: 0.9rem;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.fill_bar {
+  background-color: var(--color-accent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
