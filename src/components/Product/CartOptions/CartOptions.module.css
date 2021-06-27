@@ -1,6 +1,82 @@
 .container {
-  display: flex;
+  flex-direction: column;
   flex: 1;
   margin-right: 16px;
-  background-color: var(--color-white);
+}
+
+.title {
+  margin-bottom: .8rem;
+}
+
+.rating_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rating_star {
+  display: flex;
+  align-items: center;
+  margin-right: .5rem;
+}
+
+.rating_star ion-icon {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+}
+
+.option_container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.option {
+  flex: 1;
+}
+
+.option_name {
+  margin-bottom: .4rem;
+}
+
+.option_item_container {
+  display: flex;
+}
+
+.option_item {
+  margin-right: .8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option_item_image {
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid var(--color-gray);
+}
+
+.option_item_value_box {
+  display: flex;
+  padding: .3rem;
+  height: 4rem;
+  align-items: center;
+  border: 1px solid var(--color-gray)
+}
+
+.price {
+  margin-bottom: 1rem;
+}
+
+.quantity_container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.quantity_controller {
+  display: flex;
+  align-items: center;
+}
+
+.delivery_info {
+  margin-bottom: 1rem;
 }
