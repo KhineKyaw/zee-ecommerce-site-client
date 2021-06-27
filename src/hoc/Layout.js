@@ -3,7 +3,13 @@ import React from "react"
 import classes from "./Layout.module.css"
 
 const Layout = props => {
-  return <div className={classes.layout}>{props.children}</div>
+  const className = [classes.layout]
+
+  if (props.className) {
+    className.push(props.className)
+  }
+
+  return <div className={className.join(" ")}>{props.children}</div>
 }
 
 export default Layout

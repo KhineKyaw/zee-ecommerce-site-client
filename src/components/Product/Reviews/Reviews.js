@@ -5,7 +5,7 @@ import classes from "./Reviews.module.css"
 const Reviews = () => {
   return (
     <>
-      <h4>Customer Reviews</h4>
+      <h4 className={classes.title}>Customer Reviews</h4>
     </>
   )
 }

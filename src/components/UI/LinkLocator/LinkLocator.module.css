@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.linkItem a {
+.linkItem div {
   cursor: pointer;
 }
 

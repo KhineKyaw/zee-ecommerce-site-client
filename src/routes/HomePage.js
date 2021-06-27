@@ -11,7 +11,7 @@ import Layout from "../hoc/Layout"
 
 const HomePage = () => {
   return (
-    <Layout>
+    <Layout className={classes.layout}>
       <Banner />
       <div className={classes.body}>
         <div className={classes.topContent}>

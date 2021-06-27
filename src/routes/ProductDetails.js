@@ -38,7 +38,6 @@ const ProductDetails = props => {
           <ProductDescription data={data} />
         </div>
       </SectionWrapper>
-
       <SectionWrapper background='light'>
         <div className={classes.reviews}>
           <Reviews data={{}} />

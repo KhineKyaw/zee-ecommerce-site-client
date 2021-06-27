@@ -34,6 +34,7 @@ const ImageView = props => {
     <div className={classes.view}>
       <div className={classes.imageMagnifier}>
         <img
+          alt='magnifier pic'
           style={{
             transformOrigin: `${transformOrigin.x}px ${transformOrigin.y}px`,
             transform: `scale(${scaleImage.x}, ${scaleImage.y})`

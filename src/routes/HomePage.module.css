@@ -1,3 +1,7 @@
+.layout {
+  margin: 32px 0;
+}
+
 .body {
   flex-flow: column;
   margin-top: 32px;

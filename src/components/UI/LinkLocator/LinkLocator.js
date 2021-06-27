@@ -10,7 +10,7 @@ const LinkLocator = props => {
     <div className={classes.linkLocator}>
       {props.links.map((item, idx) => (
         <span className={classes.linkItem} key={idx}>
-          <a>{item}</a>
+          <div>{item}</div>
           {end === idx + 1 ? null : <Chevronicon />}
         </span>
       ))}
