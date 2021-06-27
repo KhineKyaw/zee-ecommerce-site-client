@@ -5,15 +5,13 @@
 }
 
 .main {
-  min-height: 70vh;
+  min-height: 60vh;
   margin: 22px 0;
-}
-
-.description {
 }
 
 .reviews {
   min-height: 50vh;
+  flex-flow: column;
 }
 
 .recommendation {

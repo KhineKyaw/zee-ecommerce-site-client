@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.linkItem a:hover {
+.linkItem div:hover {
   color: var(--color-dark);
 }
 
