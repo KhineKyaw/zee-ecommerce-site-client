@@ -63,8 +63,8 @@ const CartOptions = props => {
         <span className={classes.text_secondary}>on {10} to {20} days</span>
       </div>
       <div className={classes.actions}>
-        <Button>Buy Now</Button>
-        <Button type="outline">Add to Cart</Button>
+        <Button className={classes.action_button}>Buy Now</Button>
+        <Button type="outline" className={classes.action_button}>Add to Cart</Button>
       </div>
     </div>
   )

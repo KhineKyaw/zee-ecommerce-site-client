@@ -64,12 +64,17 @@
 }
 
 .price {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 
 .quantity_container {
   display: flex;
-  margin-bottom: 1rem;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.quantity_label {
+  margin-right: 4rem;
 }
 
 .quantity_controller {
@@ -77,6 +82,28 @@
   align-items: center;
 }
 
+.quantity_container ion-icon {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.quantity_container ion-icon:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.quantity_value {
+  font-size: 1.2rem;
+  margin: 0 .2rem;
+}
+
+.quantity_left {
+  margin-left: .6rem;
+}
+
 .delivery_info {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.action_button {
+  margin-right: 1rem;
 }
