@@ -12,7 +12,7 @@ const RatingStarsBase = props => {
     }
 
     const onMouseEnter = index => {
-        onRatingChange(index)
+        onRatingChange(index + 1)
     }
 
     const onMouseLeave = () => {
@@ -25,17 +25,17 @@ const RatingStarsBase = props => {
     
     const stars = []
     for (let i = 0; i < fullStars; i++) {
-        stars.push(<ion-icon onMouseEnter={() => onMouseEnter(i)} onMouseLeave={onMouseLeave} name="star"></ion-icon>)
+        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i)} onMouseLeave={onMouseLeave} name="star"></ion-icon>)
     }
     for (let i = 0; i < halfStars; i++) {
-        stars.push(<ion-icon onMouseEnter={() => onMouseEnter(i + fullStars)} onMouseLeave={onMouseLeave} name="star-half"></ion-icon>)
+        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars)} onMouseLeave={onMouseLeave} name="star-half"></ion-icon>)
     }
     for (let i = 0; i < outlineStars; i++) {
-        stars.push(<ion-icon onMouseEnter={() => onMouseEnter(i + fullStars + halfStars)} onMouseLeave={onMouseLeave} name="star-outline"></ion-icon>)
+        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars + halfStars)} onMouseLeave={onMouseLeave} name="star-outline"></ion-icon>)
     }
 
     return (
-        <div className={classes.container}>
+        <div className={classes.container} >
             {stars}
         </div>
     )
