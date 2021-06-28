@@ -14,8 +14,9 @@ const temp_review =
 const temp_customer = ["Customer 1", "Customer 2"]
 
 const Reviews = props => {
-  const reviews = temp_customer.map(item => (
+  const reviews = temp_customer.map((item, idx) => (
     <SectionDivider
+      key={idx}
       item1={<RatingSelector title={item} />}
       item2={<p className={classes.reviewText}>{temp_review}</p>}
     />
