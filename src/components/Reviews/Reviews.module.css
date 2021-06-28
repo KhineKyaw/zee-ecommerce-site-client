@@ -5,3 +5,13 @@
 .stats {
   display: flex;
 }
+
+.reviewText {
+  text-align: justify;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

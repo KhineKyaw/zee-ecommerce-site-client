@@ -1,6 +1,5 @@
 .categories {
   position: absolute;
-  color: var(--color-white);
   background-color: var(--color-dark-background);
   height: var(--size-categories-heigth);
   padding: 30px;
@@ -10,9 +9,12 @@
 .categories h5 {
   margin-bottom: 16px;
   text-transform: uppercase;
+  color: var(--color-white);
 }
 
 .categories p {
+  color: var(--color-white);
+
   margin-bottom: 12px;
   transition: color var(--duration-animation-normal);
   cursor: pointer;
