@@ -3,10 +3,11 @@ import React from "react"
 import RatingBar from "../RatingBar/RatingBar"
 
 const RatingBoard = props => {
+  const keys = Object.keys({ ...props.data }).reverse()
   return (
     <div>
-      {props.data.map((i, idx) => (
-        <RatingBar key={idx} data={i} />
+      {keys.map(i => (
+        <RatingBar key={i} rating={i} data={props.data[i] / props.count} />
       ))}
     </div>
   )

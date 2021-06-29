@@ -1,12 +1,22 @@
 import React from "react"
 
-// import classes from "./RatingSelector.module.css"
+import classes from "./RatingSelector.module.css"
+import RatingStars from "../../UI/RatingStars/RatingStars"
+import RatingStarsSelector from "../../UI/RatingStars/RatingStarsSelector"
 
 const RatingSelector = props => {
   return (
     <div>
-      {props.action ? <p>Rate this product</p> : <p>{props.title}</p>}
-      <p>*****</p>
+      {
+        <p className={classes.title}>
+          {props.action ? " Rate this product" : props.title}
+        </p>
+      }
+      {props.action ? (
+        <RatingStarsSelector />
+      ) : (
+        <RatingStars rating={props.rating} />
+      )}
     </div>
   )
 }

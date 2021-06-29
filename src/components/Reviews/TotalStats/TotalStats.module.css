@@ -2,3 +2,11 @@
   display: flex;
   flex-flow: column;
 }
+
+.stats h1 {
+  margin-bottom: 6px;
+}
+
+.rating_count {
+  margin-top: 8px;
+}
