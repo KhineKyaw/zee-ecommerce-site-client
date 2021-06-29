@@ -25,13 +25,13 @@ const RatingStarsBase = props => {
     
     const stars = []
     for (let i = 0; i < fullStars; i++) {
-        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i)} onMouseLeave={onMouseLeave} name="star"></ion-icon>)
+        stars.push(<ion-icon key={i} onClick={props.onClick} onMouseEnter={() => onMouseEnter(i)} onMouseLeave={onMouseLeave} name="star"></ion-icon>)
     }
     for (let i = 0; i < halfStars; i++) {
-        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars)} onMouseLeave={onMouseLeave} name="star-half"></ion-icon>)
+        stars.push(<ion-icon key={i + fullStars} onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars)} onMouseLeave={onMouseLeave} name="star-half"></ion-icon>)
     }
     for (let i = 0; i < outlineStars; i++) {
-        stars.push(<ion-icon onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars + halfStars)} onMouseLeave={onMouseLeave} name="star-outline"></ion-icon>)
+        stars.push(<ion-icon key={i + fullStars + halfStars} onClick={props.onClick} onMouseEnter={() => onMouseEnter(i + fullStars + halfStars)} onMouseLeave={onMouseLeave} name="star-outline"></ion-icon>)
     }
 
     return (

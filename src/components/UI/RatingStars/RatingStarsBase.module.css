@@ -1,9 +1,9 @@
 .container {
     display: flex;
     align-items: center;
-    color: var(--color-star);
 }
 
 .container ion-icon {
+    color: var(--color-star);
     font-size: 1.4rem;
 }
