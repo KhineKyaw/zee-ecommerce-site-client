@@ -8,6 +8,8 @@ import classes from "./CartOptions.module.css"
 
 const CartOptions = props => {
   const { data } = props
+
+  const numItemsLeft = data.items.length
   return (
     <div className={classes.container}>
       <h3 className={classes.title}>{data.title}</h3>
@@ -33,7 +35,7 @@ const CartOptions = props => {
           <span className={classes.quantity_value}>1</span>
           <ion-icon name="add"></ion-icon>
         </div>
-        <span className={classes.quantity_left}>{10} items left</span>
+        <span className={classes.quantity_left}>{numItemsLeft} items left</span>
       </div>
       <div className={classes.delivery_info}>
         <h5>Home Delivery: Ks {`1,000`}</h5>
