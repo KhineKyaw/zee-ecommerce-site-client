@@ -33,10 +33,34 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -44,17 +68,13 @@ const products = [
         price: 13500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -64,17 +84,13 @@ const products = [
         price: 12500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            category: "Size",
             value: "Small"
           }
         ],
