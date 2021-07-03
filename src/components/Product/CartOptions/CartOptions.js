@@ -24,7 +24,7 @@ const CartOptions = props => {
         <span><a href="#reviews">10 reviews</a></span>
       </div>
       <div className={classes.splitter}></div>
-      <OptionsBox data={data} />
+      <OptionsBox optionCategories={data.optionCategories} />
       <div className={classes.splitter}></div>
       <h1 className={classes.price}>Ks {`19,000`}</h1>
       <div className={classes.splitter}></div>
