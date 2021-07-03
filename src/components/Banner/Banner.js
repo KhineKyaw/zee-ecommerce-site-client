@@ -50,6 +50,8 @@ const calcScale = (offset) => {
   return 1 - (0.1 * Math.abs(offset))
 }
 
+let transitionTimeout
+
 const Banner = () => {
   const [index, setIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
@@ -62,7 +64,7 @@ const Banner = () => {
       setIndex((prevIndex) => {
         return roundAddition(prevIndex, unitDistance, promotions.length)
       })
-      setTimeout(() => 
+      transitionTimeout = setTimeout(() => 
         move(offset - unitDistance),
       transitionDuration)
     }
@@ -92,7 +94,10 @@ const Banner = () => {
     const interval = setInterval(() => {
       move(+1)
     }, autoRotateInterval)
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+      clearTimeout(transitionTimeout)
+    }
   }, [move])
 
   return (
