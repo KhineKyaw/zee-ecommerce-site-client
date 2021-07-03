@@ -31,6 +31,7 @@ const products = [
       "Item Height:10.5cm",
       "Decoration:Letter"
     ],
+    categories_id: 2,
     optionCategories: [
       {
         name: "Color"

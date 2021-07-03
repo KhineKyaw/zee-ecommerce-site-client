@@ -3,9 +3,15 @@ import ReactDOM from "react-dom"
 
 import classes from "./Modal.module.css"
 
-const Backdrop = props => (
-  <div onClick={props.toggleModal} className={classes.backdrop}></div>
-)
+const Backdrop = props => {
+  const className = [classes.backdrop]
+
+  if (props.className) className.push(props.className)
+
+  return (
+    <div onClick={props.onBackdropClick} className={className.join(" ")}></div>
+  )
+}
 
 const ModalOverlay = props => (
   <div className={`${classes.modal} ${props.className}`}>{props.children}</div>

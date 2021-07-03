@@ -12,6 +12,7 @@
 }
 
 .link {
+  text-decoration: none;
   color: var(--color-accent);
   cursor: pointer;
 }

@@ -25,6 +25,7 @@ const RatingStarsBase = props => {
   for (let i = 0; i < fullStars; i++) {
     stars.push(
       <ion-icon
+        key={i}
         onClick={props.onClick}
         onMouseEnter={() => onMouseEnter(i)}
         onMouseLeave={onMouseLeave}
@@ -34,6 +35,7 @@ const RatingStarsBase = props => {
   for (let i = 0; i < halfStars; i++) {
     stars.push(
       <ion-icon
+        key={i + fullStars}
         onClick={props.onClick}
         onMouseEnter={() => onMouseEnter(i + fullStars)}
         onMouseLeave={onMouseLeave}
@@ -43,6 +45,7 @@ const RatingStarsBase = props => {
   for (let i = 0; i < outlineStars; i++) {
     stars.push(
       <ion-icon
+        key={i + fullStars + halfStars}
         onClick={props.onClick}
         onMouseEnter={() => onMouseEnter(i + fullStars + halfStars)}
         onMouseLeave={onMouseLeave}

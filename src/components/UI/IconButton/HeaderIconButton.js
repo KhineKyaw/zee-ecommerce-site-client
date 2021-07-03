@@ -19,6 +19,10 @@ const HeaderIconButton = props => {
     className.push(props.className)
   }
 
+  if (props.showNotification) {
+    className.push(classes.noti)
+  }
+
   if (props.name) {
     Icon = icons[props.name]
   }
@@ -26,6 +30,7 @@ const HeaderIconButton = props => {
   const Props = { ...props }
   delete Props.children
   delete Props.name
+  delete Props.showNotification
 
   return (
     <button {...Props} className={className.join(" ")}>

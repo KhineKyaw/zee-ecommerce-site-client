@@ -9,15 +9,30 @@ import Reviews from "../components/Reviews/Reviews"
 import Recommendations from "../components/Product/Recommendations/Recommendations"
 import SectionWrapper from "../hoc/SectionWrapper"
 import LinkLocator from "../components/UI/LinkLocator/LinkLocator"
+import getCategories from "../api/getCategories"
 
-const temp = ["Home", "Products", "Men's Fashion", "Ballerry Men Long Wallet"]
+const FIXED_LINKS = { Home: "/", Products: "/products" }
 
 const ProductDetails = props => {
   const [data, setData] = useState()
+  const [category, setCategory] = useState()
   const productId = props.match.params.id
 
+  const loc_links =
+    category && data
+      ? { ...FIXED_LINKS, [category.name]: `/category/${category.id}` }
+      : FIXED_LINKS
+
   useEffect(() => {
-    setData(getProduct(productId))
+    const product = getProduct(productId)
+    const categories = getCategories()
+    const category = categories.reduce((obj, item) => {
+      if (item.id === product.categories_id) return item
+      return obj
+    }, {})
+
+    setData(product)
+    setCategory(category)
   }, [productId])
 
   if (!data) return null
@@ -25,7 +40,7 @@ const ProductDetails = props => {
   return (
     <div className={classes.wrapper}>
       <SectionWrapper>
-        <LinkLocator links={temp} />
+        <LinkLocator links={loc_links} last={data ? data.title : null} />
       </SectionWrapper>
       <SectionWrapper background='light'>
         <div className={classes.main}>

@@ -6,4 +6,5 @@
 
 .container ion-icon {
   font-size: 1.4rem;
+  color: var(--color-star);
 }

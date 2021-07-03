@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import { withRouter } from "react-router-dom"
 
 import classes from "./ProductItem.module.css"
 import Card from "../../UI/Card/Card"
-import Button from "../../UI/Button/Button"
+import AddToCartButton from "../../Cart/AddToCartButton/AddToCartButton"
+import CartContext from "../../../context/cart-context"
 
 const ProductItem = props => {
   const { item } = props
+  const { addItem } = useContext(CartContext)
 
   const toProductDetail = () => {
     props.history.push({
       pathname: "/product/" + item.id
     })
+  }
+
+  const onAddToCart = () => {
+    addItem(item)
   }
 
   return (
@@ -29,7 +35,7 @@ const ProductItem = props => {
         <div className={classes.itemInfo}>
           <p onClick={toProductDetail}>{item.title}</p>
           <p>Ks {item.price}</p>
-          <Button type='outline'>ADD TO CART</Button>
+          <AddToCartButton onClick={onAddToCart} />
         </div>
       </div>
     </Card>

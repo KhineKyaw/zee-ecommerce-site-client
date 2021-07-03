@@ -7,6 +7,7 @@ import LanguageContext from "../../../context/language-context"
 import LanguageSwitch from "./LanguageSwitch/LanguageSwitch"
 import NavSearchBar from "./NavSearchBar/NavSearchBar"
 import Logo from "./Logo/Logo"
+import CartContext from "../../../context/cart-context"
 
 const Navbar = () => {
   const {
@@ -14,6 +15,8 @@ const Navbar = () => {
     changeLanguage,
     language
   } = useContext(LanguageContext)
+
+  const cartState = useContext(CartContext)
 
   const languageChangedHandler = () => {
     changeLanguage(language === "en" ? "mm" : "en")
@@ -31,7 +34,7 @@ const Navbar = () => {
         <div className={classes.actions}>
           <NavSearchBar placeholder='Search' autoFocus />
           <IconButton name='profile' />
-          <IconButton name='bag' />
+          <IconButton showNotification={cartState.items.length} name='bag' />
           <LanguageSwitch
             language={language}
             onClick={languageChangedHandler}
