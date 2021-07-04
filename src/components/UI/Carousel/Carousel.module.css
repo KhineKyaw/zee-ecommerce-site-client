@@ -1,0 +1,41 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  background-color: lightblue;
+}
+
+.carosel {
+  overflow-y: auto;
+}
+
+.itemWrapper {
+  display: inline-block;
+  white-space: normal;
+  width: fit-content;
+  height: fit-content;
+  vertical-align: top;
+}
+
+.btnPrev,
+.btnNext {
+  color: #fff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #00000050;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.btnNext {
+  right: 0;
+  transform: translateY(-50%) translateX(50%);
+}
+
+.carosel::-webkit-scrollbar {
+  height: 0px;
+}

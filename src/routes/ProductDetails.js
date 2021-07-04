@@ -8,7 +8,7 @@ import ProductDescription from "../components/Product/ProductDescription/Product
 import Reviews from "../components/Reviews/Reviews"
 import Recommendations from "../components/Product/Recommendations/Recommendations"
 import SectionWrapper from "../hoc/SectionWrapper"
-import LinkLocator from "../components/UI/LinkLocator/LinkLocator"
+import Breadcrumb from "../components/UI/Breadcrumb/Breadcrumb"
 import getCategories from "../api/getCategories"
 
 const FIXED_LINKS = { Home: "/", Products: "/products" }
@@ -40,7 +40,7 @@ const ProductDetails = props => {
   return (
     <div className={classes.wrapper}>
       <SectionWrapper>
-        <LinkLocator links={loc_links} last={data ? data.title : null} />
+        <Breadcrumb links={loc_links} last={data ? data.title : null} />
       </SectionWrapper>
       <SectionWrapper background='light'>
         <div className={classes.main}>
