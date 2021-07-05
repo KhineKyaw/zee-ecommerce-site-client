@@ -1,6 +1,7 @@
 import React from "react"
 
 import OptionsBox from "./OptionsBox"
+import OptionCategory from './OptionCategory'
 
 import Button from '../../UI/Button/Button'
 
@@ -24,7 +25,11 @@ const CartOptions = props => {
         <span><a href="#reviews">10 reviews</a></span>
       </div>
       <div className={classes.splitter}></div>
-      <OptionsBox optionCategories={data.optionCategories} />
+      <OptionsBox>
+        {data.optionCategories.map(category => (
+          <OptionCategory category={category} />
+        ))}
+      </OptionsBox>
       <div className={classes.splitter}></div>
       <h1 className={classes.price}>Ks {`19,000`}</h1>
       <div className={classes.splitter}></div>
