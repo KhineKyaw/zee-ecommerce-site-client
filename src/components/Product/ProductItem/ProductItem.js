@@ -9,6 +9,9 @@ import CartContext from "../../../context/cart-context"
 const ProductItem = props => {
   const { item } = props
   const { addItem } = useContext(CartContext)
+  const className = [classes.card]
+
+  if (props.className) className.push(props.className)
 
   const toProductDetail = () => {
     props.history.push({
@@ -22,7 +25,7 @@ const ProductItem = props => {
 
   return (
     <Card
-      className={classes.card}
+      className={className.join(" ")}
       style={{
         marginRight: props.lastChild ? 0 : props.margin,
         marginBottom: props.margin,

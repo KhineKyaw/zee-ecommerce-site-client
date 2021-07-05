@@ -13,7 +13,9 @@ const RatingSelector = props => {
         </p>
       }
       {props.action ? (
-        <RatingStarsSelector />
+        <RatingStarsSelector
+          onRatingSelect={rating => console.log("Selected rating: ", rating)}
+        />
       ) : (
         <RatingStars rating={props.rating} />
       )}

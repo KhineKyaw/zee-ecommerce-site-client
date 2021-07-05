@@ -2,11 +2,6 @@
   margin-bottom: 32px;
 }
 
-.temp {
-  display: block;
-  width: 180px;
-  height: 200px;
-  background-color: snow;
-  border: 1px solid lightsalmon;
-  padding: 12px;
+.item {
+  /* margin: 0 8px; */
 }
