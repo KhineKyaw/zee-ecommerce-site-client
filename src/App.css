@@ -18,6 +18,10 @@ button {
   cursor: pointer;
 }
 
+svg {
+  pointer-events: none;
+}
+
 h1 {
   color: var(--color-dark);
   font-size: 2.1rem;
