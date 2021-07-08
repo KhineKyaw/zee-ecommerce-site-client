@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import classes from "./NavSearchBar.module.css"
 
-import HeaderIconButton from "../../../UI/IconButton/HeaderIconButton"
+import HeaderIconButton from "../../../UI/HeaderIconButton/HeaderIconButton"
 import SearchBox from "../../../UI/SearchBox/SearchBox"
 
 const NavSearchBar = props => {

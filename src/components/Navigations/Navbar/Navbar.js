@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import IconButton from "../../UI/IconButton/HeaderIconButton"
+import IconButton from "../../UI/HeaderIconButton/HeaderIconButton"
 
 import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
