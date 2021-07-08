@@ -1,0 +1,35 @@
+.wrapper {
+  width: 25%;
+  margin: 0 var(--size-common-whitespace-medium);
+}
+
+.wrapper h2 {
+  margin-bottom: var(--size-common-whitespace-small);
+}
+
+.wrapper div button {
+  border: 1px solid skyblue;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--size-common-whitespace-smaller);
+}
+
+.section.total {
+  font-weight: 700;
+  margin-top: var(--size-common-whitespace-medium);
+  padding-top: var(--size-common-whitespace-small);
+  border-top: 2px solid var(--color-gray-border);
+}
+
+.section.total dd {
+  font-size: 1.7rem;
+}
+
+.checkout {
+  width: 100%;
+  margin-top: var(--size-common-whitespace-small);
+}

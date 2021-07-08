@@ -2,17 +2,25 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import classes from "./CartItem.module.css"
+import Checkbox from "../../UI/Checkbox/Checkbox"
+
+const LinkImage = props => {
+  return (
+    <Link
+      to={props.to}
+      className={classes.imagelink}
+      style={{
+        backgroundImage: `url("${props.imageUrl}")`
+      }}></Link>
+  )
+}
 
 const CartItem = props => {
   const { item } = props
+  console.log("item: ", item)
   return (
     <div className={classes.cartitem}>
-      <Link
-        to={`/product/${item.id}`}
-        className={classes.imagelink}
-        style={{
-          backgroundImage: `url("${item.imageUrl}")`
-        }}></Link>
+      <LinkImage to={`/product/${item.id}`} imageUrl={item.imageUrl} />
       <div className={classes.content}>
         <Link className={classes.title} to={`/product/${item.id}`}>
           {item.title}
@@ -28,10 +36,12 @@ const CartItem = props => {
         <div className={classes.price}>KS {item.price}</div>
       </div>
       <div className={classes.actions}>
-        <div>picker</div>
+        <div>Amount: {item.amount} </div>
         <div className={classes.selectdelete}>
-          <input type='checkbox' />
-          <button>DE</button>
+          <Checkbox checked={item.checked} onClick={props.onSelect} />
+          <button className={classes.delete}>
+            <ion-icon name='trash-outline'></ion-icon>
+          </button>
         </div>
       </div>
     </div>

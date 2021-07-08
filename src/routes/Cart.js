@@ -2,12 +2,16 @@ import React from "react"
 
 import Layout from "../hoc/Layout"
 import CartItemList from "../components/Cart/CartItemList/CartItemList"
+import OrderSummary from "../components/Cart/OrderSummary/OrderSummary"
+import classes from "./Cart.module.css"
 
 const Cart = () => {
   return (
     <Layout>
-      <h1>Shopping Cart</h1>
-      <CartItemList />
+      <div className={classes.sectionrow}>
+        <CartItemList />
+        <OrderSummary />
+      </div>
     </Layout>
   )
 }

@@ -20,10 +20,11 @@
 }
 
 .noti::before {
+  display: block;
   position: absolute;
   content: "";
-  width: 8px;
   height: 8px;
+  width: 8px;
   border-radius: 50%;
   top: -0.15em;
   right: -0.15em;

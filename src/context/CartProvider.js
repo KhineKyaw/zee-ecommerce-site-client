@@ -3,6 +3,7 @@ import CartContext from "./cart-context"
 
 const ADD = "ADD"
 const REMOVE = "REMOVE"
+const SELECT = "SELECT"
 const defaultCartState = {
   items: [],
   totalAmount: 0
@@ -50,6 +51,17 @@ const cartReducer = (state, action) => {
       totalAmount: state.totalAmount - existingCartItem.price
     }
   }
+
+  if (action.type === SELECT) {
+    const itemId = state.items.findIndex(i => i.id === action.id)
+    return {
+      items: state.items.map((item, index) => ({
+        ...item,
+        checked: index === itemId
+      }))
+    }
+  }
+
   return defaultCartState
 }
 
@@ -67,11 +79,16 @@ const CartProvider = props => {
     dispatchCartAction({ type: REMOVE, id })
   }
 
+  const selectItemFromCartHandler = id => {
+    dispatchCartAction({ type: SELECT, id })
+  }
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
-    removeItem: removeItemFromCartHandler
+    removeItem: removeItemFromCartHandler,
+    selectItem: selectItemFromCartHandler
   }
 
   return (

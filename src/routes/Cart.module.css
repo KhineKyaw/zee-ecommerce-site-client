@@ -1,0 +1,4 @@
+.sectionrow {
+  display: flex;
+  margin-top: var(--size-common-whitespace-small);
+}

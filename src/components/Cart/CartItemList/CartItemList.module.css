@@ -1,11 +1,27 @@
 .wrapper {
+  flex: 1;
+  flex-flow: column;
   background-color: transparent;
-  width: 65%;
+  min-height: 50vh;
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper h2 {
+  margin-bottom: var(--size-common-whitespace-small);
 }
 
 .wrapper,
+.header {
+  display: flex;
+}
+
+/* temp delete */
+/* .wrapper,
 .wrapper div,
 .wrapper img {
-  /* temp delete */
   border: 1px solid #1e8fff50;
-}
+} */
