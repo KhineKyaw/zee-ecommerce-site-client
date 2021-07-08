@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import OptionsBox from "./OptionsBox"
 import OptionCategory from './OptionCategory'
@@ -9,8 +9,16 @@ import classes from "./CartOptions.module.css"
 
 const CartOptions = props => {
   const { data } = props
+  const [selectedOptions, setSelectedOptions] = useState(data.optionCategories.map(()=>null))
 
-  const numItemsLeft = data.items.length
+  const handleOptionClick = (cIndex, oIndex) => {
+    setSelectedOptions(prev => 
+      prev.map((option, i) => i === cIndex ? (option === oIndex ? null : oIndex) : option)
+    )
+  }
+
+  const numItemsLeft = data.items.reduce((acc, item) => acc + item.count, 0)
+
   return (
     <div className={classes.container}>
       <h3 className={classes.title}>{data.title}</h3>
@@ -26,8 +34,8 @@ const CartOptions = props => {
       </div>
       <div className={classes.splitter}></div>
       <OptionsBox>
-        {data.optionCategories.map(category => (
-          <OptionCategory category={category} />
+        {data.optionCategories.map((category, cIndex) => (
+          <OptionCategory category={category} selectedOption={selectedOptions[cIndex]} handleOptionClick={(i) => handleOptionClick(cIndex, i)} />
         ))}
       </OptionsBox>
       <div className={classes.splitter}></div>
