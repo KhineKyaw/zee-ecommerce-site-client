@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.button ion-icon {
+    display: block;
+    cursor: pointer;
+    transition: .3s ease;
+    padding: .2rem;
+    font-size: 1.3rem;
+}
+
+.solid ion-icon {
+    background-color: var(--color-gray-border);
+}
+
+.solid:hover ion-icon{
+    color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.outline:hover ion-icon {
+    color: var(--color-primary);
+}

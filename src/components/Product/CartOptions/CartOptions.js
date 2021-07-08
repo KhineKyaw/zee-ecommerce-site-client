@@ -4,6 +4,7 @@ import OptionsBox from "./OptionsBox"
 import OptionCategory from './OptionCategory'
 
 import Button from '../../UI/Button/Button'
+import IconButton from '../../UI/IconButton/IconButton'
 
 import classes from "./CartOptions.module.css"
 
@@ -56,9 +57,9 @@ const CartOptions = props => {
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
         <div className={classes.quantity_controller}>
-          <ion-icon name="remove" onClick={() => handleQuantityChange(-1)}></ion-icon>
+          <IconButton name="remove" onClick={() => handleQuantityChange(-1)} />
           <span className={classes.quantity_value}>{quantity}</span>
-          <ion-icon name="add" onClick={() => handleQuantityChange(+1)}></ion-icon>
+          <IconButton name="add" onClick={() => handleQuantityChange(+1)} />
         </div>
         <span className={classes.quantity_left}>{numItemsLeft} items left</span>
       </div>

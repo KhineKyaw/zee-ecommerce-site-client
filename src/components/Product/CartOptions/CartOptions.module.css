@@ -60,20 +60,6 @@
   align-items: center;
 }
 
-.quantity_container ion-icon {
-  border-radius: 1rem;
-  padding: .2rem;
-  background-color: var(--color-gray-border);
-  cursor: pointer;
-  font-size: 1.3rem;
-  transition: .3s ease;
-}
-
-.quantity_container ion-icon:hover {
-  color: var(--color-white);
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 .quantity_value {
   font-size: 1.2rem;
   margin: 0 .6rem;
