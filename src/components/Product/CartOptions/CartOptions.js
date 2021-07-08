@@ -9,7 +9,9 @@ import classes from "./CartOptions.module.css"
 
 const CartOptions = props => {
   const { data } = props
+  const numItemsLeft = data.items.reduce((acc, item) => acc + item.count, 0)
   const [selectedOptions, setSelectedOptions] = useState(data.optionCategories.map(()=>null))
+  const [quantity, setQuantity] = useState(1)
 
   const handleOptionClick = (cIndex, oIndex) => {
     setSelectedOptions(prev => 
@@ -17,7 +19,17 @@ const CartOptions = props => {
     )
   }
 
-  const numItemsLeft = data.items.reduce((acc, item) => acc + item.count, 0)
+  const handleQuantityChange = amount => {
+    setQuantity(prev => {
+      let nextQuantity = amount + prev
+      if (nextQuantity <= 0) {
+        nextQuantity = 1
+      } else if (nextQuantity > numItemsLeft) {
+        nextQuantity = numItemsLeft
+      }
+      return nextQuantity
+    })
+  }
 
   return (
     <div className={classes.container}>
@@ -44,9 +56,9 @@ const CartOptions = props => {
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
         <div className={classes.quantity_controller}>
-          <ion-icon name="remove"></ion-icon>
-          <span className={classes.quantity_value}>1</span>
-          <ion-icon name="add"></ion-icon>
+          <ion-icon name="remove" onClick={() => handleQuantityChange(-1)}></ion-icon>
+          <span className={classes.quantity_value}>{quantity}</span>
+          <ion-icon name="add" onClick={() => handleQuantityChange(+1)}></ion-icon>
         </div>
         <span className={classes.quantity_left}>{numItemsLeft} items left</span>
       </div>
