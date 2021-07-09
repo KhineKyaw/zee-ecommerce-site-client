@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import OptionsBox from "./OptionsBox"
 import OptionCategory from './OptionCategory'
@@ -10,9 +10,30 @@ import classes from "./CartOptions.module.css"
 
 const CartOptions = props => {
   const { data } = props
-  const numItemsLeft = data.items.reduce((acc, item) => acc + item.count, 0)
+  const [selectedItems, setSelectedItems] = useState(data.items)
+  const numItemsLeft = selectedItems.reduce((acc, item) => acc + item.count, 0)
   const [selectedOptions, setSelectedOptions] = useState(data.optionCategories.map(()=>null))
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(Math.min(1, numItemsLeft))
+
+  useEffect(() => {
+    const optionsUnselected = selectedOptions.every((value) => value === null)
+    if (optionsUnselected) {
+      setSelectedItems(data.items)
+    } else {
+      const selectedOptionIds = selectedOptions.map((oIndex, cIndex) => oIndex !== null && data.optionCategories[cIndex].options[oIndex].id)
+      const onlyIds = selectedOptionIds.filter(id => id !== false)
+      const filteredItems = data.items.filter(item => {
+        return onlyIds.every(id => {
+          return item.options.find(option => option.id === id)
+        })
+      })
+      setSelectedItems(filteredItems)
+    }
+  }, [selectedOptions])
+
+  useEffect(() => {
+    setQuantity(Math.min(1, numItemsLeft))
+  }, [numItemsLeft])
 
   const handleOptionClick = (cIndex, oIndex) => {
     setSelectedOptions(prev => 
@@ -25,7 +46,8 @@ const CartOptions = props => {
       let nextQuantity = amount + prev
       if (nextQuantity <= 0) {
         nextQuantity = 1
-      } else if (nextQuantity > numItemsLeft) {
+      }
+      if (nextQuantity > numItemsLeft) {
         nextQuantity = numItemsLeft
       }
       return nextQuantity
@@ -57,7 +79,7 @@ const CartOptions = props => {
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
         <div className={classes.quantity_controller}>
-          <IconButton name="remove" disabled={quantity===1} onClick={() => handleQuantityChange(-1)} />
+          <IconButton name="remove" disabled={quantity <= 1} onClick={() => handleQuantityChange(-1)} />
           <span className={classes.quantity_value}>{quantity}</span>
           <IconButton name="add" disabled={quantity===numItemsLeft} onClick={() => handleQuantityChange(+1)} />
         </div>
