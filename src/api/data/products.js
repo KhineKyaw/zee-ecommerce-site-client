@@ -36,12 +36,14 @@ const products = [
         name: "Color",
         options: [
           {
+            id: 0,
             category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
+            id: 1,
             category: "Color",
             value: "Blue",
             image:
@@ -53,10 +55,12 @@ const products = [
         name: "Size",
         options: [
           {
+            id: 2,
             category: "Size",
             value: "Medium"
           },
           {
+            id: 3,
             category: "Size",
             value: "Small"
           }
@@ -68,12 +72,14 @@ const products = [
         price: 13500,
         options: [
           {
+            id: 0,
             category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
+            id: 2,
             category: "Size",
             value: "Medium"
           }
@@ -84,12 +90,14 @@ const products = [
         price: 12500,
         options: [
           {
+            id: 1,
             category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
+            id: 3,
             category: "Size",
             value: "Small"
           }
@@ -105,10 +113,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -116,17 +152,15 @@ const products = [
         price: 7200,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -136,17 +170,15 @@ const products = [
         price: 7200,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -161,10 +193,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -172,17 +232,15 @@ const products = [
         price: 8500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -192,17 +250,15 @@ const products = [
         price: 8400,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -217,10 +273,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -228,17 +312,15 @@ const products = [
         price: 27700,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -248,17 +330,15 @@ const products = [
         price: 27700,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -273,10 +353,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -284,17 +392,15 @@ const products = [
         price: 2200,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -304,17 +410,15 @@ const products = [
         price: 2300,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -329,10 +433,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -340,17 +472,15 @@ const products = [
         price: 15600,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -360,17 +490,15 @@ const products = [
         price: 14500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -385,10 +513,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -396,17 +552,15 @@ const products = [
         price: 11500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -416,17 +570,15 @@ const products = [
         price: 11500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -442,10 +594,38 @@ const products = [
     ],
     optionCategories: [
       {
-        name: "Color"
+        name: "Color",
+        options: [
+          {
+            id: 0,
+            category: "Color",
+            value: "White",
+            image:
+              "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+          {
+            id: 1,
+            category: "Color",
+            value: "Blue",
+            image:
+              "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
+          },
+        ]
       },
       {
-        name: "Size"
+        name: "Size",
+        options: [
+          {
+            id: 2,
+            category: "Size",
+            value: "Medium"
+          },
+          {
+            id: 3,
+            category: "Size",
+            value: "Small"
+          }
+        ]
       }
     ],
     items: [
@@ -453,17 +633,15 @@ const products = [
         price: 230500,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 0,
+            category: "Color",
             value: "White",
             image:
               "https://ae01.alicdn.com/kf/Hc65f87d876da461e90a4c181f395384aO/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 2,
+            category: "Size",
             value: "Medium"
           }
         ],
@@ -473,17 +651,15 @@ const products = [
         price: 230000,
         options: [
           {
-            category: {
-              name: "Color"
-            },
+            id: 1,
+            category: "Color",
             value: "Blue",
             image:
               "https://ae01.alicdn.com/kf/H6bb80c695933489399836b72dd65ab64m/Hot-Selling-For-Fuji-Fujifilm-Instax-Mini-11-Mini-Camera-Pure-Color-Soft-Silicone-Case-Classic.jpg_50x50.jpg_.webp"
           },
           {
-            category: {
-              name: "Size"
-            },
+            id: 3,
+            category: "Size",
             value: "Small"
           }
         ],
@@ -491,51 +667,6 @@ const products = [
       }
     ]
   },
-  {
-    title:
-      "Light luxury fluffy sofa creative design velvet armchair Nordic leisure furniture waiting chair comfortable back dressing seats",
-    images: [
-      "https://ae01.alicdn.com/kf/H4271f2b0212940ee8e77ddaf48e6240ac/Women-Thick-Platform-Slippers-Summer-Beach-Eva-Soft-Sole-Slide-Sandals-Leisure-Men-Ladies-Indoor-Bathroom.jpg_Q90.jpg_.webp"
-    ],
-    items: [
-      {
-        price: 230500
-      }
-    ]
-  },
-  {
-    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
-    images: [
-      "//ae01.alicdn.com/kf/H90388142075f4f28824cd1cbc1e155625/Max-RAM-36GB-Rom-2TB-SSD-Ultrabook-Metal-Computer-with-2-4G-5-0G-Bluetooth-Ryzen.jpg_220x220xz.jpg_.webp"
-    ],
-    items: [
-      {
-        price: 635100
-      }
-    ]
-  },
-  {
-    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
-    images: [
-      "https://ae01.alicdn.com/kf/H6190310641b741178f2ef00188fb2bb0N/Nordic-designer-creative-U-shaped-white-casual-lamb-wool-single-sofa-modern-minimalist-living-balcony-bedroom.jpg_Q90.jpg_.webp"
-    ],
-    items: [
-      {
-        price: 635100
-      }
-    ]
-  },
-  {
-    title: "Max RAM 36GB Rom 2TB SSD Ultrabook Metal Computer",
-    images: [
-      "https://ae01.alicdn.com/kf/H6dd34cd7bc7145c397fad284ddfa84f1s/Shoe-rack-living-room-furnitu-Modern-shoe-cabinets-shoe-stool-for-entry-home-Simple-iron-art.jpg_Q90.jpg_.webp"
-    ],
-    items: [
-      {
-        price: 635100
-      }
-    ]
-  }
 ]
 
 export default products
