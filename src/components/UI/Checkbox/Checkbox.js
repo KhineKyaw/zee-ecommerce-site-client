@@ -8,12 +8,12 @@ const Checkbox = props => {
   if (props.checked) className.push(classes.checked)
 
   return (
-    <div className={classes.wrapper}>
+    <button className={classes.wrapper}>
       {props.children ? <label>{props.children}</label> : null}
       <div onClick={props.onClick} className={className.join(" ")}>
         <ion-icon name='checkmark-sharp'></ion-icon>
       </div>
-    </div>
+    </button>
   )
 }
 

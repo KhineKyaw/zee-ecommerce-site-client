@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
-import IconButton from "../../UI/IconButton/HeaderIconButton"
+import { Link } from "react-router-dom"
 
+import IconButton from "../../UI/IconButton/HeaderIconButton"
 import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
 import LanguageContext from "../../../context/language-context"
@@ -34,7 +35,9 @@ const Navbar = () => {
         <div className={classes.actions}>
           <NavSearchBar placeholder='Search' autoFocus />
           <IconButton name='profile' />
-          <IconButton showNotification={cartState.items.length} name='bag' />
+          <Link to='/shopcart'>
+            <IconButton showNotification={cartState.items.length} name='bag' />
+          </Link>
           <LanguageSwitch
             language={language}
             onClick={languageChangedHandler}

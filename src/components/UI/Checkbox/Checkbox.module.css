@@ -4,6 +4,8 @@
 
 .wrapper {
   display: flex;
+  outline: none;
+  border: none;
 }
 
 .checkboxwrapper {

@@ -17,7 +17,15 @@ const LinkImage = props => {
 
 const CartItem = props => {
   const { item } = props
-  console.log("item: ", item)
+
+  const onSelect = () => {
+    props.onSelect(item.id)
+  }
+
+  const onDelete = () => {
+    props.onDelete(item.id)
+  }
+
   return (
     <div className={classes.cartitem}>
       <LinkImage to={`/product/${item.id}`} imageUrl={item.imageUrl} />
@@ -38,8 +46,8 @@ const CartItem = props => {
       <div className={classes.actions}>
         <div>Amount: {item.amount} </div>
         <div className={classes.selectdelete}>
-          <Checkbox checked={item.checked} onClick={props.onSelect} />
-          <button className={classes.delete}>
+          <Checkbox checked={item.checked} onClick={onSelect} />
+          <button onClick={onDelete} className={classes.delete}>
             <ion-icon name='trash-outline'></ion-icon>
           </button>
         </div>

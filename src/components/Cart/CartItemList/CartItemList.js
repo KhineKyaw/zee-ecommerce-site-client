@@ -6,11 +6,14 @@ import Checkbox from "../../UI/Checkbox/Checkbox"
 import CartContext from "../../../context/cart-context"
 
 const CartItemList = () => {
-  const { items: cartItems, selectItem } = useContext(CartContext)
+  const { items: cartItems, selectItem, deleteItem } = useContext(CartContext)
 
-  const selectItemHandler = idx => {
-    selectItem(idx)
-    console.log(idx)
+  const selectItemHandler = id => {
+    selectItem(id)
+  }
+
+  const deleteItemHandler = id => {
+    deleteItem(id)
   }
 
   return (
@@ -20,7 +23,12 @@ const CartItemList = () => {
         <Checkbox>Select All</Checkbox>
       </div>
       {cartItems.map((item, index) => (
-        <CartItem onSelect={selectItemHandler} key={item.id} item={item} />
+        <CartItem
+          onSelect={selectItemHandler}
+          onDelete={deleteItemHandler}
+          key={item.id}
+          item={item}
+        />
       ))}
     </div>
   )

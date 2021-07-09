@@ -1,6 +1,6 @@
 .wrapper {
   width: 25%;
-  margin: 0 var(--size-common-whitespace-medium);
+  margin-left: var(--size-common-whitespace-medium);
 }
 
 .wrapper h2 {

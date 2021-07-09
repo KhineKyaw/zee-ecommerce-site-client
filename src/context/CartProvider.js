@@ -4,6 +4,7 @@ import CartContext from "./cart-context"
 const ADD = "ADD"
 const REMOVE = "REMOVE"
 const SELECT = "SELECT"
+const DELETE = "DELETE"
 const defaultCartState = {
   items: [],
   totalAmount: 0
@@ -16,50 +17,42 @@ const cartReducer = (state, action) => {
     const existingCartItem = state.items[itemId]
 
     if (existingCartItem) {
-      let temp = [...state.items]
-      temp[itemId] = {
-        ...existingCartItem,
-        amount: existingCartItem.amount + action.item.amount
-      }
+      const items = state.items.map(item => {
+        if (item.id === action.item.id)
+          return { ...item, amount: item.amount + 1 }
+        return item
+      })
       return {
-        items: temp,
-        totalAmount: state.totalAmount + action.item.price * action.item.amount
+        ...state,
+        items
       }
     }
 
     return {
-      items: [...state.items, action.item],
-      totalAmount: state.totalAmount + action.item.price * action.item.amount
+      ...state,
+      items: [...state.items, { ...action.item, amount: 1, checked: false }]
     }
   }
   // Remove
   if (action.type === REMOVE) {
-    const itemId = state.items.findIndex(i => i.id === action.id)
-    const existingCartItem = state.items[itemId]
-
-    let tempItems = [...state.items]
-    if (existingCartItem.amount > 1) {
-      tempItems[itemId] = {
-        ...existingCartItem,
-        amount: existingCartItem.amount - 1
-      }
-    } else {
-      tempItems.splice(itemId, 1)
-    }
-    return {
-      items: tempItems,
-      totalAmount: state.totalAmount - existingCartItem.price
-    }
   }
 
+  // Delete
+  if (action.type === DELETE) {
+    return { ...state, item: state.items.filter(item => item.id !== action.id) }
+  }
+
+  // Select
   if (action.type === SELECT) {
-    const itemId = state.items.findIndex(i => i.id === action.id)
-    return {
-      items: state.items.map((item, index) => ({
-        ...item,
-        checked: index === itemId
-      }))
-    }
+    const items = state.items.map(item => ({
+      ...item,
+      checked: item.id === action.id ? !item.checked : item.checked
+    }))
+    const total = items.reduce(
+      (obj, item) => obj + item.checked * item.price * item.amount,
+      0
+    )
+    return { ...state, totalAmount: total, items }
   }
 
   return defaultCartState
@@ -79,6 +72,10 @@ const CartProvider = props => {
     dispatchCartAction({ type: REMOVE, id })
   }
 
+  const deleteItemFromCartHandler = id => {
+    dispatchCartAction({ type: DELETE, id })
+  }
+
   const selectItemFromCartHandler = id => {
     dispatchCartAction({ type: SELECT, id })
   }
@@ -88,6 +85,7 @@ const CartProvider = props => {
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    deleteItem: deleteItemFromCartHandler,
     selectItem: selectItemFromCartHandler
   }
 
