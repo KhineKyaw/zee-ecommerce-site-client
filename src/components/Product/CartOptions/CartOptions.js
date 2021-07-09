@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 
+import { numberWithCommas } from '../../../utils'
+
 import OptionsBox from "./OptionsBox"
 import OptionCategory from './OptionCategory'
 
@@ -74,7 +76,7 @@ const CartOptions = props => {
         ))}
       </OptionsBox>
       <div className={classes.splitter}></div>
-      <h1 className={classes.price}>Ks {`19,000`}</h1>
+      <h1 className={classes.price}>Ks {numberWithCommas(selectedItems && selectedItems[0].price)}</h1>
       <div className={classes.splitter}></div>
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
