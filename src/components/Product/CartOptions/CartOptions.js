@@ -14,8 +14,9 @@ const CartOptions = props => {
   const { data } = props
   const [selectedItems, setSelectedItems] = useState(data.items)
   const numItemsLeft = selectedItems.reduce((acc, item) => acc + item.count, 0)
+  const minNumItems = Math.min(1, numItemsLeft)
   const [selectedOptions, setSelectedOptions] = useState(data.optionCategories.map(()=>null))
-  const [quantity, setQuantity] = useState(Math.min(1, numItemsLeft))
+  const [quantity, setQuantity] = useState(minNumItems)
 
   useEffect(() => {
     const optionsUnselected = selectedOptions.every((value) => value === null)
@@ -34,7 +35,7 @@ const CartOptions = props => {
   }, [selectedOptions])
 
   useEffect(() => {
-    setQuantity(Math.min(1, numItemsLeft))
+    setQuantity(minNumItems)
   }, [numItemsLeft])
 
   const handleOptionClick = (cIndex, oIndex) => {
@@ -76,7 +77,7 @@ const CartOptions = props => {
         ))}
       </OptionsBox>
       <div className={classes.splitter}></div>
-      <h1 className={classes.price}>Ks {numberWithCommas(selectedItems && selectedItems[0].price)}</h1>
+      <h1 className={classes.price}>Ks {selectedItems.length > 0 ? numberWithCommas(selectedItems[0].price) : (data.items.length > 0 ? numberWithCommas(data.items[0].price) : 'NaN')}</h1>
       <div className={classes.splitter}></div>
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
