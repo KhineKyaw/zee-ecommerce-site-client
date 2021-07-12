@@ -1,6 +1,7 @@
 const products = [
   {
     title: "Baellerry Men Long Wallet",
+    rating: 4.5,
     images: [
       "https://ae01.alicdn.com/kf/Hd5a59ae4b8f84ad2bd71a4d93f88dbcaf/Baellerry-Men-s-Long-Canvas-Wallet-Large-Capacity-Zipper-Wallet-Retro-Leisure-Multi-Card-Pocket-Wallet.jpg_Q90.jpg_.webp",
       "https://ae01.alicdn.com/kf/HTB1pyxjl0zJ8KJjSspkq6zF7VXaF/Baellerry-Men-Canvas-Long-Wallets-Zipper-Male-Wallet-Money-Purse-Man-Phone-Coin-Pocket-Famous-Brand.jpg_Q90.jpg_.webp",

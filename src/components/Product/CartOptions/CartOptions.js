@@ -58,7 +58,7 @@ const CartOptions = props => {
     <div className={classes.container}>
       <h3 className={classes.title}>{data.title}</h3>
       <div className={classes.rating_box}>
-        <RatingStars rating={5} />
+        <RatingStars rating={data.rating} />
         <span><a href="#reviews">10 reviews</a></span>
       </div>
       <div className={classes.splitter}></div>
