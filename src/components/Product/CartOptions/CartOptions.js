@@ -12,46 +12,42 @@ import classes from "./CartOptions.module.css"
 
 const CartOptions = props => {
   const { data } = props
-  const [selectedItems, setSelectedItems] = useState(data.items)
-  const numItemsLeft = selectedItems.reduce((acc, item) => acc + item.count, 0)
-  const minNumItems = Math.min(1, numItemsLeft)
-  const [selectedOptions, setSelectedOptions] = useState(data.optionCategories.map(()=>null))
-  const [quantity, setQuantity] = useState(minNumItems)
+  const [itemsFiltered, setItemsFiltered] = useState(data.items)
+  const maxAvailableItems = itemsFiltered.reduce((acc, item) => acc + item.count, 0)
+  const minAvailableItems = Math.min(1, maxAvailableItems)
+  const [optionsSelected, setOptionsSelected] = useState(data.optionCategories.map(()=>null))
+  const [quantity, setQuantity] = useState(minAvailableItems)
 
   useEffect(() => {
-    const optionsUnselected = selectedOptions.every((value) => value === null)
-    if (optionsUnselected) {
-      setSelectedItems(data.items)
-    } else {
-      const selectedOptionIds = selectedOptions.map((oIndex, cIndex) => oIndex !== null && data.optionCategories[cIndex].options[oIndex].id)
-      const onlyIds = selectedOptionIds.filter(id => id !== false)
-      const filteredItems = data.items.filter(item => {
-        return onlyIds.every(id => {
-          return item.options.find(option => option.id === id)
-        })
+    const idsSelected = optionsSelected.map((optionIndex, categoryIndex) => 
+      optionIndex !== null && data.optionCategories[categoryIndex].options[optionIndex].id
+    ).filter(id => id !== false)
+    const nextItemsFiltered = data.items.filter(item => {
+      return idsSelected.every(id => {
+        return item.options.find(option => option.id === id)
       })
-      setSelectedItems(filteredItems)
-    }
-  }, [selectedOptions])
+    })
+    setItemsFiltered(nextItemsFiltered)
+  }, [optionsSelected, data])
 
   useEffect(() => {
-    setQuantity(minNumItems)
-  }, [numItemsLeft])
+    setQuantity(minAvailableItems)
+  }, [maxAvailableItems, minAvailableItems])
 
-  const handleOptionClick = (cIndex, oIndex) => {
-    setSelectedOptions(prev => 
-      prev.map((option, i) => i === cIndex ? (option === oIndex ? null : oIndex) : option)
+  const handleOptionClick = (categoryIndex, optionIndex) => {
+    setOptionsSelected(prevState => 
+      prevState.map((prevOptionIndex, i) => i === categoryIndex ? (prevOptionIndex === optionIndex ? null : optionIndex) : prevOptionIndex)
     )
   }
 
   const handleQuantityChange = amount => {
-    setQuantity(prev => {
-      let nextQuantity = amount + prev
+    setQuantity(prevState => {
+      let nextQuantity = amount + prevState
       if (nextQuantity <= 0) {
         nextQuantity = 1
       }
-      if (nextQuantity > numItemsLeft) {
-        nextQuantity = numItemsLeft
+      if (nextQuantity > maxAvailableItems) {
+        nextQuantity = maxAvailableItems
       }
       return nextQuantity
     })
@@ -72,21 +68,21 @@ const CartOptions = props => {
       </div>
       <div className={classes.splitter}></div>
       <OptionsBox>
-        {data.optionCategories.map((category, cIndex) => (
-          <OptionCategory category={category} selectedOption={selectedOptions[cIndex]} handleOptionClick={(i) => handleOptionClick(cIndex, i)} />
+        {data.optionCategories.map((category, categoryIndex) => (
+          <OptionCategory key={category.name} category={category} selectedOption={optionsSelected[categoryIndex]} handleOptionClick={(optionIndex) => handleOptionClick(categoryIndex, optionIndex)} />
         ))}
       </OptionsBox>
       <div className={classes.splitter}></div>
-      <h1 className={classes.price}>Ks {selectedItems.length > 0 ? numberWithCommas(selectedItems[0].price) : (data.items.length > 0 ? numberWithCommas(data.items[0].price) : 'NaN')}</h1>
+      <h1 className={classes.price}>Ks {itemsFiltered.length > 0 ? numberWithCommas(itemsFiltered[0].price) : (data.items.length > 0 ? numberWithCommas(data.items[0].price) : 'NaN')}</h1>
       <div className={classes.splitter}></div>
       <div className={classes.quantity_container}>
         <span className={classes.quantity_label}>Quantity</span>
         <div className={classes.quantity_controller}>
           <IconButton name="remove" disabled={quantity <= 1} onClick={() => handleQuantityChange(-1)} />
           <span className={classes.quantity_value}>{quantity}</span>
-          <IconButton name="add" disabled={quantity===numItemsLeft} onClick={() => handleQuantityChange(+1)} />
+          <IconButton name="add" disabled={quantity===maxAvailableItems} onClick={() => handleQuantityChange(+1)} />
         </div>
-        <span className={classes.quantity_left}>{numItemsLeft} items left</span>
+        <span className={classes.quantity_left}>{maxAvailableItems} items left</span>
       </div>
       <div className={classes.delivery_info}>
         <h5>Home Delivery: Ks {`1,000`}</h5>
