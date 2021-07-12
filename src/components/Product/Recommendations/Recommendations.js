@@ -12,7 +12,7 @@ const Recommendations = () => {
 
   return (
     <>
-      <h4 className={classes.title}>Seller Recommendations</h4>
+      <h3 className={classes.title}>Seller Recommendations</h3>
       <Carousel data={getProducts()} renderItem={renderItem} />
     </>
   )

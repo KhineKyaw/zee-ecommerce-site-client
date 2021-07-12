@@ -5,7 +5,7 @@ desc {
 .desc p {
   text-align: justify;
   color: var(--color-dark);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .specs {
@@ -21,10 +21,10 @@ desc {
   text-indent: -1.4em;
   padding-left: 1.4em;
   padding-right: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.desc h4,
+.desc h3,
 .specs {
   margin-bottom: 14px;
 }

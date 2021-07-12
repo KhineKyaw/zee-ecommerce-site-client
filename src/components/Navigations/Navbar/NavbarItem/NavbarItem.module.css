@@ -1,3 +1,7 @@
+:root {
+  --nav-item-hover-offset: 18%;
+}
+
 .item {
   display: flex;
   list-style: none;
@@ -7,23 +11,17 @@
   position: relative;
 }
 
-.item:hover::before,
-.active::before {
+.item::before {
+  width: 0%;
   content: "";
-  background-color: rgb(var(--color-primary-rgb), 0.64);
   position: absolute;
-  width: 124%;
-  height: 7px;
   bottom: 0;
-  left: -12%;
-  animation: expand var(--duration-animation-normal) ease-in-out;
+  left: calc(var(--nav-item-hover-offset) / -2);
+  height: 0.6rem;
+  transition: var(--duration-animation-long);
+  background-color: rgba(var(--color-primary-rgb), 65%);
 }
 
-@keyframes expand {
-  0% {
-    width: 20%;
-  }
-  100% {
-    width: 100%;
-  }
+.item:hover::before {
+  width: calc(100% + var(--nav-item-hover-offset));
 }

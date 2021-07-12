@@ -1,0 +1,6 @@
+.paymentMethods {
+  height: 160px;
+  background-color: var(--color-white);
+  margin: 22px 0 32px 0;
+  padding: 22px;
+}

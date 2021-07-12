@@ -4,10 +4,19 @@ import CartContext from "./cart-context"
 const ADD = "ADD"
 const REMOVE = "REMOVE"
 const SELECT = "SELECT"
+const SELECT_ALL = "SELECT_ALL"
 const DELETE = "DELETE"
 const defaultCartState = {
   items: [],
+  selectAll: false,
   totalAmount: 0
+}
+
+const getTotalPrice = arr => {
+  return arr.reduce(
+    (obj, item) => obj + item.checked * item.price * item.amount,
+    0
+  )
 }
 
 const cartReducer = (state, action) => {
@@ -39,7 +48,8 @@ const cartReducer = (state, action) => {
 
   // Delete
   if (action.type === DELETE) {
-    return { ...state, item: state.items.filter(item => item.id !== action.id) }
+    const items = state.items.filter(item => item.id !== action.id)
+    return { ...state, totalAmount: getTotalPrice(items), items }
   }
 
   // Select
@@ -48,11 +58,22 @@ const cartReducer = (state, action) => {
       ...item,
       checked: item.id === action.id ? !item.checked : item.checked
     }))
-    const total = items.reduce(
-      (obj, item) => obj + item.checked * item.price * item.amount,
-      0
-    )
-    return { ...state, totalAmount: total, items }
+    return { ...state, totalAmount: getTotalPrice(items), items }
+  }
+
+  // Select all
+  if (action.type === SELECT_ALL) {
+    const selectAll = !state.selectAll
+    const items = state.items.map(item => ({
+      ...item,
+      checked: selectAll
+    }))
+    return {
+      ...state,
+      selectAll,
+      totalAmount: getTotalPrice(items),
+      items
+    }
   }
 
   return defaultCartState
@@ -80,13 +101,19 @@ const CartProvider = props => {
     dispatchCartAction({ type: SELECT, id })
   }
 
+  const selectAllItemFromCartHandler = () => {
+    dispatchCartAction({ type: SELECT_ALL })
+  }
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
+    selectAll: cartState.selectAll,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     deleteItem: deleteItemFromCartHandler,
-    selectItem: selectItemFromCartHandler
+    selectItem: selectItemFromCartHandler,
+    selectAllItem: selectAllItemFromCartHandler
   }
 
   return (

@@ -2,7 +2,7 @@
   flex: 1;
   flex-flow: column;
   background-color: transparent;
-  min-height: 50vh;
+  min-height: 65vh;
 }
 
 .header {
@@ -14,8 +14,14 @@
   margin-bottom: var(--size-common-whitespace-small);
 }
 
+.empty {
+  justify-content: center;
+  align-items: center;
+}
+
 .wrapper,
-.header {
+.header,
+.empty {
   display: flex;
 }
 

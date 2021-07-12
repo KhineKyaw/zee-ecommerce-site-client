@@ -45,7 +45,7 @@ const Reviews = props => {
 
   return (
     <>
-      <h4 className={classes.title}>Customer Reviews</h4>
+      <h3 className={classes.title}>Customer Reviews</h3>
       <SectionDivider
         item1={<TotalStats data={avg_rating} count={review_count} />}
         item2={<RatingBoard data={rating_stats} count={review_count} />}

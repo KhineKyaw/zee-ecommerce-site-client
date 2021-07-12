@@ -2,3 +2,9 @@
   display: flex;
   margin-top: var(--size-common-whitespace-small);
 }
+
+.sectioncolumn {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+}

@@ -6,30 +6,48 @@ import Checkbox from "../../UI/Checkbox/Checkbox"
 import CartContext from "../../../context/cart-context"
 
 const CartItemList = () => {
-  const { items: cartItems, selectItem, deleteItem } = useContext(CartContext)
+  const {
+    items: cartItems,
+    selectAll,
+    selectItem,
+    selectAllItem,
+    deleteItem
+  } = useContext(CartContext)
 
-  const selectItemHandler = id => {
+  const onSelectItemHandler = id => {
     selectItem(id)
   }
 
-  const deleteItemHandler = id => {
+  const onSelectAllHandler = () => {
+    selectAllItem()
+  }
+
+  const onDeleteItemHandler = id => {
     deleteItem(id)
   }
+
+  const renderItem = item => (
+    <CartItem
+      onSelect={onSelectItemHandler}
+      onDelete={onDeleteItemHandler}
+      key={item.id}
+      item={item}
+    />
+  )
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.header}>
         <h2>Shopping Cart ({cartItems.length})</h2>
-        <Checkbox>Select All</Checkbox>
+        <Checkbox onClick={onSelectAllHandler} checked={selectAll}>
+          Select All
+        </Checkbox>
       </div>
-      {cartItems.map((item, index) => (
-        <CartItem
-          onSelect={selectItemHandler}
-          onDelete={deleteItemHandler}
-          key={item.id}
-          item={item}
-        />
-      ))}
+      {cartItems.length ? (
+        cartItems.map(renderItem)
+      ) : (
+        <div className={classes.empty}>Shopping cart is Empty!</div>
+      )}
     </div>
   )
 }
