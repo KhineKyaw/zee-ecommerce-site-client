@@ -7,6 +7,7 @@ import OptionCategory from './OptionCategory'
 
 import Button from '../../UI/Button/Button'
 import IconButton from '../../UI/IconButton/IconButton'
+import RatingStars from '../../UI/RatingStars/RatingStars'
 
 import classes from "./CartOptions.module.css"
 
@@ -57,13 +58,7 @@ const CartOptions = props => {
     <div className={classes.container}>
       <h3 className={classes.title}>{data.title}</h3>
       <div className={classes.rating_box}>
-        <div className={classes.rating_star}>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
+        <RatingStars rating={5} />
         <span><a href="#reviews">10 reviews</a></span>
       </div>
       <div className={classes.splitter}></div>
