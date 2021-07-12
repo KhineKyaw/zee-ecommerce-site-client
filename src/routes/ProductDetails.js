@@ -44,8 +44,8 @@ const ProductDetails = props => {
       </SectionWrapper>
       <SectionWrapper background='light'>
         <div className={classes.main}>
-          <CartOptions data={data} />
           <ImageView data={data.images} />
+          <CartOptions data={data} />
         </div>
       </SectionWrapper>
       <SectionWrapper>

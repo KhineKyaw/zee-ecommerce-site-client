@@ -1,0 +1,35 @@
+.button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.button ion-icon {
+    display: block;
+    transition: .3s ease;
+    padding: .2rem;
+    font-size: 1.3rem;
+}
+
+.solid ion-icon {
+    border-radius: 50%;
+    background-color: var(--color-gray-border);
+}
+
+.solid:disabled ion-icon{
+    color: var(--color-gray);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.solid:hover ion-icon{
+    color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.solid:disabled:hover ion-icon {
+    color: var(--color-gray);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.outline:hover ion-icon {
+    color: var(--color-primary);
+}

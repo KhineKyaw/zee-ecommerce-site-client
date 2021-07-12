@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
+import IconButton from "../../UI/HeaderIconButton/HeaderIconButton"
 
-import IconButton from "../../UI/IconButton/HeaderIconButton"
 import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
 import LanguageContext from "../../../context/language-context"

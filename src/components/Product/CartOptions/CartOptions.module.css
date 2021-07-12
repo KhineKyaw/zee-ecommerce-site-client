@@ -1,6 +1,93 @@
 .container {
-  display: flex;
+  flex-direction: column;
   flex: 1;
-  margin-right: 16px;
-  background-color: var(--color-white);
+  margin-left: 2rem;
+}
+
+.container a {
+  margin-left: 1rem;
+  color: var(--color-gray);
+  text-decoration: none;
+  transition: .1s ease;
+}
+
+.container a:hover {
+  color: var(--color-primary);
+}
+
+.splitter {
+  border-top: 2px solid #eeeeee;
+  margin: 1.6rem 0;
+}
+
+.title {
+  margin-bottom: .8rem;
+}
+
+.rating_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rating_star {
+  display: flex;
+  align-items: center;
+}
+
+.rating_star ion-icon {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+}
+
+.price {
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+}
+
+.quantity_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.quantity_label {
+  margin-right: 4rem;
+}
+
+.quantity_controller {
+  display: flex;
+  align-items: center;
+}
+
+.quantity_value {
+  font-size: 1.2rem;
+  margin: 0 .6rem;
+}
+
+.quantity_left {
+  color: var(--color-gray);
+  margin-left: .6rem;
+}
+
+.delivery_info {
+  margin-bottom: 2rem;
+}
+
+.delivery_info h5 {
+  margin-bottom: .1rem;
+}
+
+.delivery_info p {
+  margin-bottom: .1rem;
+}
+
+.delivery_info span {
+  color: var(--color-gray);
+}
+
+.action_button {
+  padding: 1rem 3rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
 }
