@@ -24,3 +24,11 @@
   background-color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
+
+/* disabled */
+.main:disabled,
+.main:hover:disabled {
+  color: var(--color-white);
+  opacity: 0.5;
+  cursor: not-allowed;
+}

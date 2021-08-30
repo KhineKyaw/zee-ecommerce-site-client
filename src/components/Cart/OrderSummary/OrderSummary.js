@@ -5,7 +5,7 @@ import Button from "../../UI/Button/Button"
 import CartContext from "../../../context/cart-context"
 
 const OrderSummary = () => {
-  const { totalAmount } = useContext(CartContext)
+  const { totalAmount, items } = useContext(CartContext)
 
   return (
     <div className={classes.wrapper}>
@@ -22,7 +22,9 @@ const OrderSummary = () => {
         <dt>Total</dt>
         <dd>KS {totalAmount || "0.00"}</dd>
       </dl>
-      <Button className={classes.checkout}>CHECKOUT</Button>
+      <Button disabled={!items.length} className={classes.checkout}>
+        CHECKOUT
+      </Button>
     </div>
   )
 }

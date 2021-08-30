@@ -10,6 +10,7 @@ import AddedToCartModal from "./components/Cart/AddedToCartModal/AddedToCartModa
 import HomePage from "./routes/HomePage"
 import ProductDetails from "./routes/ProductDetails"
 import Cart from "./routes/Cart"
+import ProductsCategory from "./routes/ProductsCategory"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/' exact component={HomePage} />
                 <Route path='/product/:id' component={ProductDetails} />
                 <Route path='/shopcart' component={Cart} />
+                <Route path='/products' component={ProductsCategory} />
               </Switch>
             </main>
             <Footer />

@@ -28,6 +28,9 @@ const Categories = () => {
   useEffect(() => {
     setCategories(getCategories())
     window.addEventListener("scroll", onDocumentScroll)
+    return () => {
+      window.removeEventListener("scroll", onDocumentScroll)
+    }
   }, [])
 
   if (categoriesType === "fix-top") {

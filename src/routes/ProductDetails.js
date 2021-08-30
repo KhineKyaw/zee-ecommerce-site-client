@@ -18,7 +18,7 @@ const ProductDetails = props => {
   const [category, setCategory] = useState()
   const productId = props.match.params.id
 
-  const loc_links =
+  const links =
     category && data
       ? { ...FIXED_LINKS, [category.name]: `/category/${category.id}` }
       : FIXED_LINKS
@@ -40,7 +40,7 @@ const ProductDetails = props => {
   return (
     <div className={classes.wrapper}>
       <SectionWrapper>
-        <Breadcrumb links={loc_links} last={data ? data.title : null} />
+        <Breadcrumb links={links} last={data ? data.title : null} />
       </SectionWrapper>
       <SectionWrapper background='light'>
         <div className={classes.main}>

@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.item a {
+  text-decoration: none;
+}
+
 .item::before {
   width: 0%;
   content: "";
