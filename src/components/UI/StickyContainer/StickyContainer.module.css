@@ -1,13 +1,10 @@
 .stickyContainerWrapper {
   position: relative;
-  background-color: bisque;
-  width: fit-content;
   height: 100%;
 }
 
 .stickyContainer {
   width: fit-content;
   height: fit-content;
-  overflow: hidden;
-  position: absolute;
+  position: relative;
 }

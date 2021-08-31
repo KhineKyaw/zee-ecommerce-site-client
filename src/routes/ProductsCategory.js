@@ -13,7 +13,10 @@ const ProductsCategory = () => {
         <StickyContainer>
           <div className={classes.temp}>Temp</div>
         </StickyContainer>
-        <div>List</div>
+        <div className={classes.container}>
+          <div className={classes.topContainer}>Top</div>
+          <div className={classes.bottomContainer}>Bot</div>
+        </div>
       </div>
     </div>
   )

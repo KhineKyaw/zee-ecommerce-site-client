@@ -10,15 +10,18 @@ const StickyContainer = props => {
   const stickyRect = useRef()
   const [wrapperStyle, setWrapperStyle] = useState({})
   const [stickyStyle, setStickyStyle] = useState({})
+  const topOffset = props.topOffset || 58
 
   const onDocumentScroll = () => {
     if (!wrapperRef.current) return
     const wrapperRect = wrapperRef.current.getBoundingClientRect()
 
-    if (wrapperRect.bottom < stickyRect.current.bottom) {
+    if (wrapperRect.bottom < stickyRect.current.bottom - topOffset) {
       setStickyStyle({ position: "absolute", bottom: 0 })
+    } else if (wrapperRect.top >= topOffset) {
+      setStickyStyle({ position: "relative" })
     } else {
-      setStickyStyle({ position: "fixed" })
+      setStickyStyle({ position: "fixed", top: topOffset })
     }
   }
 

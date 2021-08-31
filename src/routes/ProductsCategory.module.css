@@ -1,5 +1,4 @@
 .body {
-  border: 1px solid #0099ffab;
   height: 180vh;
   min-height: 180vh;
 }
@@ -8,7 +7,22 @@
   display: flex;
 }
 
+.container {
+  flex: 1;
+  border: 1px solid orangered;
+  margin: 0 var(--size-common-whitespace-smaller);
+}
+
+.topContainer {
+  min-height: 100px;
+}
+
+.bottomContainer {
+  background-color: palegoldenrod;
+}
+
 .temp {
+  color: wheat;
   background-color: var(--color-dark-background);
   width: 220px;
   height: 500px;

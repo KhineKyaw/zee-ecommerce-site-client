@@ -2,6 +2,9 @@
   justify-content: center;
   height: var(--size-navbar-height);
   background-color: var(--color-white);
+  width: 100%;
+  z-index: 998;
+  box-shadow: 0 1px 5px #00000018;
   /* padding: var(--size-navbar-padding-horizontal); */
 }
 
@@ -36,4 +39,14 @@
 .pages,
 .actions {
   display: flex;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbarGhost {
+  height: var(--size-navbar-height);
 }
