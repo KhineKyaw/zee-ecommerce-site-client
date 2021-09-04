@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect } from "react"
 
 import Card from '../UI/Card/Card'
 
@@ -50,25 +50,35 @@ const calcScale = (offset) => {
   return 1 - (0.1 * Math.abs(offset))
 }
 
-let transitionTimeout
-
 const Banner = () => {
   const [index, setIndex] = useState(0)
+  const [target, setTarget] = useState(0)
   const [animating, setAnimating] = useState(false)
-
-  const move = useCallback((offset) => {
-    setAnimating(false)
+  
+  useEffect(() => {
+    const offset = minRoundOffset(index, target, promotions.length)
     if (offset !== 0 && !animating) {
-      setAnimating(true)
       const unitDistance = (offset / Math.abs(offset))
       setIndex((prevIndex) => {
         return roundAddition(prevIndex, unitDistance, promotions.length)
       })
-      transitionTimeout = setTimeout(() => 
-        move(offset - unitDistance),
+      setAnimating(true)
+    } else if (offset === 0 && !animating) {
+      const timeout = setTimeout(() => {
+        setTarget(index + 1)
+      }, autoRotateInterval)
+      return () => {
+        clearTimeout(timeout)
+      }
+    } else if (animating) {
+      const transitionTimeout = setTimeout(() =>
+        setAnimating(false),
       transitionDuration)
+      return () => {
+        clearTimeout(transitionTimeout)
+      }
     }
-  }, [animating])
+  }, [target, animating, index])
 
   const slideStyle = (slideIndex) => {
     const offset = minRoundOffset(slideIndex, index, promotions.length)
@@ -83,32 +93,15 @@ const Banner = () => {
     }
   }
 
-  const onSlideClick = (promotion, slideIndex) => {
-    if (slideIndex === 0) {
-    } else {
-      move(minRoundOffset(index, slideIndex, promotions.length))
-    }
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      move(+1)
-    }, autoRotateInterval)
-    return () => {
-      clearInterval(interval)
-      clearTimeout(transitionTimeout)
-    }
-  }, [move])
-
   return (
     <div className={classes["banner-container"]}>
       {promotions.map((promotion, slideIndex) => (
-        <Card key={promotion.id} className={classes["slide"]} style={slideStyle(slideIndex)} onClick={() => onSlideClick(promotion, slideIndex)}>
+        <Card key={promotion.id} className={classes["slide"]} style={slideStyle(slideIndex)} onClick={() => setTarget(slideIndex)}>
           <img src={promotion.image} alt={promotion.title} />
         </Card>
       ))}
-      <div className={classes.prev} onClick={() => move(-1)}>&#10094;</div>
-      <div className={classes.next} onClick={() => move(+1)}>&#10095;</div>
+      <div className={classes.prev} onClick={() => setTarget(index - 1)}>&#10094;</div>
+      <div className={classes.next} onClick={() => setTarget(index + 1)}>&#10095;</div>
     </div>
   )
 }
