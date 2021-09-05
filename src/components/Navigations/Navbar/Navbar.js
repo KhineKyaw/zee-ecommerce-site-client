@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import IconButton from "../../UI/HeaderIconButton/HeaderIconButton"
 
@@ -9,8 +9,6 @@ import LanguageSwitch from "./LanguageSwitch/LanguageSwitch"
 import NavSearchBar from "./NavSearchBar/NavSearchBar"
 import Logo from "./Logo/Logo"
 import CartContext from "../../../context/cart-context"
-
-const EVENT_TYPE = "scroll"
 
 const Navbar = () => {
   const {

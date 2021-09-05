@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: center;
   width: var(--size-navbar-width);
+  max-width: var(--size-navbar-width);
+  padding: 0 var(--size-common-whitespace-small);
+  /* background-color: lightpink; */
 }
 
 .pages {
@@ -26,7 +29,6 @@
   align-items: center;
   justify-content: flex-end;
   border-left: 1px solid var(--color-gray-border);
-  /* background-color: blue; */
 }
 
 .actions button {

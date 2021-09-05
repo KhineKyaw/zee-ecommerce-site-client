@@ -22,9 +22,6 @@
   /* main */
   --size-main-width-large: 1200px;
 
-  --size-navbar-height: 58px;
-  --size-navbar-width: var(--size-main-width-large);
-
   /* banner */
   --size-banner-height: 45vh;
 
@@ -54,6 +51,13 @@
   /* banner */
   --size-banner-control-btn-padding: 12px;
   --size-banner-dot: 10px;
+}
+
+:root {
+  --size-navbar-height: 58px;
+  --size-navbar-width: calc(
+    var(--size-main-width-large) + calc(var(--size-common-whitespace-small) * 2)
+  );
 }
 
 :root {

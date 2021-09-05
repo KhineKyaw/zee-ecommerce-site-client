@@ -1,16 +1,11 @@
 .body {
-  height: 180vh;
-  min-height: 180vh;
-}
-
-.body {
   display: flex;
 }
 
 .container {
   flex: 1;
-  border: 1px solid orangered;
-  margin: 0 var(--size-common-whitespace-smaller);
+  border: 1px solid lightslategray;
+  margin-left: var(--size-common-whitespace-small);
 }
 
 .topContainer {
@@ -18,12 +13,11 @@
 }
 
 .bottomContainer {
-  background-color: palegoldenrod;
 }
 
 .temp {
   color: wheat;
   background-color: var(--color-dark-background);
   width: 220px;
-  height: 500px;
+  height: 400px;
 }

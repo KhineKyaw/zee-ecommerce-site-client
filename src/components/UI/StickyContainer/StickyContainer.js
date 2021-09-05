@@ -12,19 +12,6 @@ const StickyContainer = props => {
   const [stickyStyle, setStickyStyle] = useState({})
   const topOffset = props.topOffset || 58
 
-  const onDocumentScroll = () => {
-    if (!wrapperRef.current) return
-    const wrapperRect = wrapperRef.current.getBoundingClientRect()
-
-    if (wrapperRect.bottom < stickyRect.current.bottom - topOffset) {
-      setStickyStyle({ position: "absolute", bottom: 0 })
-    } else if (wrapperRect.top >= topOffset) {
-      setStickyStyle({ position: "relative" })
-    } else {
-      setStickyStyle({ position: "fixed", top: topOffset })
-    }
-  }
-
   const initializeStyles = () => {
     const temp = stickyRef.current.getBoundingClientRect()
     setWrapperStyle({ width: temp.width })
@@ -33,11 +20,25 @@ const StickyContainer = props => {
 
   useEffect(() => {
     initializeStyles()
+
+    const onDocumentScroll = () => {
+      if (!wrapperRef.current) return
+      const wrapperRect = wrapperRef.current.getBoundingClientRect()
+
+      if (wrapperRect.bottom < stickyRect.current.bottom - topOffset) {
+        setStickyStyle({ position: "absolute", bottom: 0 })
+      } else if (wrapperRect.top >= topOffset) {
+        setStickyStyle({ position: "relative" })
+      } else {
+        setStickyStyle({ position: "fixed", top: topOffset })
+      }
+    }
+
     window.addEventListener(EVENT_TYPE, onDocumentScroll)
     return () => {
       window.removeEventListener(EVENT_TYPE, onDocumentScroll)
     }
-  }, [])
+  }, [topOffset])
 
   return (
     <div
