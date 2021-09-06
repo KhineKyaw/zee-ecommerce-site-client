@@ -4,15 +4,16 @@
 
 .container {
   flex: 1;
-  border: 1px solid lightslategray;
-  margin-left: var(--size-common-whitespace-small);
+  /* border: 1px solid lightslategray; */
+  margin-left: var(--size-common-whitespace-medium);
 }
 
 .topContainer {
-  min-height: 100px;
+  height: 100px;
 }
 
 .bottomContainer {
+  padding-bottom: var(--size-common-whitespace-medium);
 }
 
 .temp {

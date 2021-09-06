@@ -3,7 +3,7 @@
   /* width: 800px; */
   /* min-width: var(--size-main-width-large); */
   margin: auto;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 @media only screen and (max-width: 1200px) {
