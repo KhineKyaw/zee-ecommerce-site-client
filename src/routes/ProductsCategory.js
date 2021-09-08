@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useLocation } from "react-router-dom"
 
 import classes from "./ProductsCategory.module.css"
@@ -15,11 +15,6 @@ function useQuery() {
 
 const ProductsCategory = props => {
   let query = useQuery()
-  const [data, setData] = useState([])
-
-  useEffect(() => {
-    setData(getProducts)
-  }, [])
 
   return (
     <Layout>
@@ -33,7 +28,7 @@ const ProductsCategory = props => {
           <div className={classes.bottomContainer}>
             <ItemList
               activePage={query.get("page")}
-              data={data}
+              onDataQuery={getProducts}
               renderItem={ProductItem}
             />
           </div>
