@@ -6,14 +6,12 @@ import { Tab, Panal } from "../components/Tab";
 import ImageLoader from "../components/UI/ImageLoader/ImageLoader";
 import Button from "../components/UI/Button/Button";
 
+import TabProducts from "../containers/Store/TabProducts";
+
 import classes from "./StorePage.module.css";
 
 const About = () => {
   return <div>About</div>;
-};
-
-const Products = () => {
-  return <div>Products</div>;
 };
 
 const StorePage = (props) => {
@@ -49,7 +47,7 @@ const StorePage = (props) => {
           </div>
         </div>
         <Tab>
-          <Panal name="products" component={Products} />
+          <Panal name="products" component={TabProducts} />
           <Panal name="about" component={About} />
         </Tab>
       </div>

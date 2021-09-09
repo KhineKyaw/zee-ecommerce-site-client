@@ -1,0 +1,12 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
+}
+
+.action {
+  display: block;
+}
