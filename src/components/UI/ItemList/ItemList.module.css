@@ -2,6 +2,7 @@
   --item-list-margin: var(--size-common-whitespace-small);
   --item-list-total-margin: var(--item-list-margin) * 3;
   --pagination-size: 32px;
+  --item-list-btn-margin: 8px;
 }
 
 .itemlist {
@@ -20,35 +21,4 @@
 
 .item:nth-child(4n) {
   margin: 0 0 10px 0;
-}
-
-/* pagination */
-.pagination {
-  display: flex;
-  height: var(--pagination-size);
-  width: 100%;
-}
-
-.pagination button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: var(--pagination-size);
-  height: var(--pagination-size);
-  margin-right: 8px;
-  border: 1px solid var(--color-dark-background);
-}
-
-.pagination button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.normal {
-  border: 1px solid var(--color-dark-background);
-}
-
-.active {
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-primary) !important;
 }

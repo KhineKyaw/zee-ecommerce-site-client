@@ -2,37 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 
 import classes from "./ItemList.module.css"
-
-const DEFAULT_ITEM_COUNT_PER_PAGE = 4
-
-const Pagination = props => {
-  const { activePage } = props
-  const pageLength = Math.floor(
-    props.data.pageCount / DEFAULT_ITEM_COUNT_PER_PAGE
-  )
-  const pages = Array.from({ length: pageLength }, (_, i) => i + 1)
-
-  return (
-    <div className={classes.pagination}>
-      <button disabled={activePage <= 1} onClick={props.onClickPrev}>
-        <ion-icon name='chevron-back-outline'></ion-icon>
-      </button>
-      {pages.map(i => {
-        return (
-          <button
-            onClick={props.onClick.bind(null, i)}
-            className={i === activePage ? classes.active : classes.normal}
-            key={i}>
-            {i}
-          </button>
-        )
-      })}
-      <button disabled={pageLength === activePage} onClick={props.onClickNext}>
-        <ion-icon name='chevron-forward-outline'></ion-icon>
-      </button>
-    </div>
-  )
-}
+import Pagination from "./Pagination/Pagination"
 
 const ItemList = props => {
   const activePage = +props.activePage || 1
@@ -42,10 +12,6 @@ const ItemList = props => {
 
   const handleClick = id => {
     history.push(`products?page=${id}`)
-    // setData({
-    //   count: 20,
-    //   items: props.onDataQuery(0, id)
-    // })
   }
 
   const handleNextClick = () => {
@@ -60,7 +26,7 @@ const ItemList = props => {
 
   useEffect(() => {
     setData({
-      pageCount: 20,
+      pageCount: 40,
       items: onDataQuery(0, activePage)
     })
   }, [activePage, onDataQuery])
