@@ -1,11 +1,10 @@
 .loader {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid var(--color-gray);
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid var(--color-gray);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   margin: auto;
-  margin-top: 12px;
   animation: spin 2s linear infinite;
   position: absolute;
   left: 50%;
