@@ -14,7 +14,7 @@ const StickyContainer = props => {
 
   const initializeStyles = () => {
     const temp = stickyRef.current.getBoundingClientRect()
-    setWrapperStyle({ width: temp.width })
+    setWrapperStyle({ marginRight: temp.width })
     stickyRect.current = { bottom: temp.bottom }
   }
 

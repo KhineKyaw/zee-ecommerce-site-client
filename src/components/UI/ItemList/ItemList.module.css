@@ -1,24 +1,26 @@
 :root {
   --item-list-margin: var(--size-common-whitespace-small);
-  --item-list-total-margin: var(--item-list-margin) * 3;
   --pagination-size: 32px;
   --item-list-btn-margin: 8px;
+  --item-list-item-size: 286px;
 }
 
 .itemlist {
-  width: 100%;
+  width: calc(100% + var(--item-list-margin));
   height: 100%;
 }
 
 .item {
   display: inline-block;
   vertical-align: top;
-  /* background-color: slategray; */
-  width: calc(calc(100% - var(--item-list-total-margin)) / 4);
-  height: 286px;
+  width: calc(calc(100% / 4) - var(--item-list-margin));
+  height: var(--item-list-item-size);
   margin: 0 var(--item-list-margin) var(--item-list-margin) 0;
 }
 
-.item:nth-child(4n) {
-  margin: 0 0 10px 0;
+@media (max-width: 1052px) {
+  .item {
+    width: calc(calc(100% / 3) - var(--item-list-margin));
+    margin: 0 var(--item-list-margin) var(--item-list-margin) 0;
+  }
 }

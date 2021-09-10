@@ -8,12 +8,13 @@ import Layout from "../hoc/Layout"
 import getProducts from "../api/getProducts"
 import ItemList from "../components/UI/ItemList/ItemList"
 import ProductItem from "../components/Product/ProductItem1/ProductItem"
+import Categories from "../components/Navigations/Categories1/Categories"
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
 }
 
-const ProductsCategory = props => {
+const ProductsCategory = () => {
   let query = useQuery()
 
   return (
@@ -21,10 +22,20 @@ const ProductsCategory = props => {
       <Breadcrumb links={{ Home: "Home" }} last={"Filter"} />
       <div className={classes.body}>
         <StickyContainer>
-          <div className={classes.temp}>Temp</div>
+          <Categories />
         </StickyContainer>
         <div className={classes.container}>
-          <div className={classes.topContainer}>Top</div>
+          <div className={classes.topContainer}>
+            <h2>All Products</h2>
+            <div className={classes.actionBar}>
+              <p>182 results</p>
+              <div className={classes.viewSwitch}>
+                View:
+                <ion-icon name='grid-outline'></ion-icon>
+                <ion-icon name='reorder-four-outline'></ion-icon>
+              </div>
+            </div>
+          </div>
           <div className={classes.bottomContainer}>
             <ItemList
               activePage={query.get("page")}

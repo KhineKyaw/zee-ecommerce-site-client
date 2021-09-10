@@ -1,6 +1,7 @@
 .stickyContainerWrapper {
   display: flex;
   position: relative;
+  width: 0;
 }
 
 .stickyContainer {
