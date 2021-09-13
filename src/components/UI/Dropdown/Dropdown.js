@@ -6,31 +6,48 @@ import Button from "../Button/Button";
 
 const Dropdown = (props) => {
   const [show, setShow] = useState(false);
-  const items = !Array.isArray(props.children)
-    ? props.children.type === Dropdown.Item
-      ? [props.children]
-      : []
-    : props.children.filter(({ type }) => type === Dropdown.Item);
+
+  let children = props.children;
+  if (!children) props.children = [];
+  else if (children.constructor !== Array) children = [children];
+
+  const toggle = () => setShow(!show);
+
+  children = children.map((child) => {
+    const onClick = () => {
+      toggle();
+      props.onChange({ value: child.props.value });
+    };
+    return React.createElement(DropdownItem, { ...child.props, onClick });
+  });
+
   return (
     <div className={classes.dropdown}>
-      <Button
-        className={classes["dropdown-button"]}
-        onClick={() => setShow(!show)}
-      >
-        {items.length !== 0 && items[0].props.text}
+      <Button type="outline" onClick={toggle}>
+        <p>{props.value}</p>
+        <ion-icon
+          className={classes.caret}
+          name="caret-down-outline"
+        ></ion-icon>
       </Button>
       <div
         className={classes["dropdown-content"]}
         style={show ? { display: "block" } : { display: "none" }}
       >
-        {items}
+        {children}
       </div>
     </div>
   );
 };
 
-Dropdown.Item = (props) => {
-  return <Button className={classes.action}>{props.text}</Button>;
+const DropdownItem = (props) => {
+  return (
+    <Button {...props} className={classes.action}>
+      {props.children}
+    </Button>
+  );
 };
+
+Dropdown.Item = DropdownItem;
 
 export default Dropdown;

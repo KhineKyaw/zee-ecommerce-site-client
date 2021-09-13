@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./TabProducts.module.css";
 
 import Dropdown from "../../components/UI/Dropdown/Dropdown";
 
 const TabProducts = (props) => {
+  const [dropdown, setDropdown] = useState(1);
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes["action-bar"]}>
         <span>312 items</span>
-        <Dropdown>
-          <Dropdown.Item text="1" onClick={() => null} />
-          <Dropdown.Item text="2" onClick={() => null} />
+        <Dropdown
+          value={dropdown}
+          onChange={(target) => setDropdown(target.value)}
+        >
+          <Dropdown.Item value={1}>1</Dropdown.Item>
+          <Dropdown.Item value={2}>2</Dropdown.Item>
         </Dropdown>
       </div>
     </div>
