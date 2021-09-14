@@ -24,13 +24,7 @@ const ProductItem = props => {
   }
 
   return (
-    <Card
-      className={className.join(" ")}
-      style={{
-        marginRight: props.lastChild ? 0 : props.margin,
-        marginBottom: props.margin,
-        width: props.width || 210
-      }}>
+    <Card className={className.join(" ")}>
       <div className={classes.item}>
         <div onClick={toProductDetail} className={classes.imageContainer}>
           <img src={item.imageUrl} alt={item.title + "image"}></img>

@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useContext } from "react"
 
 import ProductsSectionBar from "../../components/Product/ProductsSectionBar/ProductsSectionBar"
-import ListView from "../../components/UI/ListView/ListView"
 import ProductItem from "../../components/Product/ProductItem/ProductItem"
 
 import getProducts from "../../api/getProducts"
 import LanguageContext from "../../context/language-context"
-
-const ITEM_WIDTH = 210
+import ItemList from "../../components/UI/ItemList/ItemList"
 
 const SectionMore2Love = () => {
   const { languageDict: texts } = useContext(LanguageContext)
@@ -23,11 +21,10 @@ const SectionMore2Love = () => {
         title={texts.home["section-title-1"]}
         subTitle={texts.actions["view-more"]}
       />
-      <ListView
+      <ItemList
+        type={"grid"}
+        onDataQuery={getProducts}
         renderItem={ProductItem}
-        cols={4}
-        childWidth={ITEM_WIDTH}
-        data={data}
       />
     </>
   )

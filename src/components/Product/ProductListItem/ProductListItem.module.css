@@ -1,0 +1,36 @@
+:root {
+  --p-item-size: 180px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: var(--p-item-size);
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.image-container img {
+  width: var(--p-item-size);
+  height: var(--p-item-size);
+}
+
+.title {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.title:hover {
+  color: var(--color-primary);
+  transition: var(--duration-animation-fast);
+}
+
+.price {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.inner-container {
+  padding: var(--size-common-whitespace-smaller);
+}

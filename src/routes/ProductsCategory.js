@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useLocation } from "react-router-dom"
 
 import classes from "./ProductsCategory.module.css"
@@ -7,8 +7,10 @@ import StickyContainer from "../components/UI/StickyContainer/StickyContainer"
 import Layout from "../hoc/Layout"
 import getProducts from "../api/getProducts"
 import ItemList from "../components/UI/ItemList/ItemList"
-import ProductItem from "../components/Product/ProductItem1/ProductItem"
+import ProductItem from "../components/Product/ProductItem/ProductItem"
+import ProductListItem from "../components/Product/ProductListItem/ProductListItem"
 import Categories from "../components/Navigations/Categories1/Categories"
+import ViewSwitch from "../components/Products/ViewSwitch/ViewSwitch"
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -16,6 +18,11 @@ function useQuery() {
 
 const ProductsCategory = () => {
   let query = useQuery()
+  const [switchState, setSwitchState] = useState(0)
+
+  const onSwitchStateHandler = s => {
+    setSwitchState(s)
+  }
 
   return (
     <Layout>
@@ -29,18 +36,16 @@ const ProductsCategory = () => {
             <h2>All Products</h2>
             <div className={classes.actionBar}>
               <p>182 results</p>
-              <div className={classes.viewSwitch}>
-                View:
-                <ion-icon name='grid-outline'></ion-icon>
-                <ion-icon name='reorder-four-outline'></ion-icon>
-              </div>
+              <ViewSwitch state={switchState} onSwitch={onSwitchStateHandler} />
             </div>
           </div>
           <div className={classes.bottomContainer}>
             <ItemList
+              type={switchState ? "list" : "grid"}
+              pagintionType='pager'
               activePage={query.get("page")}
               onDataQuery={getProducts}
-              renderItem={ProductItem}
+              renderItem={switchState ? ProductListItem : ProductItem}
             />
           </div>
         </div>

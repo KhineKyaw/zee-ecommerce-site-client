@@ -3,12 +3,17 @@ import { useHistory } from "react-router-dom"
 
 import classes from "./ItemList.module.css"
 import Pagination from "./Pagination/Pagination"
+import Button from "../Button/Button"
+
+const GRID = "grid"
+const PAGER = "pager"
 
 const ItemList = props => {
   const activePage = +props.activePage || 1
-  const { onDataQuery } = props
-  const [data, setData] = useState({})
+  const { onDataQuery, onLoadMore, type, startCols, pagintionType } = props
+  const [data, setData] = useState({ items: [] })
   const history = useHistory()
+  const listStyle = type === "grid" ? `${type}-${startCols || 4}` : type
 
   const handleClick = id => {
     history.push(`products?page=${id}`)
@@ -24,25 +29,38 @@ const ItemList = props => {
     handleClick(activePage - 1)
   }
 
-  useEffect(() => {
-    setData({
-      pageCount: 40,
-      items: onDataQuery(0, activePage)
-    })
-  }, [activePage, onDataQuery])
+  const handleLoadMore = () => {
+    onLoadMore()
+  }
 
-  return (
-    <>
-      <div className={classes.itemlist}>
-        {data.items &&
-          data.items.map(item => {
-            return (
-              <div className={classes.item} key={item.id}>
-                <props.renderItem item={item} />
-              </div>
-            )
-          })}
-      </div>
+  useEffect(() => {
+    if (pagintionType === PAGER) {
+      setData({
+        pageCount: 40,
+        items: onDataQuery(activePage)
+      })
+    } else {
+      setData(prev => {
+        return { items: [...prev.items, ...onDataQuery(activePage)] }
+      })
+    }
+  }, [activePage, onDataQuery, pagintionType])
+
+  const List = (
+    <div className={classes[listStyle]}>
+      {data.items &&
+        data.items.map(item => {
+          return (
+            <div className={classes[`${type}__item`]} key={item.id}>
+              <props.renderItem item={item} />
+            </div>
+          )
+        })}
+    </div>
+  )
+
+  const actions = pagintionType ? (
+    pagintionType === "pager" ? (
       <Pagination
         data={data}
         activePage={activePage}
@@ -50,6 +68,15 @@ const ItemList = props => {
         onClickNext={handleNextClick}
         onClickPrev={handlePrevClick}
       />
+    ) : (
+      <Button onClick={handleLoadMore}>Load More</Button>
+    )
+  ) : null
+
+  return (
+    <>
+      {List}
+      <div className={classes["load-more"]}>{actions}</div>
     </>
   )
 }

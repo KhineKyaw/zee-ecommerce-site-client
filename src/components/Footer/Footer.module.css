@@ -4,4 +4,5 @@
   align-items: center;
   height: 180px;
   background-color: var(--color-white);
+  margin-top: var(--size-common-whitespace-medium);
 }

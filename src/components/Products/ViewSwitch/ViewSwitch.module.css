@@ -1,0 +1,35 @@
+.viewSwitch button {
+  border: none;
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+.viewSwitch,
+.viewSwitch button {
+  display: flex;
+  align-items: center;
+}
+
+.viewSwitch ion-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.btn1 ion-icon {
+  width: 90%;
+  height: 90%;
+}
+
+.btn2 ion-icon {
+  color: var(--color-primary);
+}
+
+.active .btn1 ion-icon {
+  color: var(--color-primary);
+}
+
+.active .btn2 ion-icon {
+  color: var(--color-dark);
+}
