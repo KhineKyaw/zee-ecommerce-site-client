@@ -21,10 +21,14 @@ const Dropdown = (props) => {
     return React.createElement(DropdownItem, { ...child.props, onClick });
   });
 
+  const activeChild = children.find(
+    (child) => child.props.value === props.value
+  );
+
   return (
-    <div className={classes.dropdown}>
+    <div className={`${classes.dropdown} ${props.className}`}>
       <Button type="outline" onClick={toggle}>
-        <p>{props.value}</p>
+        <p>{activeChild && activeChild.props.children}</p>
         <ion-icon
           className={classes.caret}
           name="caret-down-outline"
