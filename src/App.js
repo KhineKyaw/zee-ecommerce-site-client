@@ -11,6 +11,7 @@ import HomePage from "./routes/HomePage"
 import ProductDetails from "./routes/ProductDetails"
 import Cart from "./routes/Cart"
 import ProductsCategory from "./routes/ProductsCategory"
+import StorePage from "./routes/StorePage"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/product/:id' component={ProductDetails} />
                 <Route path='/shopcart' component={Cart} />
                 <Route path='/products' component={ProductsCategory} />
+                <Route path='/store/:id' component={StorePage} />
               </Switch>
             </main>
             <Footer />
