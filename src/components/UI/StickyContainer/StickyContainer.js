@@ -24,13 +24,18 @@ const StickyContainer = props => {
     const onDocumentScroll = () => {
       if (!wrapperRef.current) return
       const wrapperRect = wrapperRef.current.getBoundingClientRect()
+      console.log("wrb: ", wrapperRect.bottom)
+      console.log("srb: ", stickyRect.current.bottom)
 
-      if (wrapperRect.bottom < stickyRect.current.bottom) {
+      if (wrapperRect.bottom < stickyRect.current.bottom - topOffset) {
         setStickyStyle({ position: "absolute", bottom: 0 })
+        console.log("Bottom Exe")
       } else if (wrapperRect.top >= topOffset) {
         setStickyStyle({ position: "relative" })
+        console.log("Top Exe")
       } else {
         setStickyStyle({ position: "fixed", top: topOffset })
+        console.log("Fixed Exe")
       }
     }
 

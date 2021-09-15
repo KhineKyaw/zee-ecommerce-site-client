@@ -16,7 +16,8 @@
   display: inline-block;
   vertical-align: top;
   width: calc(calc(100% / 4) - var(--item-list-margin));
-  height: var(--item-list-item-size);
+  /* height: var(--item-list-item-size); */
+  /* height: fit-content; */
   margin: 0 var(--item-list-margin) var(--item-list-margin) 0;
 }
 

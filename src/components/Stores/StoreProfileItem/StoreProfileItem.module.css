@@ -1,7 +1,8 @@
 .card {
   display: inline-block;
   height: 200px;
-  margin-bottom: var(--size-common-whitespace-medium);
+  /* width: 200px; */
+  width: 100%;
   transition: var(--duration-animation-normal);
 }
 

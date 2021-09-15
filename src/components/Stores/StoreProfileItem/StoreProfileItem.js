@@ -6,13 +6,7 @@ import Card from "../../UI/Card/Card"
 const StoreProfileItem = props => {
   const { item } = props
   return (
-    <Card
-      className={classes.card}
-      style={{
-        width: props.width || 200,
-        height: props.height || 200,
-        marginRight: props.lastChild ? 0 : props.margin
-      }}>
+    <Card className={classes.card}>
       <div className={classes.item}>
         <div
           className={classes.background}
