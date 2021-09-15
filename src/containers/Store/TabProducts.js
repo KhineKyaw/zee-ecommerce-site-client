@@ -8,7 +8,7 @@ import getCategories from "../../api/getCategories";
 
 const TabProducts = (props) => {
   const categories = getCategories();
-  const [dropdown, setDropdown] = useState(categories && categories[0].name);
+  const [current, setCurrent] = useState(categories && categories[0].name);
 
   return (
     <div className={classes.container}>
@@ -16,8 +16,8 @@ const TabProducts = (props) => {
         <span>312 items</span>
         <Dropdown
           name={"Categories"}
-          value={dropdown}
-          onChange={(target) => setDropdown(target.value)}
+          value={current}
+          onChange={(target) => setCurrent(target.value)}
         >
           {categories.map((category) => {
             return (
