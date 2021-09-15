@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import { useLocation } from "react-router-dom"
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-import classes from "./ProductsCategory.module.css"
-import Breadcrumb from "../components/UI/Breadcrumb/Breadcrumb"
-import StickyContainer from "../components/UI/StickyContainer/StickyContainer"
-import Layout from "../hoc/Layout"
-import getProducts from "../api/getProducts"
-import ItemList from "../components/UI/ItemList/ItemList"
-import ProductItem from "../components/Product/ProductItem/ProductItem"
-import ProductListItem from "../components/Product/ProductListItem/ProductListItem"
-import Categories from "../components/Navigations/Categories1/Categories"
-import ViewSwitch from "../components/Products/ViewSwitch/ViewSwitch"
+import classes from "./ProductsCategory.module.css";
+import Breadcrumb from "../components/UI/Breadcrumb/Breadcrumb";
+import StickyContainer from "../components/UI/StickyContainer/StickyContainer";
+import Layout from "../hoc/Layout";
+import getProducts from "../api/getProducts";
+import ItemList from "../components/UI/ItemList/ItemList";
+import ProductItem from "../components/Product/ProductItem/ProductItem";
+import ProductListItem from "../components/Product/ProductListItem/ProductListItem";
+import Categories from "../components/Navigations/Categories1/Categories";
+import ViewSwitch from "../components/Products/ViewSwitch/ViewSwitch";
 
 function useQuery() {
-  return new URLSearchParams(useLocation().search)
+  return new URLSearchParams(useLocation().search);
 }
 
 const ProductsCategory = () => {
-  let query = useQuery()
-  const [switchState, setSwitchState] = useState(0)
+  let query = useQuery();
+  const [switchState, setSwitchState] = useState(0);
 
-  const onSwitchStateHandler = s => {
-    setSwitchState(s)
-  }
+  const onSwitchStateHandler = (s) => {
+    setSwitchState(s);
+  };
 
   return (
     <Layout>
@@ -42,16 +42,16 @@ const ProductsCategory = () => {
           <div className={classes.bottomContainer}>
             <ItemList
               type={switchState ? "list" : "grid"}
-              pagintionType='pager'
+              pagintionType="pager"
               activePage={query.get("page")}
-              onDataQuery={getProducts}
+              onDataQuery={() => []}
               renderItem={switchState ? ProductListItem : ProductItem}
             />
           </div>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductsCategory
+export default ProductsCategory;
