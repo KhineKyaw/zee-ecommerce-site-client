@@ -4,20 +4,28 @@ import classes from "./TabProducts.module.css";
 
 import Dropdown from "../../components/UI/Dropdown/Dropdown";
 
+import getCategories from "../../api/getCategories";
+
 const TabProducts = (props) => {
-  const [dropdown, setDropdown] = useState("default");
+  const categories = getCategories();
+  const [dropdown, setDropdown] = useState(categories && categories[0].name);
+
   return (
     <div className={classes.container}>
       <div className={classes["action-bar"]}>
         <span>312 items</span>
         <Dropdown
+          name={"Categories"}
           value={dropdown}
           onChange={(target) => setDropdown(target.value)}
         >
-          <Dropdown.Item value={"default"}>
-            Categories (Default All)
-          </Dropdown.Item>
-          <Dropdown.Item value={"2"}>2</Dropdown.Item>
+          {categories.map((category) => {
+            return (
+              <Dropdown.Item value={category.name}>
+                {category.name}
+              </Dropdown.Item>
+            );
+          })}
         </Dropdown>
       </div>
     </div>

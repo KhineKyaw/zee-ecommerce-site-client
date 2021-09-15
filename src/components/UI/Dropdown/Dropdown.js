@@ -28,7 +28,9 @@ const Dropdown = (props) => {
   return (
     <div className={`${classes.dropdown} ${props.className}`}>
       <Button type="outline" onClick={toggle}>
-        <p>{activeChild && activeChild.props.children}</p>
+        <p>
+          {props.name} ( {activeChild && activeChild.props.children} )
+        </p>
         <ion-icon
           className={classes.caret}
           name="caret-down-outline"
