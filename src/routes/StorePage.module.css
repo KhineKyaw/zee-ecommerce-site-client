@@ -1,0 +1,60 @@
+.background {
+  object-fit: cover;
+  width: 100%;
+  height: 30vh;
+}
+
+.main {
+  margin: 0 var(--size-common-whitespace-small);
+}
+
+.header {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.header span {
+  color: var(--color-gray);
+}
+
+.header input[type="text"] {
+  padding: 0.6rem 0.6rem 0.6rem 1.8rem;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  position: relative;
+}
+
+.header ion-icon {
+  position: absolute;
+  left: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-box {
+  margin-left: auto;
+  position: relative;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.action {
+  margin-left: 4rem;
+}
