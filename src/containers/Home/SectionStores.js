@@ -5,8 +5,9 @@ import StoreProfileItem from "../../components/Stores/StoreProfileItem/StoreProf
 import getStores from "../../api/getStores"
 import LanguageContext from "../../context/language-context"
 import GridView from "../../components/UI/GridView/GridView"
+import classes from "./SectionStores.module.css"
 
-const SectionMore2Love = () => {
+const SectionStores = () => {
   const { languageDict: texts } = useContext(LanguageContext)
   const [data, setData] = useState()
 
@@ -17,6 +18,7 @@ const SectionMore2Love = () => {
   return (
     <>
       <ProductsSectionBar
+        className={classes.margin}
         title={texts.home["section-title-2"]}
         subTitle={texts.actions["view-more"]}
       />
@@ -25,4 +27,4 @@ const SectionMore2Love = () => {
   )
 }
 
-export default SectionMore2Love
+export default SectionStores

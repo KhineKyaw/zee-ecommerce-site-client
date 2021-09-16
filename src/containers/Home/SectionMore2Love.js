@@ -8,6 +8,7 @@ import ProductItem from "../../components/Product/ProductItem/ProductItem"
 import getAllProducts from "../../api/getProducts"
 import LanguageContext from "../../context/language-context"
 import GridView from "../../components/UI/GridView/GridView"
+import classes from "./SectionMore2Love.module.css"
 
 const SectionMore2Love = () => {
   const { languageDict: texts } = useContext(LanguageContext)
@@ -24,7 +25,11 @@ const SectionMore2Love = () => {
 
   return (
     <>
-      <ProductsSectionBar type='mid' title={texts.home["section-title-3"]} />
+      <ProductsSectionBar
+        className={classes.margin}
+        type='mid'
+        title={texts.home["section-title-3"]}
+      />
       <GridView data={data} renderItem={ProductItem} />
     </>
   )
