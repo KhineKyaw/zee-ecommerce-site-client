@@ -19,12 +19,12 @@ function useQuery() {
 const ProductsCategory = () => {
   let query = useQuery()
   const category_id = query.get("categoryId")
-  const page = query.get("page")
+  const page = +query.get("page") || 1
   let history = useHistory()
   const [data, setData] = useState(null)
   const [switchState, setSwitchState] = useState(0)
 
-  const onSwitchStateHandler = s => {
+  const switchStateHandler = s => {
     setSwitchState(s)
   }
 
@@ -34,8 +34,16 @@ const ProductsCategory = () => {
     history.push(updateQuery)
   }
 
+  const handleNext = () => {
+    handlePageChange(page + 1)
+  }
+
+  const handlePrev = () => {
+    handlePageChange(page - 1)
+  }
+
   useEffect(() => {
-    setData(getProducts(0, 10, category_id))
+    setData(getProducts(page, 12, category_id))
   }, [category_id, page])
 
   const itemList = data ? (
@@ -45,6 +53,8 @@ const ProductsCategory = () => {
         activePage={page}
         dataLength={data.length}
         onSelect={handlePageChange}
+        onClickPrev={handlePrev}
+        onClickNext={handleNext}
       />
     </>
   ) : null
@@ -61,7 +71,7 @@ const ProductsCategory = () => {
             <h2>All Products</h2>
             <div className={classes.actionBar}>
               <p>182 results</p>
-              <ViewSwitch state={switchState} onSwitch={onSwitchStateHandler} />
+              <ViewSwitch state={switchState} onSwitch={switchStateHandler} />
             </div>
           </div>
           <div className={classes.bottomContainer}>{itemList}</div>

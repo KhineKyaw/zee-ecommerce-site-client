@@ -13,15 +13,22 @@ import Button from "../../components/UI/Button/Button"
 
 const SectionMore2Love = () => {
   const { languageDict: texts } = useContext(LanguageContext)
-  const [activePage, setActivePage] = useState(1)
+  const [activePage, setActivePage] = useState(0)
   const [data, setData] = useState()
 
-  const loadMoreHandler = props => {
-    setActivePage(prev => prev + 1)
+  const loadMoreHandler = () => {
+    const counter = activePage + 1
+    setActivePage(counter)
+    setData(prev => {
+      return {
+        ...prev,
+        result: [...prev.result, ...getProducts(counter).result]
+      }
+    })
   }
 
   useEffect(() => {
-    setData(getProducts().result)
+    setData(getProducts())
   }, [])
 
   return (
@@ -31,9 +38,9 @@ const SectionMore2Love = () => {
         type='mid'
         title={texts.home["section-title-3"]}
       />
-      <GridView data={data} renderItem={ProductItem} />
+      <GridView data={data ? data.result : null} renderItem={ProductItem} />
       <div className={classes["btn-container"]}>
-        <Button>Load More</Button>
+        <Button onClick={loadMoreHandler}>Load More</Button>
       </div>
     </>
   )

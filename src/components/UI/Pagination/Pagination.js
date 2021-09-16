@@ -2,23 +2,30 @@ import React from "react"
 
 import classes from "./Pagination.module.css"
 
-const DEFAULT_ITEM_COUNT_PER_PAGE = 4
+const DEFAULT_ITEM_COUNT_PER_PAGE = 12
 const SHOWN_PAGE_LIMIT = 5
-const SHOWN_PAGE_TAIL = 2
-const END_BREAK = SHOWN_PAGE_LIMIT - SHOWN_PAGE_TAIL
+const SHOWN_PAGE_TAIL = 3
 
 const Pagination = props => {
   const { dataLength, onSelect, onClickNext, onClickPrev } = props
   let activePage = +props.activePage || 1
+  const pageLength = Math.floor(dataLength / DEFAULT_ITEM_COUNT_PER_PAGE)
 
   let startPage = 0
-  let endPage = 5
-  const pageLength = Math.floor(dataLength / DEFAULT_ITEM_COUNT_PER_PAGE)
+  let endPage = SHOWN_PAGE_LIMIT
+
+  if (activePage > 3) {
+    startPage = activePage - SHOWN_PAGE_TAIL
+    endPage = activePage + SHOWN_PAGE_TAIL
+  }
+
+  if (activePage >= pageLength - SHOWN_PAGE_TAIL) {
+    endPage = pageLength
+  }
+
   let btnArray = Array.from({ length: pageLength }, (_, i) => i + 1)
-  btnArray =
-    pageLength > SHOWN_PAGE_LIMIT
-      ? btnArray.slice(startPage, endPage)
-      : btnArray
+  let overPageLimit = pageLength > SHOWN_PAGE_LIMIT
+  btnArray = overPageLimit ? btnArray.slice(startPage, endPage) : btnArray
 
   const btnPrev = (
     <button disabled={activePage <= 1} onClick={onClickPrev}>
@@ -32,9 +39,32 @@ const Pagination = props => {
     </button>
   )
 
+  const startBtn =
+    overPageLimit && activePage > 3 ? (
+      <>
+        <button onClick={onSelect.bind(null, 1)} className={classes.normal}>
+          1
+        </button>
+        <span>...</span>
+      </>
+    ) : null
+
+  const endBtn =
+    overPageLimit && activePage + SHOWN_PAGE_TAIL < pageLength ? (
+      <>
+        <span>...</span>
+        <button
+          onClick={onSelect.bind(null, pageLength)}
+          className={classes.normal}>
+          {pageLength}
+        </button>
+      </>
+    ) : null
+
   return (
     <div className={classes.pagination}>
       {btnPrev}
+      {startBtn}
       {btnArray.map(i => {
         return (
           <button
@@ -45,6 +75,7 @@ const Pagination = props => {
           </button>
         )
       })}
+      {endBtn}
       {btnNext}
     </div>
   )

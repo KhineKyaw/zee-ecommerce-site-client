@@ -27,12 +27,15 @@ const StickyContainer = props => {
       // console.log("wrb: ", wrapperRect.bottom)
       // console.log("srb: ", stickyRect.current.bottom)
 
-      if (wrapperRect.bottom < stickyRect.current.bottom - topOffset) {
+      if (wrapperRect.bottom < stickyRect.current.bottom) {
         setStickyStyle({ position: "absolute", bottom: 0 })
       } else if (wrapperRect.top >= topOffset) {
         setStickyStyle({ position: "relative" })
       } else {
         setStickyStyle({ position: "fixed", top: topOffset })
+        stickyRect.current = {
+          bottom: stickyRef.current.getBoundingClientRect().bottom
+        }
       }
     }
 
