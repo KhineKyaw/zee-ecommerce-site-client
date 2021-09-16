@@ -17,7 +17,7 @@ const Cart = () => {
         </div>
         <OrderSummary />
       </div>
-      <Recommendations />
+      {/* <Recommendations /> */}
     </Layout>
   )
 }
