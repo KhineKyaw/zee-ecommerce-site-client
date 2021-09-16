@@ -1,19 +1,19 @@
-import React, { useEffect, useState, useContext } from "react"
+import React, { useEffect, useState, useContext } from "react";
 
-import ProductsSectionBar from "../../components/Product/ProductsSectionBar/ProductsSectionBar"
-import ProductItem from "../../components/Product/ProductItem/ProductItem"
+import ProductsSectionBar from "../../components/Product/ProductsSectionBar/ProductsSectionBar";
+import ProductItem from "../../components/Product/ProductItem/ProductItem";
 
-import getAllProducts from "../../api/getProducts"
-import LanguageContext from "../../context/language-context"
-import GridView from "../../components/UI/GridView/GridView"
+import getProducts from "../../api/getProducts";
+import LanguageContext from "../../context/language-context";
+import GridView from "../../components/UI/GridView/GridView";
 
 const SectionMore2Love = () => {
-  const { languageDict: texts } = useContext(LanguageContext)
-  const [data, setData] = useState()
+  const { languageDict: texts } = useContext(LanguageContext);
+  const [data, setData] = useState();
 
   useEffect(() => {
-    setData(getAllProducts().result[0])
-  }, [])
+    setData(getProducts().result);
+  }, []);
 
   return (
     <>
@@ -23,7 +23,7 @@ const SectionMore2Love = () => {
       />
       <GridView data={data} renderItem={ProductItem} />
     </>
-  )
-}
+  );
+};
 
-export default SectionMore2Love
+export default SectionMore2Love;
