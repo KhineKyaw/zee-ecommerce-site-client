@@ -37,7 +37,7 @@ const ProductsCategory = () => {
 
   return (
     <Layout>
-      <Breadcrumb links={{ Home: "Home" }} last={"Filter"} />
+      <Breadcrumb links={{ Home: "home" }} last={"Filter"} />
       <div className={classes.body}>
         <StickyContainer>
           <Categories />
