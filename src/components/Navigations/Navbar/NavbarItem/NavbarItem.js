@@ -1,25 +1,20 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
-import classes from "./NavbarItem.module.css"
+import classes from "./NavbarItem.module.css";
 
-const NavbarItem = props => {
-  const className = [classes.item]
-  const history = useHistory()
-
-  const onClick = () => {
-    history.push(props.children.toLowerCase())
-  }
+const NavbarItem = (props) => {
+  const className = [classes.item];
 
   if (props.active) {
-    className.push(classes.active)
+    className.push(classes.active);
   }
 
   return (
-    <li onClick={onClick} className={className.join(" ")}>
+    <Link className={className.join(" ")} {...props}>
       {props.children}
-    </li>
-  )
-}
+    </Link>
+  );
+};
 
-export default NavbarItem
+export default NavbarItem;

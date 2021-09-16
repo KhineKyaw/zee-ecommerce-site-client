@@ -1,9 +1,9 @@
 const ln_dict = {
   en: {
     navbar: {
-      "page-1": "Home",
-      "page-2": "Products",
-      "page-3": "Stores",
+      home: "Home",
+      products: "Products",
+      stores: "Stores",
     },
     home: {
       "section-title-1": "Top Products",
@@ -17,9 +17,9 @@ const ln_dict = {
   // split
   mm: {
     navbar: {
-      "page-1": "မူလ",
-      "page-2": "ထုတ်ကုန်များ",
-      "page-3": "စတိုးဆိုင်များ",
+      home: "မူလ",
+      products: "ထုတ်ကုန်များ",
+      stores: "စတိုးဆိုင်များ",
     },
     home: {
       "section-title-1": "ထိပ်တန်းထုတ်ကုန်များ",
