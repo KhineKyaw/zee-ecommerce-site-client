@@ -9,6 +9,7 @@ import getProducts from "../../api/getProducts"
 import LanguageContext from "../../context/language-context"
 import GridView from "../../components/UI/GridView/GridView"
 import classes from "./SectionMore2Love.module.css"
+import Button from "../../components/UI/Button/Button"
 
 const SectionMore2Love = () => {
   const { languageDict: texts } = useContext(LanguageContext)
