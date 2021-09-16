@@ -60,7 +60,7 @@ const ProductDetails = props => {
       </SectionWrapper>
       <SectionWrapper>
         <div className={classes.recommendation}>
-          <Recommendations />
+          {/* <Recommendations /> */}
         </div>
       </SectionWrapper>
     </div>

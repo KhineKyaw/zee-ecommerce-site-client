@@ -1,3 +1,10 @@
 .margin {
   margin-top: var(--size-common-whitespace-medium);
 }
+
+.btn-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--size-common-whitespace-medium);
+}
