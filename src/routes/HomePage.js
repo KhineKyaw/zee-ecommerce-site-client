@@ -6,8 +6,8 @@ import Categories from "../components/Navigations/Categories1/Categories"
 import SectionMore2Love from "../containers/Home/SectionMore2Love"
 import SectionTopProducts from "../containers/Home/SectionTopProducts"
 import SectionStores from "../containers/Home/SectionStores"
-import Layout from "../hoc/Layout"
 import StickyContainer from "../components/UI/StickyContainer/StickyContainer"
+import Layout from "../hoc/Layout"
 
 const HomePage = () => {
   return (

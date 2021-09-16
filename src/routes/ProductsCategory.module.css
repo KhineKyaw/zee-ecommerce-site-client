@@ -4,7 +4,6 @@
 
 .container {
   flex: 1;
-  /* border: 1px solid lightslategray; */
   margin-left: var(--size-common-whitespace-medium);
 }
 
@@ -12,19 +11,17 @@
   margin-bottom: var(--size-common-whitespace-smaller);
 }
 
-.bottomContainer {
+/* .bottomContainer {
   padding-bottom: var(--size-common-whitespace-medium);
-}
-
-.temp {
-  color: wheat;
-  background-color: var(--color-dark-background);
-  width: 220px;
-  height: 400px;
-}
+} */
 
 .actionBar {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+}
+
+.temp {
+  background-color: darkorchid;
+  height: 120px;
 }

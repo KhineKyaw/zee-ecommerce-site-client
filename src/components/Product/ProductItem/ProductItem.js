@@ -27,7 +27,7 @@ const ProductItem = props => {
     <Card className={className.join(" ")}>
       <div className={classes.item}>
         <div onClick={toProductDetail} className={classes.imageContainer}>
-          <img src={item.imageUrl} alt={item.title + "image"}></img>
+          <img src={item.imageUrl} alt={item.title}></img>
         </div>
         <div className={classes.itemInfo}>
           <p onClick={toProductDetail}>{item.title}</p>

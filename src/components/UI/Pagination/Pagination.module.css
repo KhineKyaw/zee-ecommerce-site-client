@@ -1,8 +1,16 @@
+:root {
+  --item-list-margin: var(--size-common-whitespace-small);
+  --pagination-size: 32px;
+  --item-list-btn-margin: 8px;
+  --item-list-item-size: 286px;
+}
+
 /* pagination */
 .pagination {
   display: flex;
   height: var(--pagination-size);
   width: 100%;
+  margin-top: var(--size-common-whitespace-small);
 }
 
 .pagination button {

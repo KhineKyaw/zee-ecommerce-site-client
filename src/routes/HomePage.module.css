@@ -1,5 +1,5 @@
 .layout {
-  margin: 32px 0;
+  padding-top: var(--size-common-whitespace-medium);
 }
 
 .body {
