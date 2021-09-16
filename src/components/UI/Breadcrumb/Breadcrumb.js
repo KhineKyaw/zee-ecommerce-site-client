@@ -1,11 +1,11 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
-import classes from "./Breadcrumb.module.css"
-import { ReactComponent as Chevronicon } from "../SvgIcons/chevron-forward-outline.svg"
+import classes from "./Breadcrumb.module.css";
+import { ReactComponent as Chevronicon } from "../SvgIcons/chevron-forward-outline.svg";
 
-const Breadcrumb = props => {
-  const keys = Object.keys(props.links)
+const Breadcrumb = (props) => {
+  const keys = Object.keys(props.links);
   return (
     <div className={classes.Breadcrumb}>
       {keys.map((item, idx) => (
@@ -18,7 +18,7 @@ const Breadcrumb = props => {
       ))}
       <div className={classes.last}>{props.last}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Breadcrumb
+export default Breadcrumb;

@@ -8,6 +8,7 @@ import ProductDescription from "../components/Product/ProductDescription/Product
 import Reviews from "../components/Reviews/Reviews";
 import Recommendations from "../components/Product/Recommendations/Recommendations";
 import SectionWrapper from "../hoc/SectionWrapper";
+import Layout from "../hoc/Layout";
 import Breadcrumb from "../components/UI/Breadcrumb/Breadcrumb";
 import getCategories from "../api/getCategories";
 
@@ -27,8 +28,9 @@ const ProductDetails = (props) => {
     const products = getProducts(productId, 1);
     const product = products.result.length !== 0 && products.result[0];
     const categories = getCategories();
+    console.log(categories, product);
     const category = categories.reduce((obj, item) => {
-      if (item.id === product.category_id) return item;
+      if (item.id === product.categoryId) return item;
       return obj;
     }, {});
 
@@ -41,7 +43,9 @@ const ProductDetails = (props) => {
   return (
     <div className={classes.wrapper}>
       <SectionWrapper>
-        <Breadcrumb links={links} last={data ? data.title : null} />
+        <Layout>
+          <Breadcrumb links={links} last={data ? data.title : null} />
+        </Layout>
       </SectionWrapper>
       <SectionWrapper background="light">
         <div className={classes.main}>
