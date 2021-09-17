@@ -10,6 +10,7 @@ const scrollTo = (ref, pos) => {
 }
 
 const Carousel = props => {
+  const { data } = props
   const [margin, setMargin] = useState(0)
   const [showBtn, setShowBtn] = useState([false, true])
   const caroselRef = useRef()
@@ -23,7 +24,7 @@ const Carousel = props => {
     var pos =
       currentPosition.current + (next ? 1 : -1) * (scrollNumber * itemWidth)
     const maxScrollWidth =
-      itemWidth * props.data.length - caroselRef.current.offsetWidth
+      itemWidth * props.data.length - margin - caroselRef.current.offsetWidth
 
     if (pos >= maxScrollWidth) pos = maxScrollWidth
     else if (pos <= 0) pos = 0
@@ -46,7 +47,7 @@ const Carousel = props => {
     const netWidth =
       caroselRef.current.offsetWidth -
       itemRef.current.offsetWidth * showItemCount
-    setMargin(netWidth / showItemCount)
+    setMargin(netWidth / (showItemCount - 1))
   }, [])
 
   const itemWrapper = useCallback(
@@ -57,7 +58,7 @@ const Carousel = props => {
           key={item.id || index}
           className={classes.itemWrapper}
           style={{
-            marginLeft: `${margin}px`
+            marginRight: `${data.length === index + 1 ? 0 : margin}px`
           }}>
           <props.renderItem item={item} index={index} />
         </div>
@@ -79,7 +80,7 @@ const Carousel = props => {
       </button>
 
       <div ref={caroselRef} className={classes.carosel}>
-        {props.data.map(itemWrapper)}
+        {data ? data.map(itemWrapper) : null}
       </div>
 
       <button onClick={onNext} className={btnNextClass.join(" ")}>

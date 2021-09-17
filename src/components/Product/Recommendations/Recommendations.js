@@ -1,13 +1,25 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import classes from "./Recommendations.module.css"
-import ProductItem from "../ProductItem/ProductItem"
 import getProducts from "../../../api/getProducts"
 import Carousel from "../../UI/Carousel/Carousel"
 
 const Recommendations = () => {
   const renderItem = ({ item }) => {
-    return <div className={classes.temp}>{item.title}</div>
+    return (
+      <div className={classes.item}>
+        <Link to={`${item.id}`}>
+          <div
+            className={classes["item-img-container"]}
+            style={{ backgroundImage: `url('${item.imageUrl}')` }}></div>
+        </Link>
+        <div className={classes["item-info"]}>
+          <Link to={`${item.id}`}>{item.title}</Link>
+          <p>Ks {item.price}</p>
+        </div>
+      </div>
+    )
   }
 
   return (
