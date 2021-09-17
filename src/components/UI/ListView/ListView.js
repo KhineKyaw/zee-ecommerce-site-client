@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 
 import classes from "./ListView.module.css"
 
 const ListView = props => {
   return (
     <div className={classes.list}>
-      {props.data.map(i => (
-        <props.renderItem key={i} item={i} />
-      ))}
+      {props.data
+        ? props.data.map(item => <props.renderItem key={item.id} item={item} />)
+        : null}
     </div>
   )
 }

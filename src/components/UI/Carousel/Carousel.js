@@ -19,7 +19,7 @@ const Carousel = props => {
   const showItemCount = 5
 
   const setPosition = (next = true) => {
-    const itemWidth = itemRef.current.offsetWidth + margin * 2
+    const itemWidth = itemRef.current.offsetWidth + margin
     var pos =
       currentPosition.current + (next ? 1 : -1) * (scrollNumber * itemWidth)
     const maxScrollWidth =
@@ -46,7 +46,7 @@ const Carousel = props => {
     const netWidth =
       caroselRef.current.offsetWidth -
       itemRef.current.offsetWidth * showItemCount
-    setMargin(netWidth / (showItemCount * 2))
+    setMargin(netWidth / showItemCount)
   }, [])
 
   const itemWrapper = useCallback(
@@ -57,7 +57,7 @@ const Carousel = props => {
           key={item.id || index}
           className={classes.itemWrapper}
           style={{
-            margin: `0 ${margin}px`
+            marginLeft: `${margin}px`
           }}>
           <props.renderItem item={item} index={index} />
         </div>

@@ -7,7 +7,7 @@ import classes from "./ProductListItem.module.css"
 const ProductListItem = props => {
   const { id, title, price, imageUrl } = props.item
   return (
-    <Card className={classes.container}>
+    <div className={classes.container}>
       <Link to={`product/${id}`} className={classes["image-container"]}>
         <img src={imageUrl} alt={title} />
       </Link>
@@ -17,7 +17,7 @@ const ProductListItem = props => {
         </Link>
         <p className={classes.price}>Ks {price}</p>
       </div>
-    </Card>
+    </div>
   )
 }
 

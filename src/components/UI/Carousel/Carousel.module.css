@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   white-space: nowrap;
+  border: 1px solid gold;
 }
 
 .carosel {
@@ -25,8 +26,8 @@
   outline: none;
   background-color: var(--color-dark-background);
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-100%) translateX(-100%);
+  /* top: 50%;
+  transform: translateY(-100%) translateX(-100%); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +43,7 @@
 
 .btnNext {
   right: 0;
-  transform: translateY(-100%) translateX(100%);
+  /* transform: translateY(-100%) translateX(100%); */
 }
 
 .carosel::-webkit-scrollbar {
@@ -51,7 +52,7 @@
 
 .btnPrev:hover,
 .btnNext:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .hide {

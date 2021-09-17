@@ -11,6 +11,10 @@ import ViewSwitch from "../components/Products/ViewSwitch/ViewSwitch"
 import GridView from "../components/UI/GridView/GridView"
 import Pagination from "../components/UI/Pagination/Pagination"
 import getProducts from "../api/getProducts"
+import ListView from "../components/UI/ListView/ListView"
+import ProductListItem from "../components/Product/ProductListItem/ProductListItem"
+
+const PRODUCTS_PER_PAGE = 12
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -43,15 +47,21 @@ const ProductsCategory = () => {
   }
 
   useEffect(() => {
-    setData(getProducts(page, 12, category_id))
+    setData(getProducts(page, PRODUCTS_PER_PAGE, category_id))
   }, [category_id, page])
 
   const itemList = data ? (
     <>
-      <GridView data={data ? data.result : null} renderItem={ProductItem} />
+      {!switchState ? (
+        <GridView data={data.result} renderItem={ProductItem} />
+      ) : (
+        <ListView data={data.result} renderItem={ProductListItem} />
+      )}
+
       <Pagination
         activePage={page}
         dataLength={data.length}
+        itemsPerPage={PRODUCTS_PER_PAGE}
         onSelect={handlePageChange}
         onClickPrev={handlePrev}
         onClickNext={handleNext}
@@ -70,7 +80,7 @@ const ProductsCategory = () => {
           <div className={classes.topContainer}>
             <h2>All Products</h2>
             <div className={classes.actionBar}>
-              <p>182 results</p>
+              <p>{data ? data.length : null} results</p>
               <ViewSwitch state={switchState} onSwitch={switchStateHandler} />
             </div>
           </div>

@@ -3,11 +3,12 @@
 }
 
 .container {
-  display: flex;
-  width: 100%;
-  height: var(--p-item-size);
   background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-border);
+  display: flex;
+  padding: var(--size-common-whitespace-smaller);
   overflow: hidden;
+  width: 100%;
 }
 
 .image-container img {
@@ -32,5 +33,5 @@
 }
 
 .inner-container {
-  padding: var(--size-common-whitespace-smaller);
+  padding: 0 var(--size-common-whitespace-smaller);
 }
