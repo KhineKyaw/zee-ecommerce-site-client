@@ -26,6 +26,7 @@
   background-color: rgba(var(--color-primary-rgb), 65%);
 }
 
-.item:hover::before {
+.item:hover::before,
+.active.item::before {
   width: calc(100% + var(--nav-item-hover-offset));
 }
