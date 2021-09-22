@@ -52,3 +52,32 @@
 .navbarGhost {
   height: var(--size-navbar-height);
 }
+
+.navlink {
+  display: flex;
+}
+
+.navlink ion-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.active-shopping-cart ion-icon {
+  color: var(--color-primary);
+}
+
+.noti {
+  position: relative;
+}
+
+.noti::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  top: 0em;
+  right: 0em;
+  background-color: var(--color-primary);
+}

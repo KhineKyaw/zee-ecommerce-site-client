@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { Link } from "react-router-dom"
-import IconButton from "../../UI/HeaderIconButton/HeaderIconButton"
+import { NavLink } from "react-router-dom"
+import IconButton from "../../UI/IconButton/IconButton"
 
 import classes from "./Navbar.module.css"
 import NavbarItem from "./NavbarItem/NavbarItem"
@@ -31,19 +31,25 @@ const Navbar = () => {
         <div className={classes.navbar_inner}>
           <Logo />
           <ul className={classes.pages}>
-            <NavbarItem to=''>{texts.navbar["home"]}</NavbarItem>
+            <NavbarItem to='' exact>{texts.navbar["home"]}</NavbarItem>
             <NavbarItem to='/products'>{texts.navbar["products"]}</NavbarItem>
             <NavbarItem to='/stores'>{texts.navbar["stores"]}</NavbarItem>
           </ul>
           <div className={classes.actions}>
             <NavSearchBar placeholder='Search' autoFocus />
-            <IconButton name='profile' />
-            <Link to='/shopcart'>
+            <NavLink className={classes.navlink} to='person'> 
+              <IconButton name='person-outline' variant='outline' />
+            </NavLink>
+            <NavLink 
+              className={`${classes.navlink} ${cartState.items.length && classes.noti}`}
+              activeClassName={classes["active-shopping-cart"]}
+              to='/shopcart'>
               <IconButton
                 showNotification={cartState.items.length}
-                name='bag'
+                variant='outline'
+                name='bag-outline'
               />
-            </Link>
+            </NavLink>
             <LanguageSwitch
               language={language}
               onClick={languageChangedHandler}
