@@ -18,20 +18,24 @@
 
 .btnPrev,
 .btnNext {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  border: none;
-  outline: none;
-  background-color: var(--color-dark-background);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-100%) translateX(-100%);
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: var(--color-dark-background);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  position: absolute;
   opacity: 0.4;
+  outline: none;
   transition: var(--duration-animation-long);
+  width: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btnNext {
+  right: 0;
 }
 
 .carouselWrapper ion-icon {
@@ -40,18 +44,13 @@
   pointer-events: none;
 }
 
-.btnNext {
-  right: 0;
-  transform: translateY(-100%) translateX(100%);
-}
-
 .carosel::-webkit-scrollbar {
   height: 0px;
 }
 
 .btnPrev:hover,
 .btnNext:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .hide {

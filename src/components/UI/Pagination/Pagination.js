@@ -2,14 +2,13 @@ import React from "react"
 
 import classes from "./Pagination.module.css"
 
-const DEFAULT_ITEM_COUNT_PER_PAGE = 12
 const SHOWN_PAGE_LIMIT = 5
 const SHOWN_PAGE_TAIL = 3
 
 const Pagination = props => {
-  const { dataLength, onSelect, onClickNext, onClickPrev } = props
+  const { dataLength, onSelect, onClickNext, onClickPrev, itemsPerPage } = props
   let activePage = +props.activePage || 1
-  const pageLength = Math.floor(dataLength / DEFAULT_ITEM_COUNT_PER_PAGE)
+  const pageLength = Math.floor(dataLength / itemsPerPage)
 
   let startPage = 0
   let endPage = SHOWN_PAGE_LIMIT
