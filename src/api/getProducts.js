@@ -27,7 +27,6 @@ const getAllProducts = () => {
 
 const getProducts = (start = 0, count = 10, category_id) => {
   let result = getAllProducts();
-  const length = result.length;
   category_id = Number(category_id);
   if (category_id)
     result = result.filter(({ categoryId }) => category_id === categoryId);
@@ -40,6 +39,7 @@ const getProducts = (start = 0, count = 10, category_id) => {
     result = result.slice(start, start + count);
   }
   const nextId = result.length && start + count;
+  const length = result.length;
   return {
     result,
     nextId,
