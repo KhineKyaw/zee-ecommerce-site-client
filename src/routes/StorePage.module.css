@@ -43,6 +43,10 @@
   position: relative;
 }
 
+.search-box input {
+  background-color: var(--color-white);
+}
+
 .info {
   display: flex;
   align-items: center;

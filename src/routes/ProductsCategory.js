@@ -47,7 +47,13 @@ const ProductsCategory = () => {
   }
 
   useEffect(() => {
-    setData(getProducts(page, PRODUCTS_PER_PAGE, category_id))
+    setData(
+      getProducts(
+        (page - 1) * PRODUCTS_PER_PAGE,
+        PRODUCTS_PER_PAGE,
+        category_id
+      )
+    )
   }, [category_id, page])
 
   const itemList = data ? (
