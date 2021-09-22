@@ -12,7 +12,8 @@ const stores = [
   },
   {
     name: "Hisense",
-    background: "https://global.hisense.com/assets/og-image/default-og.png",
+    background:
+      "https://global.hisense.com/dam/jcr:d075c095-e6c7-474e-bc33-0f0b193ac8a2/Laser100.jpg",
     logo: "https://static-01.shop.com.mm/other/shop/b66ff722130a7c80e62f2e509dfc31ed.jpeg_120x120q75.jpg_.webp"
   },
   {

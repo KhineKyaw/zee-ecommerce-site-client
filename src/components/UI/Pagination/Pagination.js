@@ -8,7 +8,7 @@ const SHOWN_PAGE_TAIL = 3
 const Pagination = props => {
   const { dataLength, onSelect, onClickNext, onClickPrev, itemsPerPage } = props
   let activePage = +props.activePage || 1
-  const pageLength = Math.floor(dataLength / itemsPerPage)
+  const pageLength = Math.ceil(dataLength / itemsPerPage)
 
   let startPage = 0
   let endPage = SHOWN_PAGE_LIMIT
@@ -33,7 +33,9 @@ const Pagination = props => {
   )
 
   const btnNext = (
-    <button disabled={pageLength === activePage} onClick={onClickNext}>
+    <button
+      disabled={!pageLength || pageLength === activePage}
+      onClick={onClickNext}>
       <ion-icon name='chevron-forward-outline'></ion-icon>
     </button>
   )

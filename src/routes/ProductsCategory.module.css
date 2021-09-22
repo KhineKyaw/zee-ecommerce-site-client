@@ -4,6 +4,7 @@
 
 .container {
   flex: 1;
+  min-height: 60vh;
   margin-left: var(--size-common-whitespace-medium);
 }
 
