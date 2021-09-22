@@ -6,7 +6,7 @@ const getAllProducts = () => {
   for (let i = 0; i < 10; i++) {
     const offset = fake_products.length;
     shuffle(
-      products.map((pd, id) => {
+      products.map(pd => {
         return {
           ...pd,
           title: pd.title,
@@ -27,9 +27,10 @@ const getAllProducts = () => {
 
 const getProducts = (start = 0, count = 10, category_id) => {
   let result = getAllProducts();
-  category_id = Number(category_id);
-  if (category_id)
+  if (category_id) {
+    category_id = Number(category_id);
     result = result.filter(({ categoryId }) => category_id === categoryId);
+  }
   const length = result.length;
   if (start < 0) {
     result = result.reverse();
