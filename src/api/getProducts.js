@@ -30,6 +30,7 @@ const getProducts = (start = 0, count = 10, category_id) => {
   category_id = Number(category_id);
   if (category_id)
     result = result.filter(({ categoryId }) => category_id === categoryId);
+  const length = result.length;
   if (start < 0) {
     result = result.reverse();
     start = -start - 1;
@@ -39,7 +40,6 @@ const getProducts = (start = 0, count = 10, category_id) => {
     result = result.slice(start, start + count);
   }
   const nextId = result.length && start + count;
-  const length = result.length;
   return {
     result,
     nextId,
