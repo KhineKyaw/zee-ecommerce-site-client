@@ -1,5 +1,8 @@
 const categories = [
   {
+    name: "All"
+  },
+  {
     name: "Electronic Devices"
   },
   {

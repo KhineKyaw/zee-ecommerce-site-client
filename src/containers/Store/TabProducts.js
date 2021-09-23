@@ -9,12 +9,18 @@ import getProducts from "../../api/getProducts"
 
 const TabProducts = props => {
   const categories = getCategories()
-  const [current, setCurrent] = useState(categories && categories[0].name)
+  const [current, setCurrent] = useState(categories && categories[0])
   const [data, setData] = useState()
 
   useEffect(() => {
-    setData(getProducts())
-  }, [])
+    setData(getProducts(0, -1, current.id))
+  }, [current])
+
+  const handleOnDropdownChange = (target) => {
+    const newCategory = categories.find(c => c.id === target.value)
+    if (newCategory)
+      setCurrent(newCategory)
+  }
 
   return (
     <div className={classes.container}>
@@ -22,11 +28,11 @@ const TabProducts = props => {
         <span>312 items</span>
         <Dropdown
           name={"Categories"}
-          value={current}
-          onChange={target => setCurrent(target.value)}>
+          value={current.id}
+          onChange={handleOnDropdownChange}>
           {categories.map(category => {
             return (
-              <Dropdown.Item key={category.name} value={category.name}>
+              <Dropdown.Item key={category.id} value={category.id}>
                 {category.name}
               </Dropdown.Item>
             )
