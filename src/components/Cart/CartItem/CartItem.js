@@ -18,6 +18,10 @@ const LinkImage = props => {
 
 const CartItem = props => {
   const { item } = props
+  const maxAvailableItems = item.items.reduce(
+    (acc, item) => acc + item.count,
+    0
+  )
 
   const onSelect = () => {
     props.onSelect(item.id)
@@ -34,8 +38,6 @@ const CartItem = props => {
   const onSubtract = () => {
     props.onSubtract(item.id)
   }
-
-  console.log("CI: ", item)
 
   return (
     <div className={classes.cartitem}>
@@ -63,7 +65,7 @@ const CartItem = props => {
         <span className={classes.amount}>{item.amount}</span>
         <IconButton
           name='add'
-          // disabled={quantity === maxAvailableItems}
+          disabled={item.amount === maxAvailableItems}
           onClick={onAdd}
         />
         <div className={classes.selectdelete}>
