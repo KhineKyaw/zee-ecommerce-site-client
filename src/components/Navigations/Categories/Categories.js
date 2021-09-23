@@ -1,65 +1,32 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-import classes from "./Categories.module.css"
-import getCategories from "../../../api/getCategories"
-
-const CATE_HEIGHT = 400
-const CATE_TOP = 32
+import classes from "./Categories.module.css";
+import getCategories from "../../../api/getCategories";
 
 const Categories = () => {
-  const [categories, setCategories] = useState()
-  const wrapperRef = useRef()
-  const [categoriesType, setCategoriesType] = useState("abs-top")
-  var categoriesStyle = {}
-
-  const onDocumentScroll = () => {
-    if (!wrapperRef.current) return
-    const wrapperRect = wrapperRef.current.getBoundingClientRect()
-
-    if (wrapperRect.top <= CATE_TOP) {
-      if (wrapperRect.bottom < CATE_HEIGHT + CATE_TOP * 2) {
-        setCategoriesType("abs-bot")
-        return
-      }
-      setCategoriesType("fix-top")
-    } else setCategoriesType("abs-top")
-  }
+  const [categories, setCategories] = useState();
 
   useEffect(() => {
-    setCategories(getCategories())
-    window.addEventListener("scroll", onDocumentScroll)
-    return () => {
-      window.removeEventListener("scroll", onDocumentScroll)
-    }
-  }, [])
-
-  if (categoriesType === "fix-top") {
-    categoriesStyle = {
-      position: "fixed",
-      top: CATE_TOP
-    }
-  }
-  if (categoriesType === "abs-bot") {
-    categoriesStyle = {
-      position: "absolute",
-      bottom: CATE_TOP
-    }
-  }
+    setCategories(getCategories());
+  }, []);
 
   const CategoriesList = categories
-    ? categories.map(item => {
-        return <p key={item.id}>{item.name}</p>
+    ? categories.map((item) => {
+        return (
+          <Link to={"/products?categoryId=" + item.id} key={item.id}>
+            <p>{item.name}</p>
+          </Link>
+        );
       })
-    : "Loading"
+    : "Loading";
 
   return (
-    <div ref={wrapperRef} className={classes.categoriesWrapper}>
-      <div className={classes.categories} style={categoriesStyle}>
-        <h5>Categories</h5>
-        {CategoriesList}
-      </div>
+    <div className={classes.categories}>
+      <h5>Categories</h5>
+      {CategoriesList}
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

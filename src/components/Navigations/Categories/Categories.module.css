@@ -1,8 +1,6 @@
 .categories {
-  position: absolute;
   background-color: var(--color-dark-background);
-  height: var(--size-categories-heigth);
-  padding: 30px;
+  padding: var(--size-common-whitespace-small);
   width: var(--size-categories-width);
 }
 
@@ -14,17 +12,11 @@
 
 .categories p {
   color: var(--color-white);
-
-  margin-bottom: 12px;
+  margin-top: 12px;
   transition: color var(--duration-animation-normal);
   cursor: pointer;
 }
 
 .categories p:hover {
   color: var(--color-primary);
-}
-
-.categoriesWrapper {
-  min-width: var(--size-categories-width);
-  margin-right: var(--size-common-whitespace-medium);
 }

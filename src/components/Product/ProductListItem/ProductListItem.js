@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import Card from "../../UI/Card/Card"
 import classes from "./ProductListItem.module.css"
 
 const ProductListItem = props => {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 import classes from "./Carousel.module.css"
 
@@ -50,22 +50,19 @@ const Carousel = props => {
     setMargin(netWidth / (showItemCount - 1))
   }, [])
 
-  const itemWrapper = useCallback(
-    (item, index) => {
-      return (
-        <div
-          ref={itemRef}
-          key={item.id || index}
-          className={classes.itemWrapper}
-          style={{
-            marginRight: `${data.length === index + 1 ? 0 : margin}px`
-          }}>
-          <props.renderItem item={item} index={index} />
-        </div>
-      )
-    },
-    [margin]
-  )
+  const itemWrapper = (item, index) => {
+    return (
+      <div
+        ref={itemRef}
+        key={item.id || index}
+        className={classes.itemWrapper}
+        style={{
+          marginRight: `${data.length === index + 1 ? 0 : margin}px`
+        }}>
+        <props.renderItem item={item} index={index} />
+      </div>
+    )
+  }
 
   const btnPrevClass = [classes.btnPrev]
   const btnNextClass = [classes.btnNext]

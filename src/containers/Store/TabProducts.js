@@ -26,7 +26,7 @@ const TabProducts = props => {
           onChange={target => setCurrent(target.value)}>
           {categories.map(category => {
             return (
-              <Dropdown.Item value={category.name}>
+              <Dropdown.Item key={category.name} value={category.name}>
                 {category.name}
               </Dropdown.Item>
             )

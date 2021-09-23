@@ -2,7 +2,7 @@ import React from "react"
 
 import classes from "./HomePage.module.css"
 import Banner from "../components/Banner/Banner"
-import Categories from "../components/Navigations/Categories1/Categories"
+import Categories from "../components/Navigations/Categories/Categories"
 import SectionMore2Love from "../containers/Home/SectionMore2Love"
 import SectionTopProducts from "../containers/Home/SectionTopProducts"
 import SectionStores from "../containers/Home/SectionStores"
