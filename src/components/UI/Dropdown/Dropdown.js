@@ -18,7 +18,7 @@ const Dropdown = (props) => {
       toggle();
       props.onChange({ value: child.props.value });
     };
-    return React.createElement(DropdownItem, { ...child.props, onClick });
+    return React.createElement(DropdownItem, { key: child.key, onClick, ...child.props});
   });
 
   const activeChild = children.find(
