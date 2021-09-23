@@ -1,14 +1,20 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import classes from "./TabProducts.module.css"
-
 import Dropdown from "../../components/UI/Dropdown/Dropdown"
-
 import getCategories from "../../api/getCategories"
+import GridView from "../../components/UI/GridView/GridView"
+import ProductItem from "../../components/Product/ProductItem/ProductItem"
+import getProducts from "../../api/getProducts"
 
 const TabProducts = props => {
   const categories = getCategories()
   const [current, setCurrent] = useState(categories && categories[0].name)
+  const [data, setData] = useState()
+
+  useEffect(() => {
+    setData(getProducts())
+  }, [])
 
   return (
     <div className={classes.container}>
@@ -27,7 +33,7 @@ const TabProducts = props => {
           })}
         </Dropdown>
       </div>
-      <div>products</div>
+      <GridView data={data ? data.result : null} renderItem={ProductItem} />
     </div>
   )
 }

@@ -9,6 +9,8 @@ const CartItemList = () => {
   const {
     items: cartItems,
     selectAll,
+    addItem,
+    removeItem,
     selectItem,
     selectAllItem,
     deleteItem
@@ -26,8 +28,14 @@ const CartItemList = () => {
     deleteItem(id)
   }
 
+  const onRemoveItemHandler = id => {
+    removeItem(id)
+  }
+
   const renderItem = item => (
     <CartItem
+      onAdd={addItem}
+      onSubtract={onRemoveItemHandler}
       onSelect={onSelectItemHandler}
       onDelete={onDeleteItemHandler}
       key={item.id}

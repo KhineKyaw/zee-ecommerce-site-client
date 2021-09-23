@@ -33,6 +33,7 @@ const cartReducer = (state, action) => {
       })
       return {
         ...state,
+        totalAmount: getTotalPrice(items),
         items
       }
     }
@@ -44,6 +45,14 @@ const cartReducer = (state, action) => {
   }
   // Remove
   if (action.type === REMOVE) {
+    const items = state.items.map(item => {
+      if (item.id === action.id) {
+        return { ...item, amount: item.amount > 1 ? item.amount - 1 : 1 }
+      }
+      return item
+    })
+
+    return { ...state, totalAmount: getTotalPrice(items), items }
   }
 
   // Delete

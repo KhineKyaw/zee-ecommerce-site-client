@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import classes from "./CartItem.module.css"
 import Checkbox from "../../UI/Checkbox/Checkbox"
+import IconButton from "../../UI/IconButton/IconButton"
 
 const LinkImage = props => {
   return (
@@ -26,6 +27,16 @@ const CartItem = props => {
     props.onDelete(item.id)
   }
 
+  const onAdd = () => {
+    props.onAdd(item)
+  }
+
+  const onSubtract = () => {
+    props.onSubtract(item.id)
+  }
+
+  console.log("CI: ", item)
+
   return (
     <div className={classes.cartitem}>
       <LinkImage to={`/product/${item.id}`} imageUrl={item.imageUrl} />
@@ -44,7 +55,17 @@ const CartItem = props => {
         <div className={classes.price}>KS {item.price}</div>
       </div>
       <div className={classes.actions}>
-        <div>Amount: {item.amount} </div>
+        <IconButton
+          name='remove'
+          disabled={item.amount <= 1}
+          onClick={onSubtract}
+        />
+        <span className={classes.amount}>{item.amount}</span>
+        <IconButton
+          name='add'
+          // disabled={quantity === maxAvailableItems}
+          onClick={onAdd}
+        />
         <div className={classes.selectdelete}>
           <Checkbox checked={item.checked} onClick={onSelect} />
           <button onClick={onDelete} className={classes.delete}>
