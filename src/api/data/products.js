@@ -32,7 +32,7 @@ const products = [
       "Item Height:10.5cm",
       "Decoration:Letter",
     ],
-    categoryId: 2,
+    categoryId: 3,
     optionCategories: [
       {
         name: "Color",
@@ -110,7 +110,7 @@ const products = [
   },
   {
     title: "GROOT Cute Flower/Plant pot",
-    categoryId: 4,
+    categoryId: 5,
     images: [
       "https://static-01.shop.com.mm/p/1178a9202ddbfc1be9a3d9a4e756fc11.jpg_720x720q75.jpg_.webp",
     ],
@@ -191,7 +191,7 @@ const products = [
   },
   {
     title: "2021 New Design Sneaker",
-    categoryId: 8,
+    categoryId: 9,
     images: [
       "https://static-01.shop.com.mm/p/5440483232e75292e01266cd531d70c1.jpg_400x400q75-product.jpg_.webp",
     ],
@@ -272,7 +272,7 @@ const products = [
   },
   {
     title: "Endo Steel Mug (1 Litre)",
-    categoryId: 9,
+    categoryId: 10,
     images: [
       "https://static-01.shop.com.mm/original/da7a700d9c5dd2f2b48206fc5ebc6c9c.jpg_400x400q75-product.jpg_.webp",
     ],
@@ -353,7 +353,7 @@ const products = [
   },
   {
     title: "2080 Mountain Pink Salt",
-    categoryId: 3,
+    categoryId: 4,
     images: [
       "https://static-01.shop.com.mm/p/d0c965e4c3fb3c9ab8b1c7e12d62c60f.jpg_400x400q75-product.jpg_.webp",
     ],
@@ -434,7 +434,7 @@ const products = [
   },
   {
     title: "Plus Size Women Dress - GMCC2-124",
-    categoryId: 1,
+    categoryId: 2,
     images: [
       "https://static-01.shop.com.mm/p/36d737c8dd1f1484c267136f0851a97b.jpg_400x400q75-product.jpg_.webp",
     ],
@@ -515,7 +515,7 @@ const products = [
   },
   {
     title: "Smart Digital Indoor HDTV Antenna with Signal Amplifier",
-    categoryId: 0,
+    categoryId: 1,
     images: [
       "https://static-01.shop.com.mm/p/f11a129b61e518e14d97e66e7752e882.jpg",
     ],
@@ -597,7 +597,7 @@ const products = [
   {
     title:
       "Light luxury fluffy sofa creative design velvet armchair Nordic leisure furniture waiting chair comfortable back dressing seats",
-    categoryId: 1,
+    categoryId: 2,
     images: [
       "https://ae01.alicdn.com/kf/Hae248343d47c493a94a88fc44c316184T/Light-luxury-fluffy-sofa-creative-design-velvet-armchair-Nordic-leisure-furniture-waiting-chair-comfortable-back-dressing.jpg_640x640.jpg",
     ],

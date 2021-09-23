@@ -1,42 +1,46 @@
 const categories = [
   {
     id: 0,
-    name: "Electronic Devices"
+    name: "All"
   },
   {
     id: 1,
-    name: "Women's Fashion"
+    name: "Electronic Devices"
   },
   {
     id: 2,
-    name: "Men's Fashion"
+    name: "Women's Fashion"
   },
   {
     id: 3,
-    name: "Health & Beauty"
+    name: "Men's Fashion"
   },
   {
     id: 4,
-    name: "Babies & Toys"
+    name: "Health & Beauty"
   },
   {
     id: 5,
-    name: "Watches & Accessories"
+    name: "Babies & Toys"
   },
   {
     id: 6,
-    name: "Sports & Outdoor"
+    name: "Watches & Accessories"
   },
   {
     id: 7,
-    name: "Bags & Shoes"
+    name: "Sports & Outdoor"
   },
   {
     id: 8,
-    name: "Automobiles & Motocycles"
+    name: "Bags & Shoes"
   },
   {
     id: 9,
+    name: "Automobiles & Motocycles"
+  },
+  {
+    id: 10,
     name: "Home Improvement & Tools"
   }
 ]
