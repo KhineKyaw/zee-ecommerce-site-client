@@ -13,6 +13,7 @@ import Pagination from "../components/UI/Pagination/Pagination"
 import getProducts from "../api/getProducts"
 import ListView from "../components/UI/ListView/ListView"
 import ProductListItem from "../components/Product/ProductListItem/ProductListItem"
+import getCategory from "../api/getCategory"
 
 const PRODUCTS_PER_PAGE = 12
 
@@ -22,11 +23,12 @@ function useQuery() {
 
 const ProductsCategory = () => {
   let query = useQuery()
-  const category_id = query.get("categoryId")
-  const page = +query.get("page") || 1
+  const category_id = Number(query.get("categoryId"))
+  const page = Number(query.get("page")) || 1
   let history = useHistory()
   const [data, setData] = useState(null)
   const [switchState, setSwitchState] = useState(0)
+  const [categoryName, setCategoryName] = useState("All Products")
 
   const switchStateHandler = s => {
     setSwitchState(s)
@@ -47,6 +49,9 @@ const ProductsCategory = () => {
   }
 
   useEffect(() => {
+    if (category_id) {
+      setCategoryName(getCategory(category_id).name)
+    }
     setData(
       getProducts(
         (page - 1) * PRODUCTS_PER_PAGE,
@@ -84,7 +89,7 @@ const ProductsCategory = () => {
         </StickyContainer>
         <div className={classes.container}>
           <div className={classes.topContainer}>
-            <h2>All Products</h2>
+            <h2>{categoryName}</h2>
             <div className={classes.actionBar}>
               <p>{data ? data.length : null} results</p>
               <ViewSwitch state={switchState} onSwitch={switchStateHandler} />

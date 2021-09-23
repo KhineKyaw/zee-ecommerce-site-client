@@ -28,7 +28,6 @@ const ProductDetails = props => {
     const products = getProducts(productId, 1)
     const product = products.result.length !== 0 && products.result[0]
     const categories = getCategories()
-    // console.log(categories, product)
     const category = categories.reduce((obj, item) => {
       if (item.id === product.categoryId) return item
       return obj
