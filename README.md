@@ -1,6 +1,6 @@
 # Zee E-commerce
 
-React client for Zee E-commerce website.
+<p align="center">React client for Zee E-commerce website.</p>
 
 <p align="center">
   <img src="https://drive.google.com/uc?export=download&id=1pyXOChkeOpWEfiUEu9Kmtq-WGIxr8i8h">
