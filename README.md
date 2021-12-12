@@ -3,7 +3,7 @@
 React client for Zee E-commerce website.
 
 <p align="center">
-  <img src="https://drive.google.com/file/d/1d1f_L9nmGPL7SMUIvBfyDtbPPFcrXkrx/view?usp=sharing">
+  <img src="https://drive.google.com/uc?export=download&id=1d1f_L9nmGPL7SMUIvBfyDtbPPFcrXkrx">
 </p>
 
 ## Developed With
